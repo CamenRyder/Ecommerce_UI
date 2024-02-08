@@ -31,6 +31,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # design system:v
+  get: ^4.6.6 
+  get_it: ^7.6.6 
+  injectable: ^1.0.4
+ 
+  #lib pack
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
