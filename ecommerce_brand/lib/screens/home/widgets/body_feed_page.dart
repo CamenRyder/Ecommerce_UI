@@ -53,13 +53,14 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
       if (e["index"] == 999) {
         return GestureDetector(
           onTap: () {
-              Get.toNamed(Routes.editTabs) ;  
+            Get.toNamed(Routes.editTabs);
           },
           child: SizedBox(
             height: 22,
             width: 22,
-            child:  Assets.iconsIcSetting
-              .svg(height: 18, width: 18, color: AppColors.textGrey),),
+            child: Assets.iconsIcSetting
+                .svg(height: 18, width: 18, color: AppColors.textGrey),
+          ),
         );
       }
       return Tab(text: e["name"]);
