@@ -41,7 +41,7 @@ class _BottomNavigatorBar extends State<BottomNavigatorBar> {
             backgroundColor: Colors.white,
             type: BottomNavigationBarType.fixed,
             showUnselectedLabels: true,
-            elevation: 1,
+            elevation: 0,
             currentIndex: controller.tabIndex.value,
             onTap: (index) {
               setState(() {
@@ -66,29 +66,24 @@ class _BottomNavigatorBar extends State<BottomNavigatorBar> {
     required String title,
   }) {
     return BottomNavigationBarItem(
-      icon: Padding(
-        padding: const EdgeInsets.only(bottom: 2.0),
-        child: icon.svg(
-          fit: BoxFit.scaleDown,
-          width: 25.w,
-          height: 25.w,
-          colorFilter: const ColorFilter.mode(
-            AppColors.black,
-            BlendMode.srcIn,
-          ),
+      icon: icon.svg(
+        fit: BoxFit.scaleDown,
+        width: 24.w,
+        height: 24.w,
+        colorFilter: const ColorFilter.mode(
+          AppColors.black,
+          BlendMode.srcIn,
         ),
       ),
-      activeIcon: Padding(
-          padding: const EdgeInsets.only(bottom: 2.0),
-          child: icon.svg(
-            fit: BoxFit.scaleDown,
-            width: 25.w,
-            height: 25.w,
-            colorFilter: const ColorFilter.mode(
-              AppColors.primary,
-              BlendMode.srcIn,
-            ),
-          )),
+      activeIcon: icon.svg(
+        fit: BoxFit.scaleDown,
+        width: 24.w,
+        height: 24.w,
+        colorFilter: const ColorFilter.mode(
+          AppColors.primary,
+          BlendMode.srcIn,
+        ),
+      ),
       label: title,
     );
   }

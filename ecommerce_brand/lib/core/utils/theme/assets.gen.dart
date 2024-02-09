@@ -34,13 +34,18 @@ class Assets {
   static const SvgGenImage iconsIcResearch =
       SvgGenImage('assets/icons/ic_research.svg');
 
+  /// File path: assets/icons/ic_setting.svg
+  static const SvgGenImage iconsIcSetting =
+      SvgGenImage('assets/icons/ic_setting.svg');
+
   /// List of all assets
   static List<SvgGenImage> get values => [
         iconsIcFile,
         iconsIcHome,
         iconsIcMarket,
         iconsIcProfile,
-        iconsIcResearch
+        iconsIcResearch,
+        iconsIcSetting
       ];
 }
 

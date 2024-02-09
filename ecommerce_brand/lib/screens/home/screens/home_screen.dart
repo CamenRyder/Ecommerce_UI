@@ -2,8 +2,8 @@
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/widgets/indicatorCustom.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
-import 'package:ecommerce_brand/screens/honme/screens/page/feed_page.dart';
-import 'package:ecommerce_brand/screens/honme/widgets/bottomNavigatorBar.dart';
+import 'package:ecommerce_brand/screens/home/screens/page/feed_page.dart';
+import 'package:ecommerce_brand/screens/home/widgets/bottomNavigatorBar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';

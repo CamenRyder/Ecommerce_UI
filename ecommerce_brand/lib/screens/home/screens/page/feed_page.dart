@@ -1,7 +1,7 @@
 import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
-import 'package:ecommerce_brand/screens/honme/widgets/app_bar_feed_page.dart';
-import 'package:ecommerce_brand/screens/honme/widgets/body_feed_page.dart';
+import 'package:ecommerce_brand/screens/home/widgets/app_bar_feed_page.dart';
+import 'package:ecommerce_brand/screens/home/widgets/body_feed_page.dart';
 import 'package:flutter/material.dart';
 
 class FeedPage extends StatefulWidget {
