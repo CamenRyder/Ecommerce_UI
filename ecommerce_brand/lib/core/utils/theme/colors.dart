@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const primary = Color.fromARGB(255, 5, 96, 58);
+  static const primary = Color(0xff614FE0);
+
 
 
   static const backgroundWhite = Color(0xffFFFFFF);
-  static const backgroundPrimary = Color.fromARGB(255, 30, 155, 82);
+  static const backgroundPrimary = Color.fromARGB(255, 130, 30, 155);
   static const background = Color(0xffFFFFFF) ; 
   static const textGrey = Color(0xFF757779);
   static const text = Color(0xff1F2024);
@@ -19,6 +20,14 @@ class AppColors {
 
 
   static Color hexToColor(String hexColor) {
+    hexColor = hexColor.replaceAll("#", "");
+    if (hexColor.length == 6) {
+      hexColor = "FF$hexColor";
+    }
+    int colorValue = int.parse(hexColor, radix: 16);
+    return Color(colorValue);
+  }
+   Color hexToColorLocal(String hexColor) {
     hexColor = hexColor.replaceAll("#", "");
     if (hexColor.length == 6) {
       hexColor = "FF$hexColor";

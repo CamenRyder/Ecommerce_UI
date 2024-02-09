@@ -2,6 +2,7 @@
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/widgets/indicatorCustom.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
+import 'package:ecommerce_brand/screens/honme/screens/page/feed_page.dart';
 import 'package:ecommerce_brand/screens/honme/widgets/bottomNavigatorBar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -33,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: _controller.pageController ,
         physics:  const NeverScrollableScrollPhysics(),
         children: [
-          // FeedPage(),
+          FeedPage(controller: _controller,),
           // const MarketScreen(),f
           // const ProfileScreen(),
           Container(

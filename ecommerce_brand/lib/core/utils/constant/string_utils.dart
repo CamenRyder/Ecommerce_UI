@@ -16,6 +16,7 @@ class StringUtils {
 class Constant {
   static const double paddingVertical = 8;
   static const double paddingHorizontal = 24;
+  static const double paddingScreen = 16;
   static const double radiusCircle = 24;
   static const double radius = 12;
   static const durationAnimateSlide = Duration(milliseconds: 300);
@@ -30,29 +31,40 @@ class AppStringConstant {
 
 class ListComponentTabConstant {
   static final listQuickFilterHome = <dynamic>[
-    {
+   {
       "name": "All",
-      "sortType": null,
+      "index": 0,
+      "tag": null,
     },
     {
-      "name": "Downloaded",
-      "sortType": 1,
+      "name": "Sustainable",
+      "index": 1,
+      "tag": "Tag",
     },
     {
-      "name": "Favorite",
-      "sortType": 2,
+      "name": "Lacoste",
+      "index": 2,
+      "tag": "Store",
     },
     {
-      "name": "Hide",
-      "sortType": 3,
+      "name": "Adidas",
+      "index": 3,
+      "tag": "Store",
     },
     {
-      "name": "Ohh My God",
-      "sortType": null,
+      "name": "Vintage",
+      "index": 4,
+      "tag": "Tag",
     },
     {
-      "name": "Porfolio",
-      "sortType": null,
+      "name": "Levi's",
+      "index": 5,
+      "tag": "Tag",
+    },
+    {
+      "name": "Setting",
+      "index": 999,
+      "tag": "Tag",
     },
   ];
   static final imageIcons = <String>[
@@ -64,46 +76,39 @@ class ListComponentTabConstant {
 
   static final listTitleLabel = <dynamic>[
     {
-      "name": "Nhãn hàng",
-      "isChoice": false,
-      "type_data": "nhanhang",
-      "isPickOne": false,
+      "name": "All",
+      "index": 0,
+      "tag": null,
     },
     {
-      "name": "Dòng hàng",
-      "isChoice": false,
-      "type_data": "line_xman",
-      "isPickOne": false,
+      "name": "Sustainable",
+      "index": 1,
+      "tag": "Tag",
     },
     {
-      "name": "Nghành hàng",
-      "isChoice": false,
-      "type_data": "nganhhang",
-      "isPickOne": false,
+      "name": "Lacoste",
+      "index": 2,
+      "tag": "Store",
     },
     {
-      "name": "Chủng loại",
-      "isChoice": false,
-      "type_data": "chungloai",
-      "isPickOne": false,
+      "name": "Adidas",
+      "index": 3,
+      "tag": "Store",
     },
     {
-      "name": "Bộ",
-      "isChoice": false,
-      "type_data": "bo",
-      "isPickOne": true,
+      "name": "Vintage",
+      "index": 4,
+      "tag": "Tag",
     },
     {
-      "name": "Cặp",
-      "isChoice": false,
-      "type_data": "cap",
-      "isPickOne": true,
+      "name": "Levi's",
+      "index": 5,
+      "tag": "Tag",
     },
     {
-      "name": "Bộ sưu tập",
-      "isChoice": false,
-      "type_data": "bst",
-      "isPickOne": false,
+      "name": "Setting",
+      "index": 999,
+      "tag": "Tag",
     },
   ];
 }

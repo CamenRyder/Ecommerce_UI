@@ -3,9 +3,11 @@ import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:flutter/material.dart';
 
-
 class AppStyles {
   static const borderRadius = BorderRadius.all(Radius.circular(3));
+  static const paddingScreen = EdgeInsets.symmetric(
+      horizontal: Constant.paddingHorizontal,
+      vertical: Constant.paddingVertical);
   static const inputStyle = InputDecoration(
     filled: true,
     fillColor: AppColors.backgroundPrimary,
@@ -29,4 +31,3 @@ class AppStyles {
       color: Color.fromARGB(255, 255, 255, 255),
       borderRadius: BorderRadius.all(Radius.circular(12)));
 }
-

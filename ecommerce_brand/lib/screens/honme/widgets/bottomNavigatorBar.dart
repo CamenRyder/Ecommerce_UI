@@ -5,24 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hidable/hidable.dart';
 
-class  BottomNavigatorBar extends StatefulWidget{
-    BottomNavigatorBar({super.key, required this.controller});
+class BottomNavigatorBar extends StatefulWidget {
+  BottomNavigatorBar({super.key, required this.controller});
   HomeScreenController controller;
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return _BottomNavigatorBar() ;
+    return _BottomNavigatorBar();
   }
+}
 
-}  
-class _BottomNavigatorBar extends State<BottomNavigatorBar>  {
- 
+class _BottomNavigatorBar extends State<BottomNavigatorBar> {
   late final HomeScreenController controller;
 
   @override
   void initState() {
     super.initState();
-    controller = widget.controller ; 
+    controller = widget.controller;
   }
 
   @override
@@ -34,8 +33,7 @@ class _BottomNavigatorBar extends State<BottomNavigatorBar>  {
   _bottomNavigator() {
     return Container(
       decoration: const BoxDecoration(
-          border: Border(
-              top: BorderSide(color: AppColors.backgroundWhite, width: 0))),
+          border: Border(top: BorderSide(color: Colors.white, width: 0))),
       child: BottomAppBar(
         child: SizedBox(
           height: 60,
@@ -43,11 +41,11 @@ class _BottomNavigatorBar extends State<BottomNavigatorBar>  {
             backgroundColor: Colors.white,
             type: BottomNavigationBarType.fixed,
             showUnselectedLabels: true,
-            elevation: 0,
+            elevation: 1,
             currentIndex: controller.tabIndex.value,
             onTap: (index) {
               setState(() {
-                 controller.onTabChanged(index) ;
+                controller.onTabChanged(index);
               });
             },
             items: [
