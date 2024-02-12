@@ -26,6 +26,10 @@ class Assets {
   static const SvgGenImage iconsIcMarket =
       SvgGenImage('assets/icons/ic_market.svg');
 
+  /// File path: assets/icons/ic_more_dots.svg
+  static const SvgGenImage iconsIcMoreDots =
+      SvgGenImage('assets/icons/ic_more_dots.svg');
+
   /// File path: assets/icons/ic_profile.svg
   static const SvgGenImage iconsIcProfile =
       SvgGenImage('assets/icons/ic_profile.svg');
@@ -58,6 +62,7 @@ class Assets {
         iconsIcFile,
         iconsIcHome,
         iconsIcMarket,
+        iconsIcMoreDots,
         iconsIcProfile,
         iconsIcResearch,
         iconsIcSetting,

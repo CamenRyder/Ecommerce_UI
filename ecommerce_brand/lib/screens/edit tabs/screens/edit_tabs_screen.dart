@@ -1,4 +1,5 @@
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
+import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
@@ -13,50 +14,28 @@ class EditTabsScreen extends StatefulWidget {
 }
 
 class _EditTabsScreen extends State<EditTabsScreen> {
-  final List<int> _items = List<int>.generate(5, (int index) => index);
+  // final List<int> _items = List<int>.generate(5, (int index) => index);
+  final List<dynamic> _items = ListComponentTabConstant.listQuickFilterHome;
 
   @override
   Widget build(BuildContext context) {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
-    final Color oddItemColor = Colors.lime.shade100;
-    final Color evenItemColor = Colors.deepPurple.shade100;
+    // final ColorScheme colorScheme = Theme.of(context).colorScheme;
+    // final Color oddItemColor = Colors.lime.shade100;
+    // final Color evenItemColor = Colors.deepPurple.shade100;
 
-    final List<Card> cards = <Card>[
-      for (int index = 0; index < _items.length; index += 1)
-        Card(
-          key: Key('$index'),
-          color: _items[index].isOdd ? oddItemColor : evenItemColor,
-          child: SizedBox(
-            height: 80,
-            child: Center(
-              child: Text('Card ${_items[index]}'),
-            ),
-          ),
-        ),
-    ];
-
-    Widget proxyDecorator(
-        Widget child, int index, Animation<double> animation) {
-      return AnimatedBuilder(
-        animation: animation,
-        builder: (BuildContext context, Widget? child) {
-          final double animValue = Curves.easeInOut.transform(animation.value);
-          final double elevation = lerpDouble(1, 6, animValue)!;
-          final double scale = lerpDouble(1, 1.02, animValue)!;
-          return Transform.scale(
-            scale: scale,
-            // Create a Card based on the color and the content of the dragged one
-            // and set its elevation to the animated value.
-            child: Card(
-              elevation: elevation,
-              color: cards[index].color,
-              child: cards[index].child,
-            ),
-          );
-        },
-        child: child,
-      );
-    }
+    // final List<Card> cards = <Card>[
+    //   for (int index = 0; index < _items.length; index += 1)
+    //     Card(
+    //       key: Key('$index'),
+    //       color: _items[index].isOdd ? oddItemColor : evenItemColor,
+    //       child: SizedBox(
+    //         height: 80,
+    //         child: Center(
+    //           child: Text('Card ${_items[index]}'),
+    //         ),
+    //       ),
+    //     ),
+    // ];
 
     return Scaffold(
         backgroundColor: AppColors.backgroundWhite,
@@ -78,9 +57,8 @@ class _EditTabsScreen extends State<EditTabsScreen> {
         ),
         body: SafeArea(
           child: Container(
-            padding: const EdgeInsets.symmetric(
-                horizontal: Constant.paddingHorizontal,
-                vertical: Constant.paddingVertical),
+            padding:
+                const EdgeInsets.symmetric(vertical: Constant.paddingVertical),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,15 +71,76 @@ class _EditTabsScreen extends State<EditTabsScreen> {
                 ),
                 Expanded(
                   child: ReorderableListView(
-                    // padding: const EdgeInsets.symmetric(horizontal: 40),
-
-                    children: cards,
+                    physics: const NeverScrollableScrollPhysics(),
+                    // proxyDecorator: proxyDecorator,
+                    children: [
+                      for (int index = 0; index < _items.length; index += 1)
+                        Container(
+                            key: Key('$index'),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: Constant.paddingHorizontal),
+                            color: index % 2 == 0
+                                ? AppColors.backgroundWhite
+                                : AppColors.primaryDecoration,
+                            child: GestureDetector(
+                              onTap: () {
+                                print("Tap Tap index: ${_items[index]}");
+                              },
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  const Icon(
+                                    Icons.drag_handle,
+                                    color: AppColors.textGrey,
+                                    size: 32,
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                        top: 18,
+                                        bottom: 18,
+                                        left: 20,
+                                        right: 20),
+                                    decoration: BoxDecoration(
+                                        color: AppColors.backgroundWhite,
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                            color: AppColors.textGrey,
+                                            width: 1)),
+                                    child: CircleAvatar(
+                                      radius: 24.0,
+                                      backgroundColor: Colors.transparent,
+                                      child: Assets.imagesAvtAddidas.image(),
+                                    ),
+                                  ),
+                                  const Expanded(
+                                      child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Lacoste",
+                                        style: AppTypography.bodyBold,
+                                      ),
+                                      SizedBox(
+                                        height: 8,
+                                      ),
+                                      Text("abc",
+                                          style: AppTypography.bodyNormal)
+                                    ],
+                                  )),
+                                  Assets.iconsIcMoreDots
+                                      .svg(height: 30, color: AppColors.black)
+                                ],
+                              ),
+                            ))
+                    ],
                     onReorder: (int oldIndex, int newIndex) {
                       setState(() {
                         if (oldIndex < newIndex) {
                           newIndex -= 1;
                         }
-                        final int item = _items.removeAt(oldIndex);
+                        final item = _items.removeAt(oldIndex);
                         _items.insert(newIndex, item);
                       });
                     },

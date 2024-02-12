@@ -32,5 +32,5 @@ class AppTypography {
   static const bodyLarge = TextStyle(
       fontSize: 22,
       fontWeight: FontWeight.w500,
-      color: Color.fromARGB(255, 51, 51, 51));
+      color: AppColors.black);
 }

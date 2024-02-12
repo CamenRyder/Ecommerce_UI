@@ -13,6 +13,7 @@ class HomeScreenController extends GetxController {
           length: getTabBarLength(), vsync: provider, initialIndex: 0),
     );
   }
+
   int getTabBarLength() => ListComponentTabConstant.listQuickFilterHome.length;
   // late Rx<TabController> tabController;
 
@@ -23,10 +24,9 @@ class HomeScreenController extends GetxController {
 
   List<Widget> tabViewHome() {
     return ListComponentTabConstant.listQuickFilterHome.map((e) {
-      return Tab(text: e["name"]);
+      return Tab(text: e.name);
     }).toList();
   }
-
 
   void _moveToPage(int pageIndex) {
     pageController.jumpToPage(pageIndex);

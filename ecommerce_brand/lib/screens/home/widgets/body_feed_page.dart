@@ -50,7 +50,7 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
 
   List<Widget> tabViewHome() {
     return ListComponentTabConstant.listQuickFilterHome.map((e) {
-      if (e["index"] == 999) {
+      if (e.index == 999) {
         return GestureDetector(
           onTap: () {
             Get.toNamed(Routes.editTabs);
@@ -63,7 +63,7 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
           ),
         );
       }
-      return Tab(text: e["name"]);
+      return Tab(text: e.name);
     }).toList();
   }
 }
