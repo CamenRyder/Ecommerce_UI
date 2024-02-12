@@ -44,43 +44,4 @@ class ListComponentTabConstant {
     TabsEditsModel(name: "Setting" ,  image:Assets.imagesAvtLevi , index: 999 ,  tag: "Store") ,  
     
   ];
-  
-
-  static final listTitleLabel = <dynamic>[
-    {
-      "name": "All",
-      "index": 0,
-      "tag": null,
-    },
-    {
-      "name": "Sustainable",
-      "index": 1,
-      "tag": "Tag",
-    },
-    {
-      "name": "Lacoste",
-      "index": 2,
-      "tag": "Store",
-    },
-    {
-      "name": "Adidas",
-      "index": 3,
-      "tag": "Store",
-    },
-    {
-      "name": "Vintage",
-      "index": 4,
-      "tag": "Tag",
-    },
-    {
-      "name": "Levi's",
-      "index": 5,
-      "tag": "Tag",
-    },
-    {
-      "name": "Setting",
-      "index": 999,
-      "tag": "Tag",
-    },
-  ];
 }

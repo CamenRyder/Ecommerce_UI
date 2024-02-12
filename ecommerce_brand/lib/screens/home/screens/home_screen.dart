@@ -1,6 +1,6 @@
-
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/widgets/indicatorCustom.dart';
+import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
 import 'package:ecommerce_brand/screens/home/screens/page/feed_page.dart';
 import 'package:ecommerce_brand/screens/home/widgets/bottomNavigatorBar.dart';
@@ -16,25 +16,31 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-   final HomeScreenController _controller = Get.put(HomeScreenController()); 
-   @override
+  final HomeScreenController _controller = Get.put(HomeScreenController());
+  final _editTabsController = Get.put(EditTabsScreenController());
+
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    // _controller. 
+    _editTabsController.initTabsElementModel(); 
+    // _controller.
   }
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: AppColors.background,
       resizeToAvoidBottomInset: false,
-   
-      // bottomNavigationBar: ,  
+
+      // bottomNavigationBar: ,
       body: PageView(
-        controller: _controller.pageController ,
-        physics:  const NeverScrollableScrollPhysics(),
+        controller: _controller.pageController,
+        physics: const NeverScrollableScrollPhysics(),
         children: [
-          FeedPage(controller: _controller,),
+          FeedPage(
+            controller: _controller,
+          ),
           // const MarketScreen(),f
           // const ProfileScreen(),
           Container(
@@ -43,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: IndicatorCustom(),
             ),
           ),
-            Container(
+          Container(
             color: AppColors.backgroundWhite,
             child: const Center(
               child: IndicatorCustom(),
@@ -57,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-         bottomNavigationBar: BottomNavigatorBar(controller: _controller),
+      bottomNavigationBar: BottomNavigatorBar(controller: _controller),
     );
   }
 }

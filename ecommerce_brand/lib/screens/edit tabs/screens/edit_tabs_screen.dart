@@ -1,12 +1,14 @@
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
-import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
+import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class EditTabsScreen extends StatefulWidget {
+  const EditTabsScreen({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _EditTabsScreen();
@@ -15,7 +17,14 @@ class EditTabsScreen extends StatefulWidget {
 
 class _EditTabsScreen extends State<EditTabsScreen> {
   // final List<int> _items = List<int>.generate(5, (int index) => index);
-  final List<dynamic> _items = ListComponentTabConstant.listQuickFilterHome;
+  late final List<dynamic> _items;
+  final _controller = Get.find<EditTabsScreenController>();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _items = _controller.tabsElementModel.value;
+  }
 
   @override
   Widget build(BuildContext context) {
