@@ -3,8 +3,8 @@ import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hidable/hidable.dart';
 
+// ignore: must_be_immutable
 class BottomNavigatorBar extends StatefulWidget {
   BottomNavigatorBar({super.key, required this.controller});
   HomeScreenController controller;

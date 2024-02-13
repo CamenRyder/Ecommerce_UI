@@ -34,14 +34,54 @@ class AppStringConstant {
 
 class ListComponentTabConstant {
   static final listQuickFilterHome = <TabsEditsModel>[
-  
-    TabsEditsModel(name: "All" ,  image: null , index: 1 ,  tag: "Tag") ,  
-    TabsEditsModel(name: "Sustainable" ,  image:Assets.iconsIcTag , index: 1 ,  tag: "Tag") ,  
-    TabsEditsModel(name: "Lacoste" ,  image:Assets.imagesAvtLacoste , index: 2 ,  tag: "Store") ,  
-    TabsEditsModel(name: "Adidas" ,  image: Assets.imagesAvtAddidas , index: 3 ,  tag: "Store") ,  
-    TabsEditsModel(name: "Vintage" ,  image: Assets.iconsIcTag, index: 4 ,  tag: "Tag") ,  
-    TabsEditsModel(name: "Levi's" ,  image:Assets.imagesAvtLevi , index: 5 ,  tag: "Store") ,  
-    TabsEditsModel(name: "Setting" ,  image:Assets.imagesAvtLevi , index: 999 ,  tag: "Store") ,  
-    
+    TabsEditsModel(
+        name: "All",
+        image: null,
+        index: 0,
+        tag: "Tag",
+        isChoice: false,
+        isShow: true),
+    TabsEditsModel(
+        name: "Sustainable",
+        image: Assets.iconsIcTag,
+        index: 1,
+        tag: "Tag",
+        isChoice: false,
+        isShow: true),
+    TabsEditsModel(
+        name: "Lacoste",
+        image: Assets.imagesAvtLacoste,
+        index: 2,
+        tag: "Store",
+        isChoice: false,
+        isShow: true),
+    TabsEditsModel(
+        name: "Adidas",
+        image: Assets.imagesAvtAddidas,
+        index: 3,
+        tag: "Store",
+        isChoice: false,
+        isShow: true),
+    TabsEditsModel(
+        name: "Vintage",
+        image: Assets.iconsIcTag,
+        index: 4,
+        tag: "Tag",
+        isChoice: false,
+        isShow: true),
+    TabsEditsModel(
+        name: "Levi's",
+        image: Assets.imagesAvtLevi,
+        index: 5,
+        tag: "Store",
+        isChoice: false,
+        isShow: true),
+    TabsEditsModel(
+        name: "Setting",
+        image: Assets.imagesAvtLevi,
+        index: 10,
+        tag: "Store",
+        isChoice: false,
+        isShow: true),
   ];
 }
