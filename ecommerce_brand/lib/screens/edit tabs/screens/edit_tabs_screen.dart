@@ -29,6 +29,8 @@ class _EditTabsScreen extends State<EditTabsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final tmp = _controller.getTabsElementSubmit();
+    print("tmp $tmp");
     return Scaffold(
         backgroundColor: AppColors.backgroundWhite,
         appBar: AppBar(
@@ -142,8 +144,19 @@ class _EditTabsScreen extends State<EditTabsScreen> {
                                               style: AppTypography.bodyNormal)
                                         ],
                                       )),
-                                      Assets.iconsIcMoreDots.svg(
-                                          height: 30, color: AppColors.black)
+                                      GestureDetector(
+                                        onTap: () {
+                                          showModalBottomSheet(
+                                              context: context,
+                                              builder: (_) {
+                                                return Container(
+                                                  height: 450,
+                                                );
+                                              });
+                                        },
+                                        child: Assets.iconsIcMoreDots.svg(
+                                            height: 30, color: AppColors.black),
+                                      )
                                     ],
                                   ),
                                 ))),
@@ -158,7 +171,7 @@ class _EditTabsScreen extends State<EditTabsScreen> {
                         final item = _items.removeAt(oldIndex);
                         _items.insert(newIndex, item);
                         print("Data: ${_items.toString()}");
-                        _controller.changeTabsArrange();
+                        _controller.changeTabsArrange(items: _items);
                       });
                     },
                   ),

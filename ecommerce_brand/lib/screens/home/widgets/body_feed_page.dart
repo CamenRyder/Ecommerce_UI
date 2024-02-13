@@ -3,6 +3,7 @@ import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
+import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,6 +20,7 @@ class BodyFeedPage extends StatefulWidget {
 
 class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
   late HomeScreenController _controller;
+  final _controllerTabs = Get.find<EditTabsScreenController>();
   @override
   void initState() {
     super.initState();
@@ -28,29 +30,31 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TabBar(
-            isScrollable: true,
-            indicatorWeight: 1,
-            padding: const EdgeInsets.only(bottom: 10),
-            tabAlignment: TabAlignment.start,
-            automaticIndicatorColorAdjustment: false,
-            indicatorSize: TabBarIndicatorSize.label,
-            indicator: const BoxDecoration(
-                shape: BoxShape.rectangle,
-                border: Border(
-                    bottom: BorderSide(width: 1, color: AppColors.primary))),
-            labelStyle: AppTypography.bodyNormalBold,
-            unselectedLabelColor: AppColors.textGrey,
-            controller: _controller.tabController.value,
-            tabs: tabViewHome()),
-      ],
-    );
+    return Obx(() => Column(
+          children: [
+            TabBar(
+                isScrollable: true,
+                indicatorWeight: 1,
+                padding: const EdgeInsets.only(bottom: 10),
+                tabAlignment: TabAlignment.start,
+                automaticIndicatorColorAdjustment: false,
+                indicatorSize: TabBarIndicatorSize.label,
+                indicator: const BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    border: Border(
+                        bottom:
+                            BorderSide(width: 1, color: AppColors.primary))),
+                labelStyle: AppTypography.bodyNormalBold,
+                unselectedLabelColor: AppColors.textGrey,
+                controller: _controller.tabController.value,
+                tabs: tabViewHome()),
+          ],
+        ));
   }
 
   List<Widget> tabViewHome() {
-    return ListComponentTabConstant.listQuickFilterHome.map((e) {
+    final items = _controllerTabs.tabsElementModel.value;
+    return items.map((e) {
       if (e.index == 10) {
         return GestureDetector(
           onTap: () {

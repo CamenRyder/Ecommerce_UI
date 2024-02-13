@@ -26,5 +26,10 @@ class EditTabsScreenController extends GetxController {
         !tabsElementModel.value[index].isChoice;
   }
 
-  void changeTabsArrange() {}
+  void changeTabsArrange({required List<TabsEditsModel> items}) {
+    int length = tabsElementModel.value.length - 1 ;
+    tabsElementModel.value.removeRange(1, length);
+    tabsElementModel.value.insertAll(1, items);
+    print("changeTabsArrange: $tabsElementModel") ;
+  }
 }
