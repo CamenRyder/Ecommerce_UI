@@ -14,6 +14,10 @@ import 'package:flutter/services.dart';
 class Assets {
   Assets._();
 
+  /// File path: assets/icons/ic_disable.svg
+  static const SvgGenImage iconsIcDisable =
+      SvgGenImage('assets/icons/ic_disable.svg');
+
   /// File path: assets/icons/ic_file.svg
   static const SvgGenImage iconsIcFile =
       SvgGenImage('assets/icons/ic_file.svg');
@@ -42,8 +46,24 @@ class Assets {
   static const SvgGenImage iconsIcSetting =
       SvgGenImage('assets/icons/ic_setting.svg');
 
+  /// File path: assets/icons/ic_swipe_hint.svg
+  static const SvgGenImage iconsIcSwipeHint =
+      SvgGenImage('assets/icons/ic_swipe_hint.svg');
+
   /// File path: assets/icons/ic_tag.svg
   static const SvgGenImage iconsIcTag = SvgGenImage('assets/icons/ic_tag.svg');
+
+  /// File path: assets/icons/ic_ticked.svg
+  static const SvgGenImage iconsIcTicked =
+      SvgGenImage('assets/icons/ic_ticked.svg');
+
+  /// File path: assets/icons/ic_unable.svg
+  static const SvgGenImage iconsIcUnable =
+      SvgGenImage('assets/icons/ic_unable.svg');
+
+  /// File path: assets/icons/ic_unfollow.svg
+  static const SvgGenImage iconsIcUnfollow =
+      SvgGenImage('assets/icons/ic_unfollow.svg');
 
   /// File path: assets/images/avt_addidas.png
   static const AssetGenImage imagesAvtAddidas =
@@ -59,6 +79,7 @@ class Assets {
 
   /// List of all assets
   static List<dynamic> get values => [
+        iconsIcDisable,
         iconsIcFile,
         iconsIcHome,
         iconsIcMarket,
@@ -66,7 +87,11 @@ class Assets {
         iconsIcProfile,
         iconsIcResearch,
         iconsIcSetting,
+        iconsIcSwipeHint,
         iconsIcTag,
+        iconsIcTicked,
+        iconsIcUnable,
+        iconsIcUnfollow,
         imagesAvtAddidas,
         imagesAvtLacoste,
         imagesAvtLevi

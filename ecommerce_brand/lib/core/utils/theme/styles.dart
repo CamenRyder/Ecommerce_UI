@@ -25,9 +25,9 @@ class AppStyles {
           horizontal: Constant.paddingHorizontal)));
 
   static const borderSideFloatingActionButton = BoxDecoration(
-      color: Color.fromARGB(255, 211, 210, 210),
-      borderRadius: BorderRadius.all(Radius.circular(12)));
+      color: Color.fromARGB(255, 232, 232, 232),
+      borderRadius: BorderRadius.all(Radius.circular(17)));
   static const borderComponentFloatingActionButton = BoxDecoration(
       color: Color.fromARGB(255, 255, 255, 255),
-      borderRadius: BorderRadius.all(Radius.circular(12)));
+      borderRadius: BorderRadius.all(Radius.circular(13)));
 }

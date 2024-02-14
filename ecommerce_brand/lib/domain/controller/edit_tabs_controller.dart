@@ -7,6 +7,10 @@ class EditTabsScreenController extends GetxController {
   Rx<List<TabsEditsModel>> tabsElementModel = Rx<List<TabsEditsModel>>(
       ListComponentTabConstant.listQuickFilterHome.obs);
 
+  Rx<int> selectedElement = 0.obs;
+
+  RxBool showBottomFloatingActionButton = false.obs;
+
   initTabsElementModel() {
     // init when construct homeScreen
     tabsElementModel.value = ListComponentTabConstant.listQuickFilterHome.obs;
@@ -24,12 +28,19 @@ class EditTabsScreenController extends GetxController {
   setChoiceElement(int index) {
     tabsElementModel.value[index].isChoice =
         !tabsElementModel.value[index].isChoice;
+    int selectedLocal = 0;
+    tabsElementModel.value.forEach((e) => e.isChoice ? selectedLocal++ : null);
+    selectedLocal == 0
+        ? selectedElement.value = 0
+        : selectedElement.value = selectedLocal;
+    selectedLocal > 0
+        ? showBottomFloatingActionButton.value = true
+        : showBottomFloatingActionButton.value = false;
   }
 
   void changeTabsArrange({required List<TabsEditsModel> items}) {
-    int length = tabsElementModel.value.length - 1 ;
+    int length = tabsElementModel.value.length - 1;
     tabsElementModel.value.removeRange(1, length);
     tabsElementModel.value.insertAll(1, items);
-    print("changeTabsArrange: $tabsElementModel") ;
   }
 }

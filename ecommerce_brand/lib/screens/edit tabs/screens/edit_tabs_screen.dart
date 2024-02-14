@@ -1,9 +1,10 @@
-import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
+import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
+import 'package:ecommerce_brand/core/utils/widgets/wrapper_icon_svg.dart';
 import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
-import 'package:ecommerce_brand/domain/models/tabs_editting_model.dart';
+import 'package:ecommerce_brand/screens/edit%20tabs/widgets/body_edits_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,194 +19,82 @@ class EditTabsScreen extends StatefulWidget {
 
 class _EditTabsScreen extends State<EditTabsScreen> {
   // final List<int> _items = List<int>.generate(5, (int index) => index);
-  late List<TabsEditsModel> _items;
+  // late List<TabsEditsModel> _items;
   final _controller = Get.find<EditTabsScreenController>();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _items = _controller.getTabsElementSubmit();
+    // _items = _controller.getTabsElementSubmit();
   }
 
   @override
   Widget build(BuildContext context) {
-    final tmp = _controller.getTabsElementSubmit();
-    print("tmp $tmp");
-    return Scaffold(
-        backgroundColor: AppColors.backgroundWhite,
-        appBar: AppBar(
-          elevation: 0,
-          centerTitle: true,
+    return Obx(
+      () => Scaffold(
           backgroundColor: AppColors.backgroundWhite,
-          title: const Text("Tabs Edit", style: AppTypography.header),
-          leading: GestureDetector(
-            onTap: () {
-              Get.back();
-            },
-            child: const Icon(
-              Icons.close,
-              size: 28,
-              color: AppColors.black,
+          appBar: AppBar(
+            elevation: 0,
+            centerTitle: _controller.selectedElement.value == 0 ? true : false,
+            backgroundColor: _controller.selectedElement.value == 0
+                ? AppColors.backgroundWhite
+                : AppColors.primary,
+            title: _controller.selectedElement.value == 0
+                ? const Text("Tabs Edit", style: AppTypography.header)
+                : Text("${_controller.selectedElement.value} Selected",
+                    style: AppTypography.headerLight),
+            leading: GestureDetector(
+              onTap: () {
+                Get.back();
+              },
+              child: Icon(
+                Icons.close,
+                size: 28,
+                color: _controller.selectedElement.value == 0
+                    ? AppColors.black
+                    : AppColors.backgroundWhite,
+              ),
             ),
           ),
-        ),
-        body: SafeArea(
-          child: Container(
-            padding:
-                const EdgeInsets.symmetric(vertical: Constant.paddingVertical),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: Constant.paddingHorizontal,
-                      vertical: Constant.paddingHorizontal),
-                  child:
-                      const Text("Active tabs", style: AppTypography.bodyLarge),
-                ),
-                Expanded(
-                  child: ReorderableListView(
-                    physics: const NeverScrollableScrollPhysics(),
-                    // proxyDecorator: proxyDecorator,
-                    children: [
-                      for (int index = 0; index < _items.length; index += 1)
-                        Container(
-                            key: Key('$index'),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: Constant.paddingHorizontal),
-                            color: _items[index].isChoice
-                                ? AppColors.primaryDecoration
-                                : AppColors.backgroundWhite,
-                            child: GestureDetector(
-                                onTap: () {
-                                  _controller.setChoiceElement(index + 1);
-                                  setState(() {});
-                                },
-                                child: Container(
-                                  color: _items[index].isChoice
-                                      ? Colors.transparent
-                                      : AppColors.backgroundWhite,
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      const Icon(
-                                        Icons.drag_handle,
-                                        color: AppColors.textGrey,
-                                        size: 32,
-                                      ),
-                                      _items[index].tag == "Tag"
-                                          ? Container(
-                                              margin: const EdgeInsets.only(
-                                                  top: 18,
-                                                  bottom: 18,
-                                                  left: 30,
-                                                  right: 28),
-                                              child: Assets.iconsIcTag
-                                                  .svg(width: 30),
-                                            )
-                                          : Container(
-                                              margin: const EdgeInsets.only(
-                                                  top: 18,
-                                                  bottom: 18,
-                                                  left: 20,
-                                                  right: 20),
-                                              decoration: BoxDecoration(
-                                                  color:
-                                                      AppColors.backgroundWhite,
-                                                  shape: BoxShape.circle,
-                                                  border: Border.all(
-                                                      color: AppColors.textGrey,
-                                                      width: 0.2)),
-                                              child: CircleAvatar(
-                                                radius: 24.0,
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                child:
-                                                    _items[index].image.image(),
-                                              ),
-                                            ),
-                                      Expanded(
-                                          child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            "${_items[index].name}",
-                                            style: AppTypography.bodyBold,
-                                          ),
-                                          const SizedBox(
-                                            height: 8,
-                                          ),
-                                          Text("${_items[index].tag}",
-                                              style: AppTypography.bodyNormal)
-                                        ],
-                                      )),
-                                      GestureDetector(
-                                        onTap: () {
-                                          showModalBottomSheet(
-                                              context: context,
-                                              builder: (_) {
-                                                return Container(
-                                                  height: 450,
-                                                );
-                                              });
-                                        },
-                                        child: Assets.iconsIcMoreDots.svg(
-                                            height: 30, color: AppColors.black),
-                                      )
-                                    ],
-                                  ),
-                                ))),
-                    ],
-                    onReorder: (int oldIndex, int newIndex) {
-                      setState(() {
-                        if (oldIndex < newIndex) {
-                          newIndex -= 1;
-                        }
-                        // print(oldIndex) ;
-                        // print(newIndex);
-                        final item = _items.removeAt(oldIndex);
-                        _items.insert(newIndex, item);
-                        print("Data: ${_items.toString()}");
-                        _controller.changeTabsArrange(items: _items);
-                      });
-                    },
-                  ),
-                )
-              ],
-            ),
-          ),
-        ));
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: floatingActionButton(),
+          body: const BodyEditsScreen()),
+    );
+  }
+
+  Widget floatingActionButton() {
+    return Obx(() {
+      return AnimatedSlide(
+        duration: const Duration(milliseconds: 200),
+        offset: _controller.showBottomFloatingActionButton.value
+            ? Offset.zero
+            : const Offset(0, 2),
+        child: AnimatedOpacity(
+            duration: const Duration(milliseconds: 200),
+            opacity: _controller.showBottomFloatingActionButton.value ? 1 : 0,
+            child: Container(
+              padding: const EdgeInsets.all(7),
+              margin: const EdgeInsets.only(bottom: 20),
+              height: 65,
+              width: 65,
+              decoration: AppStyles.borderSideFloatingActionButton,
+              child: GestureDetector(
+                onTap: () {
+                  // _controller.showBottomFloatingActionButton.value = false;
+                  // showModalBottomSheet(context: context, builder: (_) {
+                  //     return widgetBottomSheet() ; 
+                  // }) ;
+                },
+                child: Container(
+                    padding: const EdgeInsets.all(5),
+                    decoration: AppStyles.borderComponentFloatingActionButton,
+                    child: WrapperIconSVG(
+                      icon: Assets.iconsIcMoreDots,
+                      colors: Colors.black,
+                    )),
+              ),
+            )),
+      );
+    });
   }
 }
-
-  // Widget _headerEditTabsScreen() {
-  //   return Container(
-  //     color: AppColors.primary,
-  //     child: Row(
-  //       children: [
-  //         GestureDetector(
-  //           onTap: () {
-  //             Get.back();
-  //           },
-  //           child: const Icon(
-  //             Icons.close,
-  //             size: 28,
-  //             color: AppColors.black,
-  //           ),
-  //         ),
-  //         Expanded(child: Container()),
-  //         const Text("Tabs Edit", style: AppTypography.header),
-  //         Expanded(child: Container()),
-  //         const SizedBox(
-  //           width: 28,
-  //         )
-  //       ],
-  //     ),
-  //   );
-  // }
-
