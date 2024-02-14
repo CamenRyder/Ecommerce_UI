@@ -4,9 +4,18 @@ import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
+// ignore: must_be_immutable
 class BottomSheetEditTabs extends StatelessWidget {
+  BottomSheetEditTabs(
+      {super.key,
+      required this.changeTabs,
+      required this.textChangeTabs,
+      required this.withBottomSheet});
+  dynamic changeTabs;
+  dynamic withBottomSheet;
+  String textChangeTabs;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -46,17 +55,13 @@ class BottomSheetEditTabs extends StatelessWidget {
                       ],
                     )),
                 templateButtonActions(
-                    text: "Hide mutilple from feed",
+                    text: "Hide $textChangeTabs from feed",
                     icon: Assets.iconsIcDisable,
-                    function: () {
-
-                    }),
+                    function: changeTabs),
                 templateButtonActions(
-                    text: "Unfollow mutilple",
+                    text: "Unfollow $textChangeTabs",
                     icon: Assets.iconsIcUnfollow,
-                    function: () {
-
-                    }),
+                    function: withBottomSheet),
               ],
             ),
           )

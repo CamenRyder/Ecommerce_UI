@@ -4,7 +4,8 @@ import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/core/utils/widgets/wrapper_icon_svg.dart';
 import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
-import 'package:ecommerce_brand/screens/edit%20tabs/widgets/body_edits_screen.dart';
+import 'package:ecommerce_brand/screens/edit%20tabs/widgets/body_edits_tabs_screen.dart';
+import 'package:ecommerce_brand/screens/edit%20tabs/widgets/bottom_sheet_edits_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,7 +25,6 @@ class _EditTabsScreen extends State<EditTabsScreen> {
   @override
   void initState() {
     super.initState();
-    // _items = _controller.getTabsElementSubmit();
   }
 
   @override
@@ -80,10 +80,22 @@ class _EditTabsScreen extends State<EditTabsScreen> {
               decoration: AppStyles.borderSideFloatingActionButton,
               child: GestureDetector(
                 onTap: () {
-                  // _controller.showBottomFloatingActionButton.value = false;
-                  // showModalBottomSheet(context: context, builder: (_) {
-                  //     return widgetBottomSheet() ; 
-                  // }) ;
+                  showModalBottomSheet(
+                      isDismissible: false,
+                      backgroundColor: Colors.transparent,
+                      context: context,
+                      builder: (_) {
+                        return BottomSheetEditTabs(
+                          textChangeTabs: "Mutilple",
+                          changeTabs: () {
+                            print("aduu mutilple sellin?");
+                          },
+                          withBottomSheet: () {
+                            _controller.setUntickElement();
+                            Get.back();
+                          },
+                        );
+                      });
                 },
                 child: Container(
                     padding: const EdgeInsets.all(5),

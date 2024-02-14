@@ -8,6 +8,8 @@ class EditTabsScreenController extends GetxController {
       ListComponentTabConstant.listQuickFilterHome.obs);
 
   Rx<int> selectedElement = 0.obs;
+  RxBool unfollowMutilple = false.obs;
+  RxBool isShowDiabledTabs = false.obs;
 
   RxBool showBottomFloatingActionButton = false.obs;
 
@@ -16,13 +18,40 @@ class EditTabsScreenController extends GetxController {
     tabsElementModel.value = ListComponentTabConstant.listQuickFilterHome.obs;
   }
 
+  void hideTabsFromFeed() {
+    isShowDiabledTabs.value = true;
+  }
+
   List<TabsEditsModel> getTabsElementSubmit() {
     return tabsElementModel.value.where((e) {
       if (e.index == 0 || e.index == 10) {
         return false;
       }
+      if (e.isShow == false) {
+        return false;
+      }
       return true;
     }).toList();
+  }
+
+  List<TabsEditsModel> getTabsElementUnsubmit() {
+    return tabsElementModel.value.where((e) {
+      if (e.index == 0 || e.index == 10) {
+        return false;
+      }
+      if (e.isShow != false) {
+        return false;
+      }
+      return true;
+    }).toList();
+  }
+
+  setUntickElement() {
+    tabsElementModel.value.forEach((element) {
+      element.isChoice = false;
+    });
+    unfollowMutilple.value = true;
+    selectedElement.value = 0;
   }
 
   setChoiceElement(int index) {
@@ -30,6 +59,7 @@ class EditTabsScreenController extends GetxController {
         !tabsElementModel.value[index].isChoice;
     int selectedLocal = 0;
     tabsElementModel.value.forEach((e) => e.isChoice ? selectedLocal++ : null);
+    unfollowMutilple.value = false;
     selectedLocal == 0
         ? selectedElement.value = 0
         : selectedElement.value = selectedLocal;
