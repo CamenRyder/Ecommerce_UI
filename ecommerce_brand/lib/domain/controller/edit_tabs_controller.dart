@@ -7,7 +7,8 @@ class EditTabsScreenController extends GetxController {
   Rx<List<TabsEditsModel>> tabsElementModelTabsEdit = Rx<List<TabsEditsModel>>(
       ListComponentTabConstant.listQuickFilterHome.obs);
   Rx<List<TabsEditsModel>> tabsElementModelShow = Rx<List<TabsEditsModel>>(
-      ListComponentTabConstant.listQuickFilterHome.obs);
+      ListComponentTabConstant.listQuickFilterHome.obs) ; 
+    Rx<List<TabsEditsModel>> tabsElementModelDisable = Rx<List<TabsEditsModel>>([]);
 
   Rx<int> selectedElement = 0.obs;
   RxBool unfollowMutilple = false.obs;
@@ -25,6 +26,7 @@ class EditTabsScreenController extends GetxController {
   void hideTabsFromFeed(int index) {
     isShowDiabledTabs.value = true;
     tabsElementModelTabsEdit.value[index].isShow = false;
+    print("Editing controller ${tabsElementModelTabsEdit.value}");
     tabsElementModelShow.value = getTabsElementShow();
   }
 

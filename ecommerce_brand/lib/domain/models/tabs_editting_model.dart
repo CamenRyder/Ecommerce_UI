@@ -23,6 +23,6 @@ class TabsEditsModel {
 
       @override
   String toString() {
-    return "Index: $index , Name: $name , Tag: $tag \n";
+    return "Index: $index , Name: $name , Tag: $tag ,isShow: $isShow \n";
   }
 }
