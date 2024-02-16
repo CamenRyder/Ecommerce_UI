@@ -1,9 +1,6 @@
-import 'package:ecommerce_brand/core/routes/routes.dart';
-import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
-import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
+
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
-import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,7 +17,6 @@ class BodyFeedPage extends StatefulWidget {
 
 class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
   late HomeScreenController _controller;
-  final _controllerTabs = Get.find<EditTabsScreenController>();
   @override
   void initState() {
     super.initState();
@@ -47,28 +43,31 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
                 labelStyle: AppTypography.bodyNormalBold,
                 unselectedLabelColor: AppColors.textGrey,
                 controller: _controller.tabController.value,
-                tabs: tabViewHome()),
+                tabs: _controller.tabViewHome()),
           ],
         ));
   }
 
-  List<Widget> tabViewHome() {
-    final items = _controllerTabs.tabsElementModel.value;
-    return items.map((e) {
-      if (e.index == 10) {
-        return GestureDetector(
-          onTap: () {
-            Get.toNamed(Routes.editTabs);
-          },
-          child: SizedBox(
-            height: 22,
-            width: 22,
-            child: Assets.iconsIcSetting
-                .svg(height: 18, width: 18, color: AppColors.textGrey),
-          ),
-        );
-      }
-      return Tab(text: e.name);
-    }).toList();
-  }
+  // List<Widget> tabViewHome() {
+  //   List<TabsEditsModel> items =  _controllerTabs.tabsElementModel.value ;
+  //   final itemsWasShow =
+  //       items.where((element) => element.isShow == true).toList();
+  //   print("Tabs view home: $itemsWasShow");
+  //   return itemsWasShow.map((e) {
+  //     if (e.index == 10) {
+  //       return GestureDetector(
+  //         onTap: () {
+  //           Get.toNamed(Routes.editTabs);
+  //         },
+  //         child: SizedBox(
+  //           height: 22,
+  //           width: 22,
+  //           child: Assets.iconsIcSetting
+  //               .svg(height: 18, width: 18, color: AppColors.textGrey),
+  //         ),
+  //       );
+  //     }
+  //     return Tab(text: e.name);
+  //   }).toList();
+  // }
 }

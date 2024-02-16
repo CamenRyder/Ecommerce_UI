@@ -1,8 +1,9 @@
 import 'package:ecommerce_brand/core/routes/pages.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
+import 'package:ecommerce_brand/domain/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Get.put(HomeScreenController());
+
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
@@ -30,7 +33,7 @@ class MyApp extends StatelessWidget {
             useMaterial3: false,
           ),
         );
-      }, 
+      },
     );
   }
 }

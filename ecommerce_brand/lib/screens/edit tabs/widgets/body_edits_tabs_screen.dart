@@ -26,20 +26,18 @@ class _BodyEditsScreen extends State<BodyEditsScreen> {
     return SafeArea(
         child: Container(
       padding: const EdgeInsets.symmetric(vertical: Constant.paddingVertical),
-      child: Expanded(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: Constant.paddingHorizontal,
-                  vertical: Constant.paddingHorizontal),
-              child: const Text("Active tabs", style: AppTypography.bodyLarge),
-            ),
-            const ReorderingListTabs(),
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(
+                horizontal: Constant.paddingHorizontal,
+                vertical: Constant.paddingHorizontal),
+            child: const Text("Active tabs", style: AppTypography.bodyLarge),
+          ),
+          const ReorderingListTabs(),
+        ],
       ),
     ));
   }

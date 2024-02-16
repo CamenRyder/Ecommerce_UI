@@ -19,7 +19,6 @@ class ReorderingListTabs extends StatefulWidget {
 
 class _ReorderingListTabs extends State<ReorderingListTabs> {
   late List<TabsEditsModel> _items;
-  late List<TabsEditsModel> _itemsUnsubmit;
   final _controller = Get.find<EditTabsScreenController>();
   @override
   void initState() {
@@ -152,7 +151,7 @@ class _ReorderingListTabs extends State<ReorderingListTabs> {
                                                 changeTabs: () {
                                                   _items[index].isShow = false;
                                                   _controller
-                                                      .hideTabsFromFeed();
+                                                      .hideTabsFromFeed(index+1 );
                                                   setState(() {});
                                                   Get.back();
                                                 },

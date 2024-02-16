@@ -16,14 +16,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final HomeScreenController _controller = Get.put(HomeScreenController());
-  final _editTabsController = Get.put(EditTabsScreenController());
-
+  final _controller = Get.find<HomeScreenController>();
+  final _editTabsController = Get.find<EditTabsScreenController>();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _editTabsController.initTabsElementModel();   
+    _editTabsController.initTabsElementModel();
     // _controller.
   }
 

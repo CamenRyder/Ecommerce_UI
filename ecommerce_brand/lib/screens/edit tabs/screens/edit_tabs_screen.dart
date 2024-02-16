@@ -1,3 +1,4 @@
+import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/styles.dart';
@@ -44,7 +45,7 @@ class _EditTabsScreen extends State<EditTabsScreen> {
                     style: AppTypography.headerLight),
             leading: GestureDetector(
               onTap: () {
-                Get.back();
+                Get.back(); 
               },
               child: Icon(
                 Icons.close,
@@ -88,7 +89,6 @@ class _EditTabsScreen extends State<EditTabsScreen> {
                         return BottomSheetEditTabs(
                           textChangeTabs: "Mutilple",
                           changeTabs: () {
-                            print("aduu mutilple sellin?");
                           },
                           withBottomSheet: () {
                             _controller.setUntickElement();
