@@ -151,7 +151,7 @@ class _ReorderingListTabs extends State<ReorderingListTabs> {
                                                 changeTabs: () {
                                                   _items[index].isShow = false;
                                                   _controller
-                                                      .hideTabsFromFeed(index+1 );
+                                                      .hideTabsFromFeed(index+1);
                                                   setState(() {});
                                                   Get.back();
                                                 },

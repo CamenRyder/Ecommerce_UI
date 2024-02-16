@@ -12,6 +12,7 @@ class HomeScreenController extends GetxController {
   final PageController pageController = PageController(initialPage: 0);
   final _controllerTabsEdit =Get.put(EditTabsScreenController()) ;
   late Rx<TabController> tabController;
+ 
 
   void initTabController(TickerProvider provider) {
     tabController = Rx(
@@ -20,6 +21,9 @@ class HomeScreenController extends GetxController {
     );
   }
 
+  void changeElemengtTabContraoller(TickerProvider provider) {
+    tabController.value = TabController(length: _controllerTabsEdit.tabsElementModelShow.value.length , vsync: provider , initialIndex: 0 ) ;
+  }
   int getTabBarLength() => ListComponentTabConstant.listQuickFilterHome.length;
   // late Rx<TabController> tabController;
 

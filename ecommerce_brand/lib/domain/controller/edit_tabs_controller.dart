@@ -1,9 +1,5 @@
-import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
-import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
-import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/domain/models/tabs_editting_model.dart';
-import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
@@ -29,6 +25,7 @@ class EditTabsScreenController extends GetxController {
   void hideTabsFromFeed(int index) {
     isShowDiabledTabs.value = true;
     tabsElementModelTabsEdit.value[index].isShow = false;
+    tabsElementModelShow.value = getTabsElementShow();
   }
 
   List<TabsEditsModel> getTabsElementSubmit() {
@@ -36,6 +33,15 @@ class EditTabsScreenController extends GetxController {
       if (e.index == 0 || e.index == 10) {
         return false;
       }
+      if (e.isShow == false) {
+        return false;
+      }
+      return true;
+    }).toList();
+  }
+
+  List<TabsEditsModel> getTabsElementShow() {
+    return tabsElementModelTabsEdit.value.where((e) {
       if (e.isShow == false) {
         return false;
       }
@@ -86,26 +92,26 @@ class EditTabsScreenController extends GetxController {
     tabsElementModelShow.value = tabsElementModelTabsEdit.value;
   }
 
-  List<Widget> tabViewHome() {
-    List<TabsEditsModel> items = tabsElementModelShow.value;
-    final itemsWasShow =
-        items.where((element) => element.isShow == true).toList();
-    print("Tabs view home: $itemsWasShow");
-    return itemsWasShow.map((e) {
-      if (e.index == 10) {
-        return GestureDetector(
-          onTap: () {
-            Get.toNamed(Routes.editTabs);
-          },
-          child: SizedBox(
-            height: 22,
-            width: 22,
-            child: Assets.iconsIcSetting
-                .svg(height: 18, width: 18, color: AppColors.textGrey),
-          ),
-        );
-      }
-      return Tab(text: e.name);
-    }).toList();
-  }
+  // List<Widget> tabViewHome() {
+  //   List<TabsEditsModel> items = tabsElementModelShow.value;
+  //   final itemsWasShow =
+  //       items.where((element) => element.isShow == true).toList();
+  //   print("Tabs view home: $itemsWasShow");
+  //   return itemsWasShow.map((e) {
+  //     if (e.index == 10) {
+  //       return GestureDetector(
+  //         onTap: () {
+  //           Get.toNamed(Routes.editTabs);
+  //         },
+  //         child: SizedBox(
+  //           height: 22,
+  //           width: 22,
+  //           child: Assets.iconsIcSetting
+  //               .svg(height: 18, width: 18, color: AppColors.textGrey),
+  //         ),
+  //       );
+  //     }
+  //     return Tab(text: e.name);
+  //   }).toList();
+  // }
 }
