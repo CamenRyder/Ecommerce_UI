@@ -28,9 +28,9 @@ class EditTabsScreenController extends GetxController {
 
   void hideTabsFromFeed(int index) {
     isShowDiabledTabs.value = true;
-    tabsElementModelTabsEdit.value[index + 1].isShow = false;
+    tabsElementModelTabsEdit.value[index+1].isShow = false;
     print("Editing controller ${tabsElementModelTabsEdit.value}");
-    tabsElementModelDisable.value.add(tabsElementModelTabsEdit.value[index]);
+    tabsElementModelDisable.value.add(tabsElementModelTabsEdit.value[index+1]);
     tabsElementModelShow.value = getTabsElementShow();
     tabsElementModelTabsEdit.value = getTabsElementShow();
   }

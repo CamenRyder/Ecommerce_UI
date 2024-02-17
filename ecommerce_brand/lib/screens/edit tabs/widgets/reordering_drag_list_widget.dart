@@ -30,15 +30,15 @@ class _ReorderingListTabs extends State<ReorderingListTabs> {
 
   @override
   Widget build(BuildContext context) {
-    print("into here?") ; 
+    print("into here?");
     _items = _controller.getTabsElementSubmit();
     _itemsDisable = _controller.getTabsElementUnsubmit();
-    print("_items: $_items") ;  
+    print("_items: $_items");
     return Expanded(
       child: Obx(() {
         return ReorderableListView(
           physics: const NeverScrollableScrollPhysics(),
-          footer: _itemsDisable.isEmpty == false 
+          footer: _itemsDisable.isEmpty == false
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,21 +50,128 @@ class _ReorderingListTabs extends State<ReorderingListTabs> {
                       color: AppColors.textGrey,
                     ),
                     Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: Constant.paddingHorizontal,
-                          vertical: Constant.paddingHorizontal),
+                      padding: const EdgeInsets.only(
+                          left: Constant.paddingHorizontal,
+                          top: 8,
+                          bottom: Constant.paddingHorizontal),
                       child: const Text(
                         "Diabled tabs",
                         style: AppTypography.bodyLarge,
                       ),
                     ),
-                    for (int index = 0;
-                        index < _itemsDisable.length;
-                        index++)
+                    for (int index = 0; index < _itemsDisable.length; index++)
                       Container(
-                        color: Colors.red,
-                        height: 80,
-                      ),
+                          padding: const EdgeInsets.only(
+                              right: Constant.paddingHorizontal,  
+                              left: 10),
+                          color: _controller.unfollowMutilple.value
+                              ? AppColors.backgroundWhite
+                              : _itemsDisable[index].isChoice
+                                  ? AppColors.primaryDecoration
+                                  : AppColors.backgroundWhite,
+                          child: GestureDetector(
+                              onTap: () {
+                                // _controller.setChoiceElement(index + 1);
+                                // setState(() {});
+                              },
+                              child: Container(
+                                color: _itemsDisable[index].isChoice
+                                    ? Colors.transparent
+                                    : AppColors.backgroundWhite,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    _itemsDisable[index].tag == "Tag"
+                                        ? Container(
+                                            margin: const EdgeInsets.only(
+                                                top: 18,
+                                                bottom: 18,
+                                                left: 30,
+                                                right: 28),
+                                            child: Assets.iconsIcTag
+                                                .svg(width: 30),
+                                          )
+                                        : Container(
+                                            margin: const EdgeInsets.only(
+                                                top: 18,
+                                                bottom: 18,
+                                                left: 20,
+                                                right: 20),
+                                            decoration: BoxDecoration(
+                                                color:
+                                                    AppColors.backgroundWhite,
+                                                shape: BoxShape.circle,
+                                                border: Border.all(
+                                                    color: AppColors.textGrey,
+                                                    width: 0.2)),
+                                            child: CircleAvatar(
+                                              radius: 24.0,
+                                              backgroundColor: Colors.transparent,
+                                              child: _itemsDisable[index]
+                                                  .image
+                                                  .image(),
+                                            ),
+                                          ),
+                                    Expanded(
+                                        child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "${_itemsDisable[index].name}",
+                                          style: AppTypography.bodyBold50per,
+                                        ),
+                                        const SizedBox(
+                                          height: 8,
+                                        ),
+                                        Text("${_itemsDisable[index].tag}",
+                                            style: AppTypography.bodyNormal50per)
+                                      ],
+                                    )),
+                                    !_itemsDisable[index].isChoice
+                                        ? GestureDetector(
+                                            onTap: () {
+                                              showModalBottomSheet(
+                                                  isDismissible: false,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  context: context,
+                                                  builder: (_) {
+                                                    return BottomSheetEditTabs(
+                                                      textChangeTabs:
+                                                          _itemsDisable[index]
+                                                                  .name ??
+                                                              "mutilple.",
+                                                      withBottomSheet: () {
+                                                        Get.back();
+                                                      },
+                                                      changeTabs: () {
+                                                        // _itemsDisable[index].isShow =
+                                                        //     false;
+                                                        // _controller
+                                                        //     .hideTabsFromFeed(
+                                                        //         index);
+                                                        // setState(() {
+                                                        //   print("Set state?");
+                                                        // });
+                                                        Get.back();
+                                                      },
+                                                    );
+                                                  });
+                                            },
+                                            child: Assets.iconsIcMoreDots.svg(
+                                                height: 30,
+                                                // ignore: deprecated_member_use_from_same_package
+                                                color: AppColors.black),
+                                          )
+                                        : Container(
+                                            child: Assets.iconsIcTicked.svg(),
+                                          )
+                                  ],
+                                ),
+                              ))),
                   ],
                 )
               : null,
@@ -156,10 +263,10 @@ class _ReorderingListTabs extends State<ReorderingListTabs> {
                                               },
                                               changeTabs: () {
                                                 _items[index].isShow = false;
-                                                _controller.hideTabsFromFeed(
-                                                    index );
+                                                _controller
+                                                    .hideTabsFromFeed(index);
                                                 setState(() {
-                                                  print("Set state?") ; 
+                                                  print("Set state?");
                                                 });
                                                 Get.back();
                                               },
