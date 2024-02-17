@@ -30,8 +30,10 @@ class _ReorderingListTabs extends State<ReorderingListTabs> {
 
   @override
   Widget build(BuildContext context) {
+    print("into here?") ; 
     _items = _controller.getTabsElementSubmit();
     _itemsDisable = _controller.getTabsElementUnsubmit();
+    print("_items: $_items") ;  
     return Expanded(
       child: Obx(() {
         return ReorderableListView(
@@ -155,8 +157,10 @@ class _ReorderingListTabs extends State<ReorderingListTabs> {
                                               changeTabs: () {
                                                 _items[index].isShow = false;
                                                 _controller.hideTabsFromFeed(
-                                                    index + 1);
-                                                setState(() {});
+                                                    index );
+                                                setState(() {
+                                                  print("Set state?") ; 
+                                                });
                                                 Get.back();
                                               },
                                             );

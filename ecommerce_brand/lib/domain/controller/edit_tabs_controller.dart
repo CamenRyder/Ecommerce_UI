@@ -7,8 +7,11 @@ class EditTabsScreenController extends GetxController {
   Rx<List<TabsEditsModel>> tabsElementModelTabsEdit = Rx<List<TabsEditsModel>>(
       ListComponentTabConstant.listQuickFilterHome.obs);
   Rx<List<TabsEditsModel>> tabsElementModelShow = Rx<List<TabsEditsModel>>(
-      ListComponentTabConstant.listQuickFilterHome.obs) ; 
-    Rx<List<TabsEditsModel>> tabsElementModelDisable = Rx<List<TabsEditsModel>>([]);
+      ListComponentTabConstant.listQuickFilterHome.obs);
+  Rx<List<TabsEditsModel>> tabsElementModelDisable =
+      Rx<List<TabsEditsModel>>([]);
+  Rx<List<TabsEditsModel>> tabsElementModelActives = Rx<List<TabsEditsModel>>(
+      ListComponentTabConstant.listQuickFilterHome.obs);
 
   Rx<int> selectedElement = 0.obs;
   RxBool unfollowMutilple = false.obs;
@@ -25,12 +28,15 @@ class EditTabsScreenController extends GetxController {
 
   void hideTabsFromFeed(int index) {
     isShowDiabledTabs.value = true;
-    tabsElementModelTabsEdit.value[index].isShow = false;
+    tabsElementModelTabsEdit.value[index + 1].isShow = false;
     print("Editing controller ${tabsElementModelTabsEdit.value}");
+    tabsElementModelDisable.value.add(tabsElementModelTabsEdit.value[index]);
     tabsElementModelShow.value = getTabsElementShow();
+    tabsElementModelTabsEdit.value = getTabsElementShow();
   }
 
   List<TabsEditsModel> getTabsElementSubmit() {
+    print("Go hehre:");
     return tabsElementModelTabsEdit.value.where((e) {
       if (e.index == 0 || e.index == 10) {
         return false;
@@ -52,15 +58,7 @@ class EditTabsScreenController extends GetxController {
   }
 
   List<TabsEditsModel> getTabsElementUnsubmit() {
-    return tabsElementModelTabsEdit.value.where((e) {
-      if (e.index == 0 || e.index == 10) {
-        return false;
-      }
-      if (e.isShow != false) {
-        return false;
-      }
-      return true;
-    }).toList();
+    return tabsElementModelDisable.value;
   }
 
   setUntickElement() {
