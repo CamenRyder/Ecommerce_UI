@@ -45,7 +45,7 @@ class _EditTabsScreen extends State<EditTabsScreen> {
                     style: AppTypography.headerLight),
             leading: GestureDetector(
               onTap: () {
-                Get.back(); 
+                Get.back();
               },
               child: Icon(
                 Icons.close,
@@ -89,6 +89,8 @@ class _EditTabsScreen extends State<EditTabsScreen> {
                         return BottomSheetEditTabs(
                           textChangeTabs: "Mutilple",
                           changeTabs: () {
+                            _controller.hideTabsDiablog();
+                            Get.back();
                           },
                           withBottomSheet: () {
                             _controller.setUntickElement();

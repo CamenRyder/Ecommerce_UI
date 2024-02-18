@@ -15,7 +15,6 @@ class BodyEditsScreen extends StatefulWidget {
 }
 
 class _BodyEditsScreen extends State<BodyEditsScreen> {
-  final _controller = Get.find<EditTabsScreenController>();
   @override
   void initState() {
     super.initState();

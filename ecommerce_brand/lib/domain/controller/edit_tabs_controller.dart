@@ -10,8 +10,6 @@ class EditTabsScreenController extends GetxController {
       ListComponentTabConstant.listQuickFilterHome.obs);
   Rx<List<TabsEditsModel>> tabsElementModelDisable =
       Rx<List<TabsEditsModel>>([]);
-  Rx<List<TabsEditsModel>> tabsElementModelActives = Rx<List<TabsEditsModel>>(
-      ListComponentTabConstant.listQuickFilterHome.obs);
 
   Rx<int> selectedElement = 0.obs;
   RxBool unfollowMutilple = false.obs;
@@ -28,11 +26,26 @@ class EditTabsScreenController extends GetxController {
 
   void hideTabsFromFeed(int index) {
     isShowDiabledTabs.value = true;
-    tabsElementModelTabsEdit.value[index+1].isShow = false;
+    tabsElementModelTabsEdit.value[index + 1].isShow = false;
     print("Editing controller ${tabsElementModelTabsEdit.value}");
-    tabsElementModelDisable.value.add(tabsElementModelTabsEdit.value[index+1]);
+    tabsElementModelDisable.value
+        .add(tabsElementModelTabsEdit.value[index + 1]);
     tabsElementModelShow.value = getTabsElementShow();
     tabsElementModelTabsEdit.value = getTabsElementShow();
+  }
+
+  void hideTabsDiablog() {
+    selectedElement.value = 0;
+    showBottomFloatingActionButton.value = false;
+    tabsElementModelTabsEdit.value.removeWhere((element) {
+      if (element.isChoice) {
+        tabsElementModelDisable.value.add(element);
+      }
+      return element.isChoice == true;
+    });
+    tabsElementModelShow.value = getTabsElementShow();
+    tabsElementModelTabsEdit.value = getTabsElementShow();
+    tabsElementModelDisable.value.forEach((element) {element.isChoice = false ; });
   }
 
   List<TabsEditsModel> getTabsElementSubmit() {
@@ -92,26 +105,11 @@ class EditTabsScreenController extends GetxController {
     tabsElementModelShow.value = tabsElementModelTabsEdit.value;
   }
 
-  // List<Widget> tabViewHome() {
-  //   List<TabsEditsModel> items = tabsElementModelShow.value;
-  //   final itemsWasShow =
-  //       items.where((element) => element.isShow == true).toList();
-  //   print("Tabs view home: $itemsWasShow");
-  //   return itemsWasShow.map((e) {
-  //     if (e.index == 10) {
-  //       return GestureDetector(
-  //         onTap: () {
-  //           Get.toNamed(Routes.editTabs);
-  //         },
-  //         child: SizedBox(
-  //           height: 22,
-  //           width: 22,
-  //           child: Assets.iconsIcSetting
-  //               .svg(height: 18, width: 18, color: AppColors.textGrey),
-  //         ),
-  //       );
-  //     }
-  //     return Tab(text: e.name);
-  //   }).toList();
-  // }
+  void addActiveTabs(TabsEditsModel itemsDisable) {
+    itemsDisable.isShow = true;
+    int index = tabsElementModelTabsEdit.value.length - 1;
+    tabsElementModelTabsEdit.value.insert(index, itemsDisable);
+    tabsElementModelShow.value = tabsElementModelTabsEdit.value;
+    tabsElementModelDisable.value.remove(itemsDisable);
+  }
 }
