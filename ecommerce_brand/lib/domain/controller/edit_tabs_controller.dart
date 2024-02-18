@@ -27,7 +27,6 @@ class EditTabsScreenController extends GetxController {
   void hideTabsFromFeed(int index) {
     isShowDiabledTabs.value = true;
     tabsElementModelTabsEdit.value[index + 1].isShow = false;
-    print("Editing controller ${tabsElementModelTabsEdit.value}");
     tabsElementModelDisable.value
         .add(tabsElementModelTabsEdit.value[index + 1]);
     tabsElementModelShow.value = getTabsElementShow();
@@ -45,11 +44,12 @@ class EditTabsScreenController extends GetxController {
     });
     tabsElementModelShow.value = getTabsElementShow();
     tabsElementModelTabsEdit.value = getTabsElementShow();
-    tabsElementModelDisable.value.forEach((element) {element.isChoice = false ; });
+    for (var element in tabsElementModelDisable.value) {
+      element.isChoice = false;
+    }
   }
 
   List<TabsEditsModel> getTabsElementSubmit() {
-    print("Go hehre:");
     return tabsElementModelTabsEdit.value.where((e) {
       if (e.index == 0 || e.index == 10) {
         return false;
@@ -75,9 +75,9 @@ class EditTabsScreenController extends GetxController {
   }
 
   setUntickElement() {
-    tabsElementModelTabsEdit.value.forEach((element) {
+    for (var element in tabsElementModelTabsEdit.value) {
       element.isChoice = false;
-    });
+    }
     unfollowMutilple.value = true;
     selectedElement.value = 0;
     showBottomFloatingActionButton.value = false;
@@ -87,8 +87,9 @@ class EditTabsScreenController extends GetxController {
     tabsElementModelTabsEdit.value[index].isChoice =
         !tabsElementModelTabsEdit.value[index].isChoice;
     int selectedLocal = 0;
-    tabsElementModelTabsEdit.value
-        .forEach((e) => e.isChoice ? selectedLocal++ : null);
+    for (var e in tabsElementModelTabsEdit.value) {
+      e.isChoice ? selectedLocal++ : null;
+    }
     unfollowMutilple.value = false;
     selectedLocal == 0
         ? selectedElement.value = 0

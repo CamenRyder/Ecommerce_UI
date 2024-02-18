@@ -10,7 +10,6 @@ class BottomNavigatorBar extends StatefulWidget {
   HomeScreenController controller;
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _BottomNavigatorBar();
   }
 }
@@ -26,7 +25,6 @@ class _BottomNavigatorBar extends State<BottomNavigatorBar> {
 
   @override
   Widget build(BuildContext context) {
-    //  return Hidable(child: _bottomNavigator(), controller: widget.controller .) ;
     return _bottomNavigator();
   }
 

@@ -11,7 +11,7 @@ abstract class AppPages {
     ),
     GetPage(
       name: Routes.editTabs,
-      page: () => EditTabsScreen(),
+      page: () => const EditTabsScreen(),
     ),
   ];
 }

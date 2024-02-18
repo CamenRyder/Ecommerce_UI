@@ -36,7 +36,6 @@ class HomeScreenController extends GetxController {
     List<TabsEditsModel> items = _controllerTabsEdit.tabsElementModelShow.value;
     final itemsWasShow =
         items.where((element) => element.isShow == true).toList();
-    print("Tabs view home: $itemsWasShow");
     return itemsWasShow.map((e) {
       if (e.index == 10) {
         return GestureDetector(

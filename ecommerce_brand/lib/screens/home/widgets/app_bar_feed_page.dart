@@ -7,7 +7,6 @@ class AppBarFeedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
       margin: const EdgeInsets.only(bottom: 8),
       child: Row(

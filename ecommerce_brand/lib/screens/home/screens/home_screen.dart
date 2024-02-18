@@ -22,7 +22,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _editTabsController.initTabsElementModel();
-    // _controller.
   }
 
   @override
@@ -39,8 +38,6 @@ class _HomeScreenState extends State<HomeScreen> {
           FeedPage(
             controller: _controller,
           ),
-          // const MarketScreen(),f
-          // const ProfileScreen(),
           Container(
             color: AppColors.backgroundWhite,
             child: const Center(

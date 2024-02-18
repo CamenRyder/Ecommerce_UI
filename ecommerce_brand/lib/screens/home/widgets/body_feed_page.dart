@@ -26,8 +26,8 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      _controller.changeElemengtTabContraoller(this) ;  
-    return   Column(
+      _controller.changeElemengtTabContraoller(this);
+      return Column(
         children: [
           TabBar(
               isScrollable: true,
@@ -48,27 +48,4 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
       );
     });
   }
-
-  // List<Widget> tabViewHome() {
-  //   List<TabsEditsModel> items =  _controllerTabs.tabsElementModel.value ;
-  //   final itemsWasShow =
-  //       items.where((element) => element.isShow == true).toList();
-  //   print("Tabs view home: $itemsWasShow");
-  //   return itemsWasShow.map((e) {
-  //     if (e.index == 10) {
-  //       return GestureDetector(
-  //         onTap: () {
-  //           Get.toNamed(Routes.editTabs);
-  //         },
-  //         child: SizedBox(
-  //           height: 22,
-  //           width: 22,
-  //           child: Assets.iconsIcSetting
-  //               .svg(height: 18, width: 18, color: AppColors.textGrey),
-  //         ),
-  //       );
-  //     }
-  //     return Tab(text: e.name);
-  //   }).toList();
-  // }
 }

@@ -1,9 +1,7 @@
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
-import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
 import 'package:ecommerce_brand/screens/edit%20tabs/widgets/reordering_drag_list_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class BodyEditsScreen extends StatefulWidget {
   const BodyEditsScreen({super.key});
