@@ -1,3 +1,6 @@
+import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
+import 'package:ecommerce_brand/domain/models/tabs_editting_model.dart';
+
 class StringUtils {
   static String capitalize(String text) {
     // Viết hoa ký tự đầu tiên của chuỗi
@@ -30,85 +33,55 @@ class AppStringConstant {
 }
 
 class ListComponentTabConstant {
-  static final listQuickFilterHome = <dynamic>[
-   {
-      "name": "All",
-      "index": 0,
-      "tag": null,
-    },
-    {
-      "name": "Sustainable",
-      "index": 1,
-      "tag": "Tag",
-    },
-    {
-      "name": "Lacoste",
-      "index": 2,
-      "tag": "Store",
-    },
-    {
-      "name": "Adidas",
-      "index": 3,
-      "tag": "Store",
-    },
-    {
-      "name": "Vintage",
-      "index": 4,
-      "tag": "Tag",
-    },
-    {
-      "name": "Levi's",
-      "index": 5,
-      "tag": "Tag",
-    },
-    {
-      "name": "Setting",
-      "index": 999,
-      "tag": "Tag",
-    },
-  ];
-  static final imageIcons = <String>[
-    "icon_filter_2",
-    "icon_info",
-    "icon_sort",
-    "icon_filter",
-  ];
-
-  static final listTitleLabel = <dynamic>[
-    {
-      "name": "All",
-      "index": 0,
-      "tag": null,
-    },
-    {
-      "name": "Sustainable",
-      "index": 1,
-      "tag": "Tag",
-    },
-    {
-      "name": "Lacoste",
-      "index": 2,
-      "tag": "Store",
-    },
-    {
-      "name": "Adidas",
-      "index": 3,
-      "tag": "Store",
-    },
-    {
-      "name": "Vintage",
-      "index": 4,
-      "tag": "Tag",
-    },
-    {
-      "name": "Levi's",
-      "index": 5,
-      "tag": "Tag",
-    },
-    {
-      "name": "Setting",
-      "index": 999,
-      "tag": "Tag",
-    },
+  static final listQuickFilterHome = <TabsEditsModel>[
+    TabsEditsModel(
+        name: "All",
+        image: null,
+        index: 0,
+        tag: "Tag",
+        isChoice: false,
+        isShow: true),
+    TabsEditsModel(
+        name: "Sustainable",
+        image: Assets.iconsIcTag,
+        index: 1,
+        tag: "Tag",
+        isChoice: false,
+        isShow: true),
+    TabsEditsModel(
+        name: "Lacoste",
+        image: Assets.imagesAvtLacoste,
+        index: 2,
+        tag: "Store",
+        isChoice: false,
+        isShow: true),
+    TabsEditsModel(
+        name: "Adidas",
+        image: Assets.imagesAvtAddidas,
+        index: 3,
+        tag: "Store",
+        isChoice: false,
+        isShow: true),
+    TabsEditsModel(
+        name: "Vintage",
+        image: Assets.iconsIcTag,
+        index: 4,
+        tag: "Tag",
+        isChoice: false,
+        isShow: true),
+    TabsEditsModel(
+        name: "Levi's",
+        image: Assets.imagesAvtLevi,
+        index: 5,
+        tag: "Store",
+        isChoice: false,
+        isShow: true),
+    TabsEditsModel(
+        name: "Setting",
+        image: Assets.imagesAvtLevi,
+        index: 10,
+        tag: "Store",
+        isChoice: false,
+        isShow: true),
   ];
 }

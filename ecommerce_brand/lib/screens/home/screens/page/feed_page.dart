@@ -17,7 +17,6 @@ class _FeedPage extends State<FeedPage> {
   late HomeScreenController _controller;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _controller = widget.controller;
   }
