@@ -77,6 +77,46 @@ class Assets {
   static const AssetGenImage imagesAvtLevi =
       AssetGenImage('assets/images/avt_levi.png');
 
+  /// File path: assets/images/mock_image01.png
+  static const AssetGenImage imagesMockImage01 =
+      AssetGenImage('assets/images/mock_image01.png');
+
+  /// File path: assets/images/mock_image02.png
+  static const AssetGenImage imagesMockImage02 =
+      AssetGenImage('assets/images/mock_image02.png');
+
+  /// File path: assets/images/mock_image03.png
+  static const AssetGenImage imagesMockImage03 =
+      AssetGenImage('assets/images/mock_image03.png');
+
+  /// File path: assets/images/mock_image04.png
+  static const AssetGenImage imagesMockImage04 =
+      AssetGenImage('assets/images/mock_image04.png');
+
+  /// File path: assets/images/mock_image05.png
+  static const AssetGenImage imagesMockImage05 =
+      AssetGenImage('assets/images/mock_image05.png');
+
+  /// File path: assets/images/mock_image06.png
+  static const AssetGenImage imagesMockImage06 =
+      AssetGenImage('assets/images/mock_image06.png');
+
+  /// File path: assets/images/mock_image07.png
+  static const AssetGenImage imagesMockImage07 =
+      AssetGenImage('assets/images/mock_image07.png');
+
+  /// File path: assets/images/mock_image08.png
+  static const AssetGenImage imagesMockImage08 =
+      AssetGenImage('assets/images/mock_image08.png');
+
+  /// File path: assets/images/mock_image09.png
+  static const AssetGenImage imagesMockImage09 =
+      AssetGenImage('assets/images/mock_image09.png');
+
+  /// File path: assets/images/mock_image10.png
+  static const AssetGenImage imagesMockImage10 =
+      AssetGenImage('assets/images/mock_image10.png');
+
   /// List of all assets
   static List<dynamic> get values => [
         iconsIcDisable,
@@ -94,7 +134,17 @@ class Assets {
         iconsIcUnfollow,
         imagesAvtAddidas,
         imagesAvtLacoste,
-        imagesAvtLevi
+        imagesAvtLevi,
+        imagesMockImage01,
+        imagesMockImage02,
+        imagesMockImage03,
+        imagesMockImage04,
+        imagesMockImage05,
+        imagesMockImage06,
+        imagesMockImage07,
+        imagesMockImage08,
+        imagesMockImage09,
+        imagesMockImage10
       ];
 }
 
