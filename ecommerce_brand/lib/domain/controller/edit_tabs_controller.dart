@@ -45,7 +45,9 @@ class EditTabsScreenController extends GetxController {
     });
     tabsElementModelShow.value = getTabsElementShow();
     tabsElementModelTabsEdit.value = getTabsElementShow();
-    tabsElementModelDisable.value.forEach((element) {element.isChoice = false ; });
+    tabsElementModelDisable.value.forEach((element) {
+      element.isChoice = false;
+    });
   }
 
   List<TabsEditsModel> getTabsElementSubmit() {

@@ -1,6 +1,7 @@
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
+import 'package:ecommerce_brand/screens/home/widgets/list_view_feed_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,8 +27,10 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      _controller.changeElemengtTabContraoller(this) ;  
-    return   Column(
+      final bodyHeight = MediaQuery.sizeOf(context).height - 85 - 10 - 105 ; 
+      print("Max screen: $bodyHeight");
+      _controller.changeElemengtTabContraoller(this);
+      return Column(
         children: [
           TabBar(
               isScrollable: true,
@@ -44,6 +47,24 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
               unselectedLabelColor: AppColors.textGrey,
               controller: _controller.tabController.value,
               tabs: _controller.tabViewHome()),
+          // Expanded(
+          //   child:
+          // )
+        SizedBox(
+          height: bodyHeight,
+          child:  TabBarView(
+              physics: const NeverScrollableScrollPhysics(),
+              controller: _controller.tabController.value,
+              children: const [
+            ListFeedPage(),
+            ListFeedPage(),
+            ListFeedPage(),
+            ListFeedPage(),
+            ListFeedPage(),
+            ListFeedPage(),
+            ListFeedPage(),
+          ]),
+        )
         ],
       );
     });
