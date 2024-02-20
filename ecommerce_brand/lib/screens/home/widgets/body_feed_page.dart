@@ -17,6 +17,10 @@ class BodyFeedPage extends StatefulWidget {
 
 class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
   late HomeScreenController _controller;
+  /*
+  final bodyHeight = MediaQuery.sizeOf(context).height - 85 - 10 - 105 ; 
+      print("Max screen: $bodyHeight");
+  */
   @override
   void initState() {
     super.initState();
@@ -51,7 +55,8 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
           //   child:
           // )
         SizedBox(
-          height: bodyHeight,
+          height: bodyHeight - 59 , // for mac :)
+          // height: bodyHeight  ,    // for android 
           child:  TabBarView(
               physics: const NeverScrollableScrollPhysics(),
               controller: _controller.tabController.value,
@@ -69,27 +74,4 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
       );
     });
   }
-
-  // List<Widget> tabViewHome() {
-  //   List<TabsEditsModel> items =  _controllerTabs.tabsElementModel.value ;
-  //   final itemsWasShow =
-  //       items.where((element) => element.isShow == true).toList();
-  //   print("Tabs view home: $itemsWasShow");
-  //   return itemsWasShow.map((e) {
-  //     if (e.index == 10) {
-  //       return GestureDetector(
-  //         onTap: () {
-  //           Get.toNamed(Routes.editTabs);
-  //         },
-  //         child: SizedBox(
-  //           height: 22,
-  //           width: 22,
-  //           child: Assets.iconsIcSetting
-  //               .svg(height: 18, width: 18, color: AppColors.textGrey),
-  //         ),
-  //       );
-  //     }
-  //     return Tab(text: e.name);
-  //   }).toList();
-  // }
 }
