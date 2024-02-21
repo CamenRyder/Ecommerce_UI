@@ -9,21 +9,63 @@ import 'package:get/get.dart';
 
 class HomeScreenController extends GetxController {
   final tabIndex = 0.obs;
+  final length = 0.obs;
   final PageController pageController = PageController(initialPage: 0);
-  final _controllerTabsEdit =Get.put(EditTabsScreenController()) ;
+  RxBool showBottomFloatingActionButton = false.obs;
+  final isSearchBar = false.obs;
+  late ScrollController scrollController;
+
+  final _controllerTabsEdit = Get.put(EditTabsScreenController());
   late Rx<TabController> tabController;
- 
+  late TickerProvider _provider;
 
   void initTabController(TickerProvider provider) {
     tabController = Rx(
       TabController(
           length: getTabBarLength(), vsync: provider, initialIndex: 0),
     );
+    _provider = provider;
   }
 
-  void changeElemengtTabContraoller(TickerProvider provider) {
-    tabController.value = TabController(length: _controllerTabsEdit.tabsElementModelShow.value.length , vsync: provider , initialIndex: 0 ) ;
+  void animateTopPage() {
+    scrollController.animateTo(
+      0 * 100,
+      duration: const Duration(seconds: 1),
+      curve: Curves.fastOutSlowIn,
+    );
   }
+
+  void onScrollOverNestedListTrue() {
+    showBottomFloatingActionButton.value = true;
+  }
+
+  void onScrollOverNestedListFalse() {
+    showBottomFloatingActionButton.value = false;
+  }
+
+  void initScrollController() {
+    scrollController = ScrollController();
+    double oldOffset = 0.0;
+    scrollController.addListener(() {
+      if (scrollController.offset > 100) {
+        if (scrollController.offset > oldOffset) {
+          onScrollOverNestedListTrue();
+        } else {
+          onScrollOverNestedListFalse();
+        }
+      }
+      oldOffset = scrollController.offset;
+    });
+  }
+
+  void changeElemengtTabContraoller() {
+    tabController.value = TabController(
+        length: _controllerTabsEdit.tabsElementModelShow.value.length,
+        vsync: _provider,
+        initialIndex: 0);
+    length.value = _controllerTabsEdit.tabsElementModelShow.value.length;
+  }
+
   int getTabBarLength() => ListComponentTabConstant.listQuickFilterHome.length;
   // late Rx<TabController> tabController;
 
