@@ -101,8 +101,9 @@ class _FeedPage extends State<FeedPage> {
                     GestureDetector(
                         onTap: () {
 
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (_) => FocusProductScreen(items: list[index])));
+                            // Navigator.of(context).push(MaterialPageRoute(
+                            //   builder: (_) => FocusProductScreen(items: list[index])));
+                            Get.toNamed(Routes.focusProduct,arguments: list[index] ) ;
                         },
                         child: Stack(
                           alignment: Alignment.bottomLeft,

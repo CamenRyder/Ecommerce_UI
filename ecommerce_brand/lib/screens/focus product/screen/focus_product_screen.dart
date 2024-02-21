@@ -3,6 +3,7 @@ import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FocusProductScreen extends StatefulWidget {
   dynamic items;
@@ -80,6 +81,9 @@ class _FocusProductScreen extends State<FocusProductScreen> {
                         ),
                       ),
                       GestureDetector(
+                        onTap: () {
+                          Get.back() ;  
+                        },
                         child: Container(
                           margin: const EdgeInsets.all(5),
                           padding: const EdgeInsets.all(15),
