@@ -3,6 +3,7 @@ import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hidable/hidable.dart';
 
 // ignore: must_be_immutable
 class BottomNavigatorBar extends StatefulWidget {
@@ -10,7 +11,6 @@ class BottomNavigatorBar extends StatefulWidget {
   HomeScreenController controller;
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _BottomNavigatorBar();
   }
 }
@@ -31,30 +31,37 @@ class _BottomNavigatorBar extends State<BottomNavigatorBar> {
   }
 
   _bottomNavigator() {
-    return Container(
-      decoration: const BoxDecoration(
-          border: Border(top: BorderSide(color: Colors.white, width: 0))),
-      child: BottomAppBar(
-        child: SizedBox(
-          height: 60,
-          child: BottomNavigationBar(
-            backgroundColor: Colors.white,
-            type: BottomNavigationBarType.fixed,
-            showUnselectedLabels: true,
-            elevation: 1,
-            currentIndex: controller.tabIndex.value,
-            onTap: (index) {
-              setState(() {
-                controller.onTabChanged(index);
-              });
-            },
-            items: [
-              _bottomNavigationBarItem(icon: Assets.iconsIcHome, title: 'Feed'),
-              _bottomNavigationBarItem(
-                  icon: Assets.iconsIcMarket, title: 'Market'),
-              _bottomNavigationBarItem(
-                  icon: Assets.iconsIcProfile, title: 'Profile'),
-            ],
+    return Hidable(
+      controller: controller.scrollController,
+      deltaFactor: 0.1,
+      enableOpacityAnimation: true, // As default it's true
+      preferredWidgetSize: const Size.fromHeight(93),
+      child: Container(
+        decoration: const BoxDecoration(
+            border: Border(top: BorderSide(color: Colors.white, width: 0))),
+        child: BottomAppBar(
+          child: SizedBox(
+            height: 60,
+            child: BottomNavigationBar(
+              backgroundColor: Colors.white,
+              type: BottomNavigationBarType.fixed,
+              showUnselectedLabels: true,
+              elevation: 0,
+              currentIndex: controller.tabIndex.value,
+              onTap: (index) {
+                setState(() {
+                  controller.onTabChanged(index);
+                });
+              },
+              items: [
+                _bottomNavigationBarItem(
+                    icon: Assets.iconsIcHome, title: 'Feed'),
+                _bottomNavigationBarItem(
+                    icon: Assets.iconsIcMarket, title: 'Market'),
+                _bottomNavigationBarItem(
+                    icon: Assets.iconsIcProfile, title: 'Profile'),
+              ],
+            ),
           ),
         ),
       ),
