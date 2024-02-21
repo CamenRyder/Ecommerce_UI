@@ -1,10 +1,10 @@
 import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
+import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
 import 'package:ecommerce_brand/domain/mock/mock_product.dart';
-import 'package:ecommerce_brand/screens/focus%20product/screen/focus_product_screen.dart';
 import 'package:ecommerce_brand/screens/home/widgets/app_bar_feed_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -100,10 +100,8 @@ class _FeedPage extends State<FeedPage> {
                   children: [
                     GestureDetector(
                         onTap: () {
-
-                            // Navigator.of(context).push(MaterialPageRoute(
-                            //   builder: (_) => FocusProductScreen(items: list[index])));
-                            Get.toNamed(Routes.focusProduct,arguments: list[index] ) ;
+                          Get.toNamed(Routes.focusProduct,
+                              arguments: list[index]);
                         },
                         child: Stack(
                           alignment: Alignment.bottomLeft,
