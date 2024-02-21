@@ -1,8 +1,10 @@
+import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
 import 'package:ecommerce_brand/domain/mock/mock_product.dart';
+import 'package:ecommerce_brand/screens/focus%20product/screen/focus_product_screen.dart';
 import 'package:ecommerce_brand/screens/home/widgets/app_bar_feed_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -96,29 +98,42 @@ class _FeedPage extends State<FeedPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Stack(
-                      alignment: Alignment.bottomLeft,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: list[index].image.image(),
+                    GestureDetector(
+                        onTap: () {
+
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (_) => FocusProductScreen(items: list[index])));
+                        },
+                        child: Stack(
+                          alignment: Alignment.bottomLeft,
+                          children: [
+                            Hero(
+                              tag: 'list_${list[index].name}',
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: list[index].image.image(),
+                              ),
+                            ),
+                            list[index].brandName != null
+                                ? Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: CircleAvatar(
+                                      backgroundColor: Colors.white,
+                                      child: list[index].brandName,
+                                    ),
+                                  )
+                                : Container()
+                          ],
+                        )),
+                    SizedBox(
+                      height: 40,
+                      width: 200,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 10, bottom: 7),
+                        child: Text(
+                          list[index].name ?? "Loading",
+                          style: AppTypography.bodyNormal16,
                         ),
-                        list[index].brandName != null
-                            ? Padding(
-                                padding: const EdgeInsets.all(10),
-                                child: CircleAvatar(
-                                  backgroundColor: Colors.white,
-                                  child: list[index].brandName,
-                                ),
-                              )
-                            : Container()
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, bottom: 7),
-                      child: Text(
-                        list[index].name ?? "Loading",
-                        style: AppTypography.bodyNormal16,
                       ),
                     ),
                     list[index].price != null

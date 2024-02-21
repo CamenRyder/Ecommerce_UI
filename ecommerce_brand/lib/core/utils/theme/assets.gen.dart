@@ -14,9 +14,16 @@ import 'package:flutter/services.dart';
 class Assets {
   Assets._();
 
+  /// File path: assets/icons/ic_ban.svg
+  static const SvgGenImage iconsIcBan = SvgGenImage('assets/icons/ic_ban.svg');
+
   /// File path: assets/icons/ic_disable.svg
   static const SvgGenImage iconsIcDisable =
       SvgGenImage('assets/icons/ic_disable.svg');
+
+  /// File path: assets/icons/ic_feature.svg
+  static const SvgGenImage iconsIcFeature =
+      SvgGenImage('assets/icons/ic_feature.svg');
 
   /// File path: assets/icons/ic_file.svg
   static const SvgGenImage iconsIcFile =
@@ -29,6 +36,10 @@ class Assets {
   /// File path: assets/icons/ic_market.svg
   static const SvgGenImage iconsIcMarket =
       SvgGenImage('assets/icons/ic_market.svg');
+
+  /// File path: assets/icons/ic_media.svg
+  static const SvgGenImage iconsIcMedia =
+      SvgGenImage('assets/icons/ic_media.svg');
 
   /// File path: assets/icons/ic_more_dots.svg
   static const SvgGenImage iconsIcMoreDots =
@@ -52,6 +63,10 @@ class Assets {
 
   /// File path: assets/icons/ic_tag.svg
   static const SvgGenImage iconsIcTag = SvgGenImage('assets/icons/ic_tag.svg');
+
+  /// File path: assets/icons/ic_tick.svg
+  static const SvgGenImage iconsIcTick =
+      SvgGenImage('assets/icons/ic_tick.svg');
 
   /// File path: assets/icons/ic_ticked.svg
   static const SvgGenImage iconsIcTicked =
@@ -119,16 +134,20 @@ class Assets {
 
   /// List of all assets
   static List<dynamic> get values => [
+        iconsIcBan,
         iconsIcDisable,
+        iconsIcFeature,
         iconsIcFile,
         iconsIcHome,
         iconsIcMarket,
+        iconsIcMedia,
         iconsIcMoreDots,
         iconsIcProfile,
         iconsIcResearch,
         iconsIcSetting,
         iconsIcSwipeHint,
         iconsIcTag,
+        iconsIcTick,
         iconsIcTicked,
         iconsIcUnable,
         iconsIcUnfollow,
