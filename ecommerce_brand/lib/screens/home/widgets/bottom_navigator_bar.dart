@@ -26,7 +26,6 @@ class _BottomNavigatorBar extends State<BottomNavigatorBar> {
 
   @override
   Widget build(BuildContext context) {
-    //  return Hidable(child: _bottomNavigator(), controller: widget.controller .) ;
     return _bottomNavigator();
   }
 

@@ -27,6 +27,14 @@ class HomeScreenController extends GetxController {
     _provider = provider;
   }
 
+  void animateTopPage() {
+    scrollController.animateTo(
+      0 * 100,
+      duration: const Duration(seconds: 1),
+      curve: Curves.fastOutSlowIn,
+    );
+  }
+
   void onScrollOverNestedListTrue() {
     showBottomFloatingActionButton.value = true;
   }

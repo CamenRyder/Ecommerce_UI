@@ -7,6 +7,7 @@ import 'package:ecommerce_brand/screens/home/widgets/app_bar_feed_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
+import 'package:scrolls_to_top/scrolls_to_top.dart';
 
 class FeedPage extends StatefulWidget {
   const FeedPage({super.key});
@@ -78,56 +79,60 @@ class _FeedPage extends State<FeedPage> {
 
   // ignore: non_constant_identifier_names
   listview_mock() {
-    return MasonryGridView.builder(
-        controller: _controller.scrollController,
-        shrinkWrap: false,
-        gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2),
-        mainAxisSpacing: 4,
-        crossAxisSpacing: 4,
-        itemCount: list.length,
-        itemBuilder: (_, index) {
-          return Container(
-            color: AppColors.backgroundWhite,
-            padding: const EdgeInsets.all(5),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Stack(
-                  alignment: Alignment.bottomLeft,
+    return ScrollsToTop(
+        child: MasonryGridView.builder(
+            controller: _controller.scrollController,
+            shrinkWrap: false,
+            gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2),
+            mainAxisSpacing: 4,
+            crossAxisSpacing: 4,
+            itemCount: list.length,
+            itemBuilder: (_, index) {
+              return Container(
+                color: AppColors.backgroundWhite,
+                padding: const EdgeInsets.all(5),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child: list[index].image.image(),
+                    Stack(
+                      alignment: Alignment.bottomLeft,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: list[index].image.image(),
+                        ),
+                        list[index].brandName != null
+                            ? Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  child: list[index].brandName,
+                                ),
+                              )
+                            : Container()
+                      ],
                     ),
-                    list[index].brandName != null
-                        ? Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.white,
-                              child: list[index].brandName,
-                            ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, bottom: 7),
+                      child: Text(
+                        list[index].name ?? "Loading",
+                        style: AppTypography.bodyNormal16,
+                      ),
+                    ),
+                    list[index].price != null
+                        ? Text(
+                            "\$${list[index].price}",
+                            style: AppTypography.bodyBold,
                           )
                         : Container()
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10, bottom: 7),
-                  child: Text(
-                    list[index].name ?? "Loading",
-                    style: AppTypography.bodyNormal16,
-                  ),
-                ),
-                list[index].price != null
-                    ? Text(
-                        "\$${list[index].price}",
-                        style: AppTypography.bodyBold,
-                      )
-                    : Container()
-              ],
-            ),
-          );
+              );
+            }),
+        onScrollsToTop: (event) async {
+          _controller.animateTopPage();
         });
   }
 }

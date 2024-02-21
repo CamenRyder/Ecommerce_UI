@@ -24,9 +24,14 @@ class AppBarFeedPage extends StatelessWidget {
             GestureDetector(
               child: Assets.iconsIcFile.svg(height: 24, width: 24),
             ),
-            const Text(
-              "Feed",
-              style: AppTypography.header,
+            GestureDetector(
+              onTap: () {
+                controller.animateTopPage();
+              },
+              child: const Text(
+                "Feed",
+                style: AppTypography.header,
+              ),
             ),
             GestureDetector(
               child: Assets.iconsIcResearch.svg(height: 24, width: 24),
