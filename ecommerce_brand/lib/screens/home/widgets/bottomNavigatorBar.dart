@@ -41,7 +41,7 @@ class _BottomNavigatorBar extends State<BottomNavigatorBar> {
             backgroundColor: Colors.white,
             type: BottomNavigationBarType.fixed,
             showUnselectedLabels: true,
-            elevation: 0,
+            elevation: 1,
             currentIndex: controller.tabIndex.value,
             onTap: (index) {
               setState(() {

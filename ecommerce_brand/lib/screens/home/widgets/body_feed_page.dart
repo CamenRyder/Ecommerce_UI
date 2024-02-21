@@ -31,7 +31,7 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      final bodyHeight = MediaQuery.sizeOf(context).height - 85 - 10 - 105 ; 
+      final bodyHeight = MediaQuery.sizeOf(context).height - 85 - 10 - 105;
       print("Max screen: $bodyHeight");
       _controller.changeElemengtTabContraoller(this);
       return Column(
@@ -54,22 +54,22 @@ class _BodyFeedPage extends State<BodyFeedPage> with TickerProviderStateMixin {
           // Expanded(
           //   child:
           // )
-        SizedBox(
-          height: bodyHeight - 59 , // for mac :)
-          // height: bodyHeight  ,    // for android 
-          child:  TabBarView(
-              physics: const NeverScrollableScrollPhysics(),
-              controller: _controller.tabController.value,
-              children: const [
-            ListFeedPage(),
-            ListFeedPage(),
-            ListFeedPage(),
-            ListFeedPage(),
-            ListFeedPage(),
-            ListFeedPage(),
-            ListFeedPage(),
-          ]),
-        )
+          SizedBox(
+            // height: bodyHeight - 59, // for mac :)
+            height: bodyHeight, // for android
+            child: TabBarView(
+                physics: const NeverScrollableScrollPhysics(),
+                controller: _controller.tabController.value,
+                children: const [
+                  ListFeedPage(),
+                  ListFeedPage(),
+                  ListFeedPage(),
+                  ListFeedPage(),
+                  ListFeedPage(),
+                  ListFeedPage(),
+                  ListFeedPage(),
+                ]),
+          )
         ],
       );
     });
