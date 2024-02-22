@@ -1,3 +1,4 @@
+import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
@@ -96,29 +97,41 @@ class _FeedPage extends State<FeedPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Stack(
-                      alignment: Alignment.bottomLeft,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: list[index].image.image(),
+                    GestureDetector(
+                        onLongPress: () {
+                          Get.toNamed(Routes.focusProduct,
+                              arguments: list[index]);
+                        },
+                        child: Stack(
+                          alignment: Alignment.bottomLeft,
+                          children: [
+                            Hero(
+                              tag: 'list_${list[index].name}',
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: list[index].image.image(),
+                              ),
+                            ),
+                            list[index].brandName != null
+                                ? Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: CircleAvatar(
+                                      backgroundColor: Colors.white,
+                                      child: list[index].brandName,
+                                    ),
+                                  )
+                                : Container()
+                          ],
+                        )),
+                    SizedBox(
+                      height: 40,
+                      width: 200,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 10, bottom: 7),
+                        child: Text(
+                          list[index].name ?? "Loading",
+                          style: AppTypography.bodyNormal16,
                         ),
-                        list[index].brandName != null
-                            ? Padding(
-                                padding: const EdgeInsets.all(10),
-                                child: CircleAvatar(
-                                  backgroundColor: Colors.white,
-                                  child: list[index].brandName,
-                                ),
-                              )
-                            : Container()
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, bottom: 7),
-                      child: Text(
-                        list[index].name ?? "Loading",
-                        style: AppTypography.bodyNormal16,
                       ),
                     ),
                     list[index].price != null
