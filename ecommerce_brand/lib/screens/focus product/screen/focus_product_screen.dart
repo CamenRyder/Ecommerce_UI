@@ -32,119 +32,126 @@ class _FocusProductScreen extends State<FocusProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      height: double.infinity,
-      width: double.infinity,
-      // color: Colors.transparent,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(widget.items.image.path),
-          fit: BoxFit.cover,
+        body: GestureDetector(
+      onTap: () {
+        Get.back();
+      },
+      child: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(widget.items.image.path),
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
-      child: Center(
-          child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: Constant.paddingHorizontal),
-            child: SizedBox(
-              height: 55,
-              child: Obx(
-                () => _controller.isSelectedLongPress.value
-                    ? Row(
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.only(bottom: 18),
-                            child: Text(
-                              _controller.title.value,
-                              style: AppTypography.headerLarge,
+        child: Center(
+            child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                  horizontal: Constant.paddingHorizontal),
+              child: SizedBox(
+                height: 55,
+                child: Obx(
+                  () => _controller.isSelectedLongPressOption.value ||
+                          _controller.isSelectedLongPress.value
+                      ? Row(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(bottom: 18),
+                              child: Text(
+                                _controller.title.value,
+                                style: AppTypography.headerLarge,
+                              ),
                             ),
-                          ),
-                          Expanded(child: Container()),
-                        ],
-                      )
-                    : Container(),
+                            Expanded(child: Container()),
+                          ],
+                        )
+                      : Container(),
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: Constant.paddingHorizontal),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Hero(
-                    tag: 'list_${widget.items.name}',
-                    child: SizedBox(
-                      width: 240,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: widget.items.image.image(),
-                      ),
-                    )),
-                const OptionsFocusProductWidget(),
-              ],
-            ),
-          ),
-          Obx(() => GestureDetector(
-                onLongPress: () {
-                  _controller.getTextItem("Show more");
-
-                  // Get.back();
-                },
-                onLongPressEnd: (a) {},
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 350),
-                  margin: const EdgeInsets.only(top: 24),
-                  width: _controller.isSelectedLongPress.value
-                      ? widthScreen - 36
-                      : widthScreen - 48,
-                  height: _controller.isSelectedLongPress.value ? 105 : 90,
-                  padding: const EdgeInsets.all(Constant.paddingHorizontal),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(13),
-                      color: _controller.isSelectedLongPress.value
-                          ? AppColors.primary
-                          : AppColors.backgroundWhite),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "${widget.items.name}",
-                        style: _controller.isSelectedLongPress.value
-                            ? AppTypography.bodyNormal18White
-                            : AppTypography.bodyNormal16Black,
-                      ),
-                      Container(
-                        height: _controller.isSelectedLongPress.value ? 45  : 41,
-                        width: _controller.isSelectedLongPress.value ? 45  : 41, 
-                        padding: const EdgeInsets.all(1),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color:   _controller.isSelectedLongPress.value ?AppColors.primary : AppColors.backgroundWhite,
-                            border: Border.all(
-                                width: 0.45,
-                                color: _controller.isSelectedLongPress.value
-                                    ? AppColors.backgroundWhite
-                                    : AppColors.textGrey)),
-                        child: Center(
-                          child: Text(
-                            "Brand",
-                            style: _controller.isSelectedLongPress.value
-                                ? AppTypography.bodyRegularWhite
-                                : AppTypography.bodyRegular,
-                          ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                  horizontal: Constant.paddingHorizontal),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Hero(
+                      tag: 'list_${widget.items.name}',
+                      child: SizedBox(
+                        width: 240,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: widget.items.image.image(),
                         ),
-                      )
-                    ],
+                      )),
+                  const OptionsFocusProductWidget(),
+                ],
+              ),
+            ),
+            Obx(() => GestureDetector(
+                  onLongPress: () {
+                    _controller.getTextItem("Show more");
+                  },
+                  onLongPressEnd: (a) {},
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 350),
+                    margin: const EdgeInsets.only(top: 24),
+                    width: _controller.isSelectedLongPress.value
+                        ? widthScreen - 36
+                        : widthScreen - 48,
+                    height: _controller.isSelectedLongPress.value ? 105 : 90,
+                    padding: const EdgeInsets.all(Constant.paddingHorizontal),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(13),
+                        color: _controller.isSelectedLongPress.value
+                            ? AppColors.primary
+                            : AppColors.backgroundWhite),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "${widget.items.name}",
+                          style: _controller.isSelectedLongPress.value
+                              ? AppTypography.bodyNormal18White
+                              : AppTypography.bodyNormal16Black,
+                        ),
+                        Container(
+                          height:
+                              _controller.isSelectedLongPress.value ? 45 : 41,
+                          width:
+                              _controller.isSelectedLongPress.value ? 45 : 41,
+                          padding: const EdgeInsets.all(1),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: _controller.isSelectedLongPress.value
+                                  ? AppColors.primary
+                                  : AppColors.backgroundWhite,
+                              border: Border.all(
+                                  width: 0.45,
+                                  color: _controller.isSelectedLongPress.value
+                                      ? AppColors.backgroundWhite
+                                      : AppColors.textGrey)),
+                          child: Center(
+                            child: Text(
+                              "Brand",
+                              style: _controller.isSelectedLongPress.value
+                                  ? AppTypography.bodyRegularWhite
+                                  : AppTypography.bodyRegular,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              ))
-        ],
-      )).asGlass(blurX: 20, blurY: 20),
+                ))
+          ],
+        )).asGlass(blurX: 20, blurY: 20),
+      ),
     ));
   }
 }

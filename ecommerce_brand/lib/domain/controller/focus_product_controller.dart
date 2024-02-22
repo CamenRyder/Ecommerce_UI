@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 class FocusProductScreenController extends GetxController {
   RxBool isSelectedLongPress = false.obs;
+  RxBool isSelectedLongPressOption = false.obs;
   RxString title = "".obs;
 
   List<FocusProductModel> optionFocusProduct = [
@@ -18,6 +19,10 @@ class FocusProductScreenController extends GetxController {
 
   getTextItem(String name) {
     title.value = name;
-    isSelectedLongPress.value = true;
+    if (name == "Show more") {
+      isSelectedLongPress.value = true;
+    } else {
+      isSelectedLongPressOption.value = true;
+    }
   }
 }
