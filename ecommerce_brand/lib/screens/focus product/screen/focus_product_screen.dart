@@ -1,15 +1,18 @@
+
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
-import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
+import 'package:ecommerce_brand/domain/controller/focus_product_controller.dart';
+import 'package:ecommerce_brand/screens/focus%20product/widget/options_focus_product_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:glass/glass.dart';
 
 // ignore: must_be_immutable
 class FocusProductScreen extends StatefulWidget {
   dynamic items;
-  FocusProductScreen({required this.items});
+  FocusProductScreen({super.key, required this.items});
 
   @override
   State<StatefulWidget> createState() {
@@ -18,6 +21,13 @@ class FocusProductScreen extends StatefulWidget {
 }
 
 class _FocusProductScreen extends State<FocusProductScreen> {
+  bool isSelected = false;
+  late final _controller = Get.put(FocusProductScreenController());
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +49,25 @@ class _FocusProductScreen extends State<FocusProductScreen> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 55,
+              child: Obx(
+                () => _controller.isSelected.value
+                    ? Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(bottom: 18),
+                            child: Text(
+                              _controller.title.value,
+                              style: AppTypography.headerLarge,
+                            ),
+                          ),
+                          Expanded(child: Container()),
+                        ],
+                      )
+                    : Container(),
+              ),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -51,63 +80,7 @@ class _FocusProductScreen extends State<FocusProductScreen> {
                         child: widget.items.image.image(),
                       ),
                     )),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    GestureDetector(
-                      child: Container(
-                        margin: const EdgeInsets.all(5),
-                        padding: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            color: AppColors.backgroundWhite),
-                        height: 48,
-                        width: 48,
-                        child: Assets.iconsIcFeature.svg(),
-                      ),
-                    ),
-                    GestureDetector(
-                      child: Container(
-                        margin: const EdgeInsets.all(5),
-                        padding: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            color: AppColors.backgroundWhite),
-                        height: 48,
-                        width: 48,
-                        child: Assets.iconsIcMedia.svg(),
-                      ),
-                    ),
-                    GestureDetector(
-                      child: Container(
-                        margin: const EdgeInsets.all(5),
-                        padding: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            color: AppColors.backgroundWhite),
-                        height: 48,
-                        width: 48,
-                        child: Assets.iconsIcTick.svg(),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Get.back();
-                      },
-                      child: Container(
-                        margin: const EdgeInsets.all(5),
-                        padding: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            color: AppColors.backgroundWhite),
-                        height: 48,
-                        width: 48,
-                        child: Assets.iconsIcBan.svg(),
-                      ),
-                    ),
-                  ],
-                ),
+                const OptionsFocusProductWidget(),
               ],
             ),
             Container(

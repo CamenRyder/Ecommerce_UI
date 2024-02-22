@@ -16,6 +16,7 @@ class HomeScreenController extends GetxController {
   late ScrollController scrollController;
 
   final _controllerTabsEdit = Get.put(EditTabsScreenController());
+
   late Rx<TabController> tabController;
   late TickerProvider _provider;
 

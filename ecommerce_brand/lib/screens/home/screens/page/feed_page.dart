@@ -1,6 +1,5 @@
 import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
-import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
@@ -99,7 +98,7 @@ class _FeedPage extends State<FeedPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     GestureDetector(
-                        onTap: () {
+                        onLongPress: () {
                           Get.toNamed(Routes.focusProduct,
                               arguments: list[index]);
                         },
