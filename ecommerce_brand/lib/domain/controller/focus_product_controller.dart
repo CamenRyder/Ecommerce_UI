@@ -3,7 +3,7 @@ import 'package:ecommerce_brand/domain/models/focus_product_model.dart';
 import 'package:get/get.dart';
 
 class FocusProductScreenController extends GetxController {
-  RxBool isSelected = false.obs;
+  RxBool isSelectedLongPress = false.obs;
   RxString title = "".obs;
 
   List<FocusProductModel> optionFocusProduct = [
@@ -18,6 +18,6 @@ class FocusProductScreenController extends GetxController {
 
   getTextItem(String name) {
     title.value = name;
-    isSelected.value = true;
+    isSelectedLongPress.value = true;
   }
 }

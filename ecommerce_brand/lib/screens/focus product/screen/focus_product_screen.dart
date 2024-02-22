@@ -1,4 +1,3 @@
-
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
@@ -23,6 +22,8 @@ class FocusProductScreen extends StatefulWidget {
 class _FocusProductScreen extends State<FocusProductScreen> {
   bool isSelected = false;
   late final _controller = Get.put(FocusProductScreenController());
+
+  get widthScreen => MediaQuery.sizeOf(context).width;
   @override
   void initState() {
     super.initState();
@@ -42,17 +43,17 @@ class _FocusProductScreen extends State<FocusProductScreen> {
         ),
       ),
       child: Center(
-          child: Padding(
-        padding:
-            const EdgeInsets.symmetric(horizontal: Constant.paddingHorizontal),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
+          child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+                horizontal: Constant.paddingHorizontal),
+            child: SizedBox(
               height: 55,
               child: Obx(
-                () => _controller.isSelected.value
+                () => _controller.isSelectedLongPress.value
                     ? Row(
                         children: [
                           Container(
@@ -68,7 +69,11 @@ class _FocusProductScreen extends State<FocusProductScreen> {
                     : Container(),
               ),
             ),
-            Row(
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+                horizontal: Constant.paddingHorizontal),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Hero(
@@ -83,42 +88,62 @@ class _FocusProductScreen extends State<FocusProductScreen> {
                 const OptionsFocusProductWidget(),
               ],
             ),
-            Container(
-              margin: const EdgeInsets.only(top: 20),
-              width: double.infinity,
-              height: 90,
-              padding: const EdgeInsets.all(Constant.paddingHorizontal),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(13),
-                  color: AppColors.backgroundWhite),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "${widget.items.name}",
-                    style: AppTypography.bodyNormal16Black,
-                  ),
-                  Container(
-                    height: 41,
-                    width: 41,
-                    padding: const EdgeInsets.all(1),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: AppColors.backgroundWhite,
-                        border:
-                            Border.all(width: 0.45, color: AppColors.textGrey)),
-                    child: const Center(
-                      child: Text(
-                        "Brand",
-                        style: AppTypography.bodyRegular,
+          ),
+          Obx(() => GestureDetector(
+                onLongPress: () {
+                  _controller.getTextItem("Show more");
+
+                  // Get.back();
+                },
+                onLongPressEnd: (a) {},
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 350),
+                  margin: const EdgeInsets.only(top: 24),
+                  width: _controller.isSelectedLongPress.value
+                      ? widthScreen - 36
+                      : widthScreen - 48,
+                  height: _controller.isSelectedLongPress.value ? 105 : 90,
+                  padding: const EdgeInsets.all(Constant.paddingHorizontal),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(13),
+                      color: _controller.isSelectedLongPress.value
+                          ? AppColors.primary
+                          : AppColors.backgroundWhite),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "${widget.items.name}",
+                        style: _controller.isSelectedLongPress.value
+                            ? AppTypography.bodyNormal18White
+                            : AppTypography.bodyNormal16Black,
                       ),
-                    ),
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
+                      Container(
+                        height: _controller.isSelectedLongPress.value ? 45  : 41,
+                        width: _controller.isSelectedLongPress.value ? 45  : 41, 
+                        padding: const EdgeInsets.all(1),
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color:   _controller.isSelectedLongPress.value ?AppColors.primary : AppColors.backgroundWhite,
+                            border: Border.all(
+                                width: 0.45,
+                                color: _controller.isSelectedLongPress.value
+                                    ? AppColors.backgroundWhite
+                                    : AppColors.textGrey)),
+                        child: Center(
+                          child: Text(
+                            "Brand",
+                            style: _controller.isSelectedLongPress.value
+                                ? AppTypography.bodyRegularWhite
+                                : AppTypography.bodyRegular,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ))
+        ],
       )).asGlass(blurX: 20, blurY: 20),
     ));
   }

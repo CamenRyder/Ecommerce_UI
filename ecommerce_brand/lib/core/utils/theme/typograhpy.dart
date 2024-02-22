@@ -26,6 +26,9 @@ class AppTypography {
   static const bodyNormal16Black = TextStyle(
       fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.black);
 
+  static const bodyNormal18White = TextStyle(
+      fontSize: 18, fontWeight: FontWeight.w500, color: AppColors.backgroundWhite);
+
   static const bodyNormal50per = TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w400,
@@ -36,6 +39,8 @@ class AppTypography {
 
   static const bodyRegularLight = TextStyle(
       fontSize: 14, fontWeight: FontWeight.normal, color: AppColors.primary);
+        static const bodyRegularWhite = TextStyle(
+      fontSize: 14, fontWeight: FontWeight.normal, color: AppColors.backgroundWhite);
 
   static const bodyBold = TextStyle(
     fontSize: 16,
