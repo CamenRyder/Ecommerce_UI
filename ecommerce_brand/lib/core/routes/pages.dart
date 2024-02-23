@@ -1,4 +1,5 @@
 import 'package:ecommerce_brand/core/routes/routes.dart';
+import 'package:ecommerce_brand/screens/cart%20tracking/screens/cart_tracking_screen.dart';
 import 'package:ecommerce_brand/screens/edit%20tabs/screens/edit_tabs_screen.dart';
 import 'package:ecommerce_brand/screens/focus%20product/screen/focus_product_screen.dart';
 import 'package:ecommerce_brand/screens/home/screens/home_screen.dart';
@@ -15,9 +16,15 @@ abstract class AppPages {
       name: Routes.editTabs,
       page: () => const EditTabsScreen(),
     ),
-      GetPage(
+    GetPage(
       name: Routes.focusProduct,
-      page: () => FocusProductScreen(items: Get.arguments,),
+      page: () => FocusProductScreen(
+        items: Get.arguments,
+      ),
+    ),
+    GetPage(
+      name: Routes.cartTracking,
+      page: () => const CartTrackingScreen(),
     ),
   ];
 }

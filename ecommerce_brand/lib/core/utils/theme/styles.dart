@@ -8,6 +8,12 @@ class AppStyles {
   static const paddingScreen = EdgeInsets.symmetric(
       horizontal: Constant.paddingHorizontal,
       vertical: Constant.paddingVertical);
+  static const paddingSquare = EdgeInsets.only(
+      left: Constant.paddingHorizontal,
+      right: Constant.paddingHorizontal,
+      bottom: Constant.paddingVertical,  
+      top: Constant.paddingHorizontal,  
+      );
   static const inputStyle = InputDecoration(
     filled: true,
     fillColor: AppColors.backgroundPrimary,

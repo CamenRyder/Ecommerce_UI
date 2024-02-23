@@ -1,3 +1,4 @@
+import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
@@ -23,6 +24,9 @@ class AppBarFeedPage extends StatelessWidget {
           children: [
             GestureDetector(
               child: Assets.iconsIcFile.svg(height: 24, width: 24),
+              onTap: () {
+                Get.toNamed(Routes.cartTracking);
+              },
             ),
             GestureDetector(
               onTap: () {

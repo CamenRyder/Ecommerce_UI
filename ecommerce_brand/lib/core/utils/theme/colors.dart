@@ -5,6 +5,7 @@ class AppColors {
   static const primaryDecoration = Color.fromARGB(81, 215, 192, 255);
 
   static const backgroundWhite = Color(0xffFFFFFF);
+  static const backgroundWhiteBlur = Color.fromARGB(255, 238, 238, 238);
   static const backgroundPrimary = Color.fromARGB(255, 130, 30, 155);
   static const background = Color(0xffFFFFFF);
   static const textGrey = Color(0xFF757779);
