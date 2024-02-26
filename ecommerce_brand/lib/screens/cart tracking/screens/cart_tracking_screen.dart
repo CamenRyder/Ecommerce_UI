@@ -5,7 +5,6 @@ import 'package:ecommerce_brand/screens/cart%20tracking/widgets/body_widget.dart
 import 'package:ecommerce_brand/screens/cart%20tracking/widgets/panel_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class CartTrackingScreen extends StatefulWidget {
@@ -36,7 +35,7 @@ class _CartTrackingScreen extends State<CartTrackingScreen> {
             boxShadow: null,
             color:
                 controller.isExpand.value ? Colors.white : Colors.transparent,
-            minHeight: MediaQuery.sizeOf(context).height / 2,
+            minHeight: MediaQuery.sizeOf(context).height / 1.8,
             maxHeight: MediaQuery.sizeOf(context).height,
             borderRadius: AppStyles.borderRadiusPanel,
             panel: PanelCartTrackingWidget(),

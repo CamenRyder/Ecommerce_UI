@@ -33,11 +33,11 @@ class InfoCurrentPackageWidget extends StatelessWidget {
             margin: const EdgeInsets.only(top: 8),
             child: const Text(
               "Arrival estimate: April 15",
-              style: AppTypography.bodyNormal,
+              style: AppTypography.bodyNormal16,
             ),
           ),
           Container(
-            margin: const EdgeInsets.symmetric(vertical: 15),
+            margin: const EdgeInsets.symmetric(vertical: 18),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -56,7 +56,7 @@ class InfoCurrentPackageWidget extends StatelessWidget {
                       margin: const EdgeInsets.only(bottom: 8),
                       child: const Text(
                         "Bershka Mom Jeans",
-                        style: AppTypography.bodyNormalBold,
+                        style: AppTypography.bodyBold,
                       ),
                     ),
                     const Text(
@@ -76,12 +76,12 @@ class InfoCurrentPackageWidget extends StatelessWidget {
             child: const Center(
               child: Text(
                 "More info",
-                style: AppTypography.bodyNormalBold,
+                style: AppTypography.bodyBold,
               ),
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 12, bottom: 12),
+            margin: const EdgeInsets.only(top: 15, bottom: 12),
             padding: const EdgeInsets.symmetric(vertical: 13),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(9),
@@ -89,7 +89,7 @@ class InfoCurrentPackageWidget extends StatelessWidget {
             child: const Center(
               child: Text(
                 "Cancel order",
-                style: AppTypography.bodyNormalBold,
+                style: AppTypography.bodyBold,
               ),
             ),
           ),

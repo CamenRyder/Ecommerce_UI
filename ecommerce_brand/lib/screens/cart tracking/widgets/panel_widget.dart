@@ -18,23 +18,26 @@ class PanelCartTrackingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(children: [
-        Container(
-          margin: const EdgeInsets.only(bottom: 20),
-          child: Center(
-            child: Assets.iconsIcRulerRack.svg(color: Colors.white, height: 6),
-          ),
-        ),
-        Expanded(
-          child: Container(
-              decoration: const BoxDecoration(
-                  color: AppColors.backgroundWhite,
-                  borderRadius: AppStyles.borderRadiusPanel),
-              padding: const EdgeInsets.symmetric(
-                  horizontal: Constant.paddingHorizontal,
-                  vertical: Constant.paddingVertical),
-              child: Obx(
-                () => Column(
+      child: Obx(
+        () => Column(children: [
+          !controller.isExpand.value
+              ? Container(
+                  margin: const EdgeInsets.only(bottom: 20),
+                  child: Center(
+                    child: Assets.iconsIcRulerRack
+                        .svg(color: Colors.white, height: 6),
+                  ),
+                )
+              : Container(),
+          Expanded(
+            child: Container(
+                decoration: const BoxDecoration(
+                    color: AppColors.backgroundWhite,
+                    borderRadius: AppStyles.borderRadiusPanel),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: Constant.paddingHorizontal,
+                    vertical: Constant.paddingVertical),
+                child: Column(
                   children: [
                     controller.isExpand.value
                         ? Container()
@@ -99,10 +102,10 @@ class PanelCartTrackingWidget extends StatelessWidget {
                           )),
                     )
                   ],
-                ),
-              )),
-        )
-      ]),
+                )),
+          )
+        ]),
+      ),
     );
   }
 }

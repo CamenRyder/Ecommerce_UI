@@ -28,7 +28,7 @@ class HeaderScaleWidget extends StatelessWidget {
           ],
         ),
         Container(
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           margin: const EdgeInsets.only(left: 12, right: 12, top: 24),
           decoration: BoxDecoration(
               color: const Color.fromARGB(255, 221, 221, 221),
