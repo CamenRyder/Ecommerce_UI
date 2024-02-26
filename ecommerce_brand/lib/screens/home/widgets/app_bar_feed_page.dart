@@ -25,6 +25,7 @@ class AppBarFeedPage extends StatelessWidget {
             GestureDetector(
               child: Assets.iconsIcFile.svg(height: 24, width: 24),
               onTap: () {
+                // print("Go to here");
                 Get.toNamed(Routes.cartTracking);
               },
             ),

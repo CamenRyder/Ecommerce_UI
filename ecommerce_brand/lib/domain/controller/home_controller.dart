@@ -67,7 +67,7 @@ class HomeScreenController extends GetxController {
     length.value = _controllerTabsEdit.tabsElementModelShow.value.length;
   }
 
-  int getTabBarLength() => ListComponentTabConstant.listQuickFilterHome.length;
+  int getTabBarLength() => ListComponentConstant.listQuickFilterHome.length;
   // late Rx<TabController> tabController;
 
   onTabChanged(int newTabIndex) {

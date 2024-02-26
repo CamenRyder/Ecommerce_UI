@@ -92,7 +92,7 @@ class InfoCurrentPackageWidget extends StatelessWidget {
                 style: AppTypography.bodyNormalBold,
               ),
             ),
-          )
+          ),
         ],
       ),
     );

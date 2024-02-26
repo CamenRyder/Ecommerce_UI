@@ -20,6 +20,12 @@ class AppTypography {
   static const bodyNormal = TextStyle(
       fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.textGrey);
 
+  static const bodyNormalRed = TextStyle(
+      fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.textRed);
+
+  static const bodyNormalPrimary = TextStyle(
+      fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.primary);
+
   static const bodyNormal16 = TextStyle(
       fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.textGrey);
 
@@ -27,7 +33,9 @@ class AppTypography {
       fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.black);
 
   static const bodyNormal18White = TextStyle(
-      fontSize: 18, fontWeight: FontWeight.w500, color: AppColors.backgroundWhite);
+      fontSize: 18,
+      fontWeight: FontWeight.w500,
+      color: AppColors.backgroundWhite);
 
   static const bodyNormal50per = TextStyle(
       fontSize: 14,
@@ -39,8 +47,10 @@ class AppTypography {
 
   static const bodyRegularLight = TextStyle(
       fontSize: 14, fontWeight: FontWeight.normal, color: AppColors.primary);
-        static const bodyRegularWhite = TextStyle(
-      fontSize: 14, fontWeight: FontWeight.normal, color: AppColors.backgroundWhite);
+  static const bodyRegularWhite = TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+      color: AppColors.backgroundWhite);
 
   static const bodyBold = TextStyle(
     fontSize: 16,

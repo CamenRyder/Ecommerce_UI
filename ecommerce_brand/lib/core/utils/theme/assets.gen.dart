@@ -17,6 +17,10 @@ class Assets {
   /// File path: assets/icons/ic_ban.svg
   static const SvgGenImage iconsIcBan = SvgGenImage('assets/icons/ic_ban.svg');
 
+  /// File path: assets/icons/ic_close.svg
+  static const SvgGenImage iconsIcClose =
+      SvgGenImage('assets/icons/ic_close.svg');
+
   /// File path: assets/icons/ic_disable.svg
   static const SvgGenImage iconsIcDisable =
       SvgGenImage('assets/icons/ic_disable.svg');
@@ -92,6 +96,18 @@ class Assets {
   static const AssetGenImage imagesAvtLevi =
       AssetGenImage('assets/images/avt_levi.png');
 
+  /// File path: assets/images/mock_cart_product_image02.png
+  static const AssetGenImage imagesMockCartProductImage02 =
+      AssetGenImage('assets/images/mock_cart_product_image02.png');
+
+  /// File path: assets/images/mock_cart_product_image03.png
+  static const AssetGenImage imagesMockCartProductImage03 =
+      AssetGenImage('assets/images/mock_cart_product_image03.png');
+
+  /// File path: assets/images/mock_cart_product_image05.png
+  static const AssetGenImage imagesMockCartProductImage05 =
+      AssetGenImage('assets/images/mock_cart_product_image05.png');
+
   /// File path: assets/images/mock_image01.png
   static const AssetGenImage imagesMockImage01 =
       AssetGenImage('assets/images/mock_image01.png');
@@ -132,9 +148,14 @@ class Assets {
   static const AssetGenImage imagesMockImage10 =
       AssetGenImage('assets/images/mock_image10.png');
 
+  /// File path: assets/images/mock_image_cart_tracking_06.png
+  static const AssetGenImage imagesMockImageCartTracking06 =
+      AssetGenImage('assets/images/mock_image_cart_tracking_06.png');
+
   /// List of all assets
   static List<dynamic> get values => [
         iconsIcBan,
+        iconsIcClose,
         iconsIcDisable,
         iconsIcFeature,
         iconsIcFile,
@@ -154,6 +175,9 @@ class Assets {
         imagesAvtAddidas,
         imagesAvtLacoste,
         imagesAvtLevi,
+        imagesMockCartProductImage02,
+        imagesMockCartProductImage03,
+        imagesMockCartProductImage05,
         imagesMockImage01,
         imagesMockImage02,
         imagesMockImage03,
@@ -163,7 +187,8 @@ class Assets {
         imagesMockImage07,
         imagesMockImage08,
         imagesMockImage09,
-        imagesMockImage10
+        imagesMockImage10,
+        imagesMockImageCartTracking06
       ];
 }
 

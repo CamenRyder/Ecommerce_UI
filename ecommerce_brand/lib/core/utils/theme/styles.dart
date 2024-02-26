@@ -5,15 +5,17 @@ import 'package:flutter/material.dart';
 
 class AppStyles {
   static const borderRadius = BorderRadius.all(Radius.circular(3));
+  static const borderRadiusPanel = BorderRadius.only(
+      topLeft: Radius.circular(32), topRight: Radius.circular(32));
   static const paddingScreen = EdgeInsets.symmetric(
       horizontal: Constant.paddingHorizontal,
       vertical: Constant.paddingVertical);
   static const paddingSquare = EdgeInsets.only(
-      left: Constant.paddingHorizontal,
-      right: Constant.paddingHorizontal,
-      bottom: Constant.paddingVertical,  
-      top: Constant.paddingHorizontal,  
-      );
+    left: Constant.paddingHorizontal,
+    right: Constant.paddingHorizontal,
+    bottom: Constant.paddingVertical,
+    top: Constant.paddingHorizontal,
+  );
   static const inputStyle = InputDecoration(
     filled: true,
     fillColor: AppColors.backgroundPrimary,

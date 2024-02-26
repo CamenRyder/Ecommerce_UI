@@ -90,9 +90,7 @@ class HeroExample extends StatelessWidget {
 
 class BoxWidget extends StatelessWidget {
   const BoxWidget({required this.size});
-
   final Size size;
-
   @override
   Widget build(BuildContext context) {
     return Container(
