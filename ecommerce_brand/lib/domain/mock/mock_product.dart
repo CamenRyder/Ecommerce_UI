@@ -90,7 +90,7 @@ class MockProduct {
           ),
         )),
     CartTrackingProductModel(
-        image: Assets.imagesMockCartProductImage02,
+        image: Assets.imagesMockImage01,
         title: "Lacoste Sport Top/ Bershka Ski...",
         status: RichText(
           text: const TextSpan(
@@ -117,7 +117,7 @@ class MockProduct {
           ),
         )),
     CartTrackingProductModel(
-        image: Assets.imagesMockImage01,
+        image: Assets.imagesMockImage08,
         title: "Bershka White Coat",
         status: RichText(
           text: const TextSpan(

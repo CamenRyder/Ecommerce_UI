@@ -57,6 +57,10 @@ class Assets {
   static const SvgGenImage iconsIcResearch =
       SvgGenImage('assets/icons/ic_research.svg');
 
+  /// File path: assets/icons/ic_ruler_rack.svg
+  static const SvgGenImage iconsIcRulerRack =
+      SvgGenImage('assets/icons/ic_ruler_rack.svg');
+
   /// File path: assets/icons/ic_setting.svg
   static const SvgGenImage iconsIcSetting =
       SvgGenImage('assets/icons/ic_setting.svg');
@@ -165,6 +169,7 @@ class Assets {
         iconsIcMoreDots,
         iconsIcProfile,
         iconsIcResearch,
+        iconsIcRulerRack,
         iconsIcSetting,
         iconsIcSwipeHint,
         iconsIcTag,
