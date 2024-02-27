@@ -37,10 +37,16 @@ class AppTypography {
       fontWeight: FontWeight.w500,
       color: AppColors.backgroundWhite);
 
+  static const bodyNormal18Black = TextStyle(
+      fontSize: 18, fontWeight: FontWeight.w500, color: AppColors.textGrey);
+
+  static const bodyNormal20Black = TextStyle(
+      fontSize: 18, fontWeight: FontWeight.w500, color: AppColors.black);
+
   static const bodyNormal50per = TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w400,
-      color: Color.fromARGB(255, 201, 201, 209));
+      color: Color.fromARGB(255, 8, 8, 10));
 
   static const bodyNormalBold = TextStyle(
       fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.black);

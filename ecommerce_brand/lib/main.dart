@@ -30,6 +30,9 @@ class MyApp extends StatelessWidget {
           getPages: AppPages.pages,
           title: 'Ping Meme',
           theme: ThemeData(
+            pageTransitionsTheme: const PageTransitionsTheme(builders: {
+              TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+            }),
             colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
             useMaterial3: false,
           ),

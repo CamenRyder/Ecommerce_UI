@@ -5,4 +5,6 @@ abstract class Routes {
   static const editTabs = '/edit_tabs';
   static const focusProduct = '/focusProduct';
   static const cartTracking = '/cartTracking';
+  static const cartTrackingDetail = '/cartTrackingDetail';
+  
 }
