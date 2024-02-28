@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class AppStyles {
   static const borderRadius = BorderRadius.all(Radius.circular(3));
+  static const borderRadiusButton = BorderRadius.all(Radius.circular(10));
   static const borderRadiusImage1 = BorderRadius.all(Radius.circular(18));
   static const borderRadiusPanel = BorderRadius.only(
       topLeft: Radius.circular(32), topRight: Radius.circular(32));
@@ -39,4 +40,7 @@ class AppStyles {
   static const borderComponentFloatingActionButton = BoxDecoration(
       color: Color.fromARGB(255, 255, 255, 255),
       borderRadius: BorderRadius.all(Radius.circular(13)));
+  static final boxDecorationButton = BoxDecoration(
+      borderRadius: AppStyles.borderRadiusButton,
+      border: Border.all(color: AppColors.textGrey, width: 0.3));
 }
