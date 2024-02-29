@@ -3,7 +3,7 @@ import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/core/utils/widgets/divider_stepper_custom.dart';
-import 'package:ecommerce_brand/screens/cart%20tracking%20detail/widget/stepper_2_widget.dart';
+import 'package:ecommerce_brand/screens/cart%20tracking%20detail/widgets/stepper_2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
