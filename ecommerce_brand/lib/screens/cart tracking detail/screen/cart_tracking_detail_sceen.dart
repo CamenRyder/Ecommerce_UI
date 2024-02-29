@@ -3,7 +3,6 @@ import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/core/utils/widgets/divider_stepper_custom.dart';
-import 'package:ecommerce_brand/screens/cart%20tracking%20detail/widget/stepper_1_widget.dart';
 import 'package:ecommerce_brand/screens/cart%20tracking%20detail/widget/stepper_2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -92,7 +91,7 @@ class CartTrackingDetailScreen extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.symmetric(vertical: 20),
+            margin: const EdgeInsets.only(top: 20, bottom: 32),
             color: AppColors.textGrey,
             width: double.infinity,
             height: 0.4,
@@ -102,10 +101,53 @@ class CartTrackingDetailScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Shipping info",
                   style: AppTypography.bodyNormal18Black,
-                ), 
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 30, bottom: 5),
+                  child: const Text(
+                    "Order address",
+                    style: AppTypography.bodyNormal15,
+                    // style: AppTypography.bodyNormal16Black,
+                  ),
+                ),
+                const Text(
+                  "3910 Crim Lane, Greendale Country,",
+                  style: AppTypography.bodyNormal16Black,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 5),
+                  child: const Text(
+                    "Colorado, Zip Code 410348",
+                    style: AppTypography.bodyNormal16Black,
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 20, bottom: 5),
+                  child: const Text(
+                    "Receives",
+                    style: AppTypography.bodyNormal15,
+                    // style: AppTypography.bodyNormal16Black,
+                  ),
+                ),
+                const Text(
+                  "Ava Johnson",
+                  style: AppTypography.bodyNormal16Black,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 20, bottom: 5),
+                  child: const Text(
+                    "Tracking ID",
+                    style: AppTypography.bodyNormal15,
+                    // style: AppTypography.bodyNormal16Black,
+                  ),
+                ),
+                const Text(
+                  "0706502",
+                  style: AppTypography.bodyNormal16Black,
+                ),
               ],
             ),
           ),
@@ -114,7 +156,66 @@ class CartTrackingDetailScreen extends StatelessWidget {
             color: AppColors.textGrey,
             width: double.infinity,
             height: 0.4,
-          )
+          ),
+          Padding(
+            padding: AppStyles.paddingScreen,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 18),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "Report a problem",
+                        style: AppTypography.bodyBold,
+                      ),
+                      Assets.iconsIcWarming.svg()
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 2, bottom: 18),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "Share order",
+                        style: AppTypography.bodyBold,
+                      ),
+                      Assets.iconsIcMedia.svg(height: 24)
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 20),
+            color: AppColors.textGrey,
+            width: double.infinity,
+            height: 0.4,
+          ),
+          Padding(
+            padding: AppStyles.paddingScreen,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  "Order details",
+                  style: AppTypography.bodyNormal18Grey,
+                ),
+                Assets.iconsIcArrowDown.svg()
+              ],
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 20),
+            color: AppColors.textGrey,
+            width: double.infinity,
+            height: 0.4,
+          ),
         ],
       )),
     );

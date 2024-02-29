@@ -14,6 +14,10 @@ import 'package:flutter/services.dart';
 class Assets {
   Assets._();
 
+  /// File path: assets/icons/ic_arrow_down.svg
+  static const SvgGenImage iconsIcArrowDown =
+      SvgGenImage('assets/icons/ic_arrow_down.svg');
+
   /// File path: assets/icons/ic_ban.svg
   static const SvgGenImage iconsIcBan = SvgGenImage('assets/icons/ic_ban.svg');
 
@@ -88,6 +92,10 @@ class Assets {
   static const SvgGenImage iconsIcUnfollow =
       SvgGenImage('assets/icons/ic_unfollow.svg');
 
+  /// File path: assets/icons/ic_warming.svg
+  static const SvgGenImage iconsIcWarming =
+      SvgGenImage('assets/icons/ic_warming.svg');
+
   /// File path: assets/images/avt_addidas.png
   static const AssetGenImage imagesAvtAddidas =
       AssetGenImage('assets/images/avt_addidas.png');
@@ -158,6 +166,7 @@ class Assets {
 
   /// List of all assets
   static List<dynamic> get values => [
+        iconsIcArrowDown,
         iconsIcBan,
         iconsIcClose,
         iconsIcDisable,
@@ -177,6 +186,7 @@ class Assets {
         iconsIcTicked,
         iconsIcUnable,
         iconsIcUnfollow,
+        iconsIcWarming,
         imagesAvtAddidas,
         imagesAvtLacoste,
         imagesAvtLevi,

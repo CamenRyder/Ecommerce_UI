@@ -31,17 +31,17 @@ class StepperSecondWidget extends StatelessWidget {
           "April 15,  12:05",
           style: AppTypography.bodyNormal15,
         ),
-        Container(
-          margin: const EdgeInsets.only(top: 20, bottom: 5),
-          child: const Text(
-            "Your package is on route",
-            style: AppTypography.bodyNormal16Black,
-          ),
-        ),
-        const Text(
-          "April 15,  09:25",
-          style: AppTypography.bodyNormal15,
-        ),
+    Container(
+      margin: const EdgeInsets.only(top: 20, bottom: 5),
+      child: const Text(
+        "Your package is on route",
+        style: AppTypography.bodyNormal16Black,
+      ),
+    ),
+    const Text(
+      "April 15,  09:25",
+      style: AppTypography.bodyNormal15,
+    ),
         Container(
           margin: const EdgeInsets.only(top: 20, bottom: 5),
           child: const Text(
