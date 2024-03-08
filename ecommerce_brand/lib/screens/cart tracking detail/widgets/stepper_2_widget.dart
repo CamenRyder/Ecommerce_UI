@@ -2,6 +2,8 @@ import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:flutter/material.dart';
 
 class StepperSecondWidget extends StatelessWidget {
+  const StepperSecondWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(

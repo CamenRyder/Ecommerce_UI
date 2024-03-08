@@ -6,7 +6,6 @@ import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/core/utils/widgets/divider_stepper_custom.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class InfoCurrentPackageWidget extends StatelessWidget {
   const InfoCurrentPackageWidget({super.key});
@@ -15,7 +14,6 @@ class InfoCurrentPackageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print("hello world");
         Get.toNamed(Routes.cartTrackingDetail);
       },
       child: Container(

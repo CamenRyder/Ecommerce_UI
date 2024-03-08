@@ -2,6 +2,7 @@ import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
+import 'package:ecommerce_brand/domain/controller/cart_tracking_detail_controller.dart';
 import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
 import 'package:ecommerce_brand/domain/models/tabs_editting_model.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class HomeScreenController extends GetxController {
   late ScrollController scrollController;
 
   final _controllerTabsEdit = Get.put(EditTabsScreenController());
+ final controllerTracking =  Get.put(CartTrackingDetailController());
 
   late Rx<TabController> tabController;
   late TickerProvider _provider;

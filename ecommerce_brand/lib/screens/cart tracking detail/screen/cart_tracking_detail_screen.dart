@@ -3,12 +3,16 @@ import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/core/utils/widgets/divider_stepper_custom.dart';
+import 'package:ecommerce_brand/domain/controller/cart_tracking_detail_controller.dart';
+import 'package:ecommerce_brand/screens/cart%20tracking%20detail/widgets/stepper_1_widget.dart';
 import 'package:ecommerce_brand/screens/cart%20tracking%20detail/widgets/stepper_2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CartTrackingDetailScreen extends StatelessWidget {
-  const CartTrackingDetailScreen({super.key});
+  CartTrackingDetailScreen({super.key});
+
+  final _controller = Get.find<CartTrackingDetailController>();
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +45,7 @@ class CartTrackingDetailScreen extends StatelessWidget {
               margin: const EdgeInsets.only(top: 45, bottom: 20),
               child: ClipRRect(
                 borderRadius: AppStyles.borderRadiusImage1,
-                child: Assets.imagesMockCartProductImage05.image(),
+                child: Assets.imagesMockImage01.image(),
               ),
             ),
           ),
@@ -61,24 +65,38 @@ class CartTrackingDetailScreen extends StatelessWidget {
             ),
           ),
           Container(
-            padding: AppStyles.paddingScreen,
-            margin: const EdgeInsets.symmetric(vertical: 28),
-            child: Row(
-              children: [
-                DividerSteppeCustomize.dotStepperBefore(),
-                DividerSteppeCustomize.rulerBefore(),
-                DividerSteppeCustomize.dotStepperBefore(),
-                DividerSteppeCustomize.rulerBefore(),
-                DividerSteppeCustomize.dotStepperChecking(),
-                DividerSteppeCustomize.rulerAfter(),
-                DividerSteppeCustomize.dotStepperAfter(),
-              ],
-            ),
-          ),
-          AnimatedContainer(
               padding: AppStyles.paddingScreen,
-              duration: const Duration(microseconds: 500),
-              child: StepperSecondWidget()),
+              margin: const EdgeInsets.symmetric(vertical: 28),
+              child: Obx(
+                () => Row(
+                  children: [
+                    DividerSteppeCustomize.dotStepperBefore(),
+                    DividerSteppeCustomize.rulerBefore(),
+                    GestureDetector(
+                      onTap: _controller.checkingThis,
+                      child: _controller.isSecondStepper.value
+                          ? DividerSteppeCustomize.dotStepperBefore()
+                          : DividerSteppeCustomize.dotStepperChecking(),
+                    ),
+                    DividerSteppeCustomize.rulerBefore(),
+                    GestureDetector(
+                        onTap: _controller.checkingThis,
+                        child: _controller.isSecondStepper.value
+                            ? DividerSteppeCustomize.dotStepperChecking()
+                            : DividerSteppeCustomize.dotStepperBefore()),
+                    DividerSteppeCustomize.rulerAfter(),
+                    DividerSteppeCustomize.dotStepperAfter(),
+                  ],
+                ),
+              )),
+          Obx(
+            () => AnimatedContainer(
+                padding: AppStyles.paddingScreen,
+                duration: const Duration(microseconds: 500),
+                child: _controller.isSecondStepper.value
+                    ? const StepperSecondWidget()
+                    : const StepperFirstWidget()),
+          ),
           Container(
             width: double.infinity,
             alignment: Alignment.center,
