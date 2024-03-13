@@ -1,3 +1,4 @@
+import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
@@ -59,48 +60,56 @@ class PanelCartTrackingWidget extends StatelessWidget {
                                 child: ListView.builder(
                                   physics: const NeverScrollableScrollPhysics(),
                                   itemBuilder: (_, index) {
-                                    return Container(
-                                      margin: const EdgeInsets.only(top: 28),
-                                      height: 60,
-                                      child: Row(
-                                        children: [
-                                          Container(
-                                            margin: const EdgeInsets.only(
-                                                right: 24),
-                                            child: CustomImage3(
-                                              radius: 12,
-                                              path: MockProduct
-                                                  .listCartTrackingProduct[
-                                                      index]
-                                                  .image
-                                                  .path,
+                                    return GestureDetector(
+                                      onTap: () {
+                                        Get.toNamed(Routes.cartOrderedReview,
+                                            arguments: MockProduct
+                                                    .listCartTrackingProduct[
+                                                index]);
+                                      },
+                                      child: Container(
+                                        margin: const EdgeInsets.only(top: 28),
+                                        height: 60,
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              margin: const EdgeInsets.only(
+                                                  right: 24),
+                                              child: CustomImage3(
+                                                radius: 12,
+                                                path: MockProduct
+                                                    .listCartTrackingProduct[
+                                                        index]
+                                                    .image
+                                                    .path,
+                                              ),
                                             ),
-                                          ),
-                                          Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  MockProduct
+                                                          .listCartTrackingProduct[
+                                                              index]
+                                                          .title ??
+                                                      "Title",
+                                                  style: AppTypography
+                                                      .bodyNormal16Black,
+                                                ),
+                                                const SizedBox(
+                                                  height: 10,
+                                                ),
                                                 MockProduct
-                                                        .listCartTrackingProduct[
-                                                            index]
-                                                        .title ??
-                                                    "Title",
-                                                style: AppTypography
-                                                    .bodyNormal16Black,
-                                              ),
-                                              const SizedBox(
-                                                height: 10,
-                                              ),
-                                              MockProduct
-                                                  .listCartTrackingProduct[
-                                                      index]
-                                                  .status
-                                            ],
-                                          )
-                                        ],
+                                                    .listCartTrackingProduct[
+                                                        index]
+                                                    .status
+                                              ],
+                                            )
+                                          ],
+                                        ),
                                       ),
                                     );
                                   },

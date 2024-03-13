@@ -1,4 +1,5 @@
 import 'package:ecommerce_brand/core/routes/routes.dart';
+import 'package:ecommerce_brand/screens/cart%20ordered%20review/screens/cart_ordered_review_screen.dart';
 import 'package:ecommerce_brand/screens/cart%20tracking%20detail/screen/cart_tracking_detail_screen.dart';
 import 'package:ecommerce_brand/screens/cart%20tracking/screens/cart_tracking_screen.dart';
 import 'package:ecommerce_brand/screens/edit%20tabs/screens/edit_tabs_screen.dart';
@@ -39,6 +40,14 @@ abstract class AppPages {
       showCupertinoParallax: false,
       transition: Transition.fadeIn,
       page: () => CartTrackingDetailScreen(),
+    ),
+    GetPage(
+      name: Routes.cartOrderedReview,
+      showCupertinoParallax: false,
+      transition: Transition.fadeIn,
+      page: () => CartOrderedReviewScreen(
+        model: Get.arguments,
+      ),
     ),
   ];
 }
