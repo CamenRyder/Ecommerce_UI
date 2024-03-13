@@ -47,10 +47,8 @@ class AppTypography {
   static const bodyNormal18Grey = TextStyle(
       fontSize: 18, fontWeight: FontWeight.w500, color: AppColors.textGrey);
 
-static const bodyNormal18Black = TextStyle(
+  static const bodyNormal18Black = TextStyle(
       fontSize: 18, fontWeight: FontWeight.w500, color: AppColors.black);
-
-
 
   static const bodyNormal20Black = TextStyle(
       fontSize: 18, fontWeight: FontWeight.w500, color: AppColors.black);
@@ -77,7 +75,13 @@ static const bodyNormal18Black = TextStyle(
 
   static const bodyBold50per =
       TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey);
+  static const bodyBold70per = TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: Color.fromARGB(255, 125, 119, 119));
 
+  static const bodyBold70perWhite =
+      TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white);
   static const bodyBoldLight = TextStyle(
       fontSize: 16, fontWeight: FontWeight.bold, color: AppColors.textLight);
 
