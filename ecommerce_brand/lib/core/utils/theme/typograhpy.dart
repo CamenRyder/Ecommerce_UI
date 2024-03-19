@@ -32,7 +32,7 @@ class AppTypography {
   static const bodyNormal15 = TextStyle(
       fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.textGrey);
   static const bodyNormal15Black = TextStyle(
-      fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.textGrey);
+      fontSize: 15, fontWeight: FontWeight.w600, color: AppColors.black);
   static const bodyNormal15B = TextStyle(
       fontSize: 15, fontWeight: FontWeight.w600, color: AppColors.black);
 

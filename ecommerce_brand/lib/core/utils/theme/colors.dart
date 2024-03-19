@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static const primary = Color(0xff614FE0);
+  static const notifyPrimary = Color(0xffffdad1);
   static const primaryDecoration = Color.fromARGB(81, 152, 117, 212);
 
   static const backgroundWhite = Color(0xffFFFFFF);
@@ -14,6 +15,7 @@ class AppColors {
   static const textLight = Color.fromARGB(255, 249, 249, 249);
   static const textPrimary = Color.fromARGB(255, 127, 213, 150);
   static const textRed = Color(0xffDC362E);
+  static const badgesOgraneLinear = Color.fromARGB(255, 197, 124, 68);
   static const border = Color(0xffEFF3F8);
   static const black = Color.fromARGB(255, 51, 51, 51);
 

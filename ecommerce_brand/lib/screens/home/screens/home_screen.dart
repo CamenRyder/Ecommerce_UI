@@ -7,6 +7,7 @@ import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
 import 'package:ecommerce_brand/screens/home/screens/page/feed_page.dart';
 import 'package:ecommerce_brand/screens/home/widgets/bottom_navigator_bar.dart';
+import 'package:ecommerce_brand/screens/market/screen/market_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -44,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         physics: const NeverScrollableScrollPhysics(),
         children: [
           const FeedPage(),
-          // const MarketScreen(),f
+          const MarketScreen(), 
           // const ProfileScreen(),
           Container(
             color: AppColors.backgroundWhite,
