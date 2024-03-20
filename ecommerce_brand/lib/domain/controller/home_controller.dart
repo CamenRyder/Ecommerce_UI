@@ -4,6 +4,7 @@ import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/domain/controller/cart_tracking_detail_controller.dart';
 import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
+import 'package:ecommerce_brand/domain/controller/market_controller.dart';
 import 'package:ecommerce_brand/domain/models/tabs_editting_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,8 +17,10 @@ class HomeScreenController extends GetxController {
   final isSearchBar = false.obs;
   late ScrollController scrollController;
 
+// inital state mamangement temp :v
   final _controllerTabsEdit = Get.put(EditTabsScreenController());
- final controllerTracking =  Get.put(CartTrackingDetailController());
+  final controllerTracking = Get.put(CartTrackingDetailController());
+  final controllerMarket = Get.put(MarketScreenController());
 
   late Rx<TabController> tabController;
   late TickerProvider _provider;
@@ -69,7 +72,7 @@ class HomeScreenController extends GetxController {
     length.value = _controllerTabsEdit.tabsElementModelShow.value.length;
   }
 
-  int getTabBarLength() => ListComponentConstant.listQuickFilterHome.length;
+  int getTabBarLength() => DumpData.listQuickFilterHome.length;
   // late Rx<TabController> tabController;
 
   onTabChanged(int newTabIndex) {

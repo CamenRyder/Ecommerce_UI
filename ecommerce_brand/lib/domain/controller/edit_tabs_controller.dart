@@ -5,9 +5,9 @@ import 'package:get/get.dart';
 
 class EditTabsScreenController extends GetxController {
   Rx<List<TabsEditsModel>> tabsElementModelTabsEdit =
-      Rx<List<TabsEditsModel>>(ListComponentConstant.listQuickFilterHome.obs);
+      Rx<List<TabsEditsModel>>(DumpData.listQuickFilterHome.obs);
   Rx<List<TabsEditsModel>> tabsElementModelShow =
-      Rx<List<TabsEditsModel>>(ListComponentConstant.listQuickFilterHome.obs);
+      Rx<List<TabsEditsModel>>(DumpData.listQuickFilterHome.obs);
   Rx<List<TabsEditsModel>> tabsElementModelDisable =
       Rx<List<TabsEditsModel>>([]);
 
@@ -19,8 +19,7 @@ class EditTabsScreenController extends GetxController {
 
   initTabsElementModel() {
     // init when construct homeScreen
-    tabsElementModelTabsEdit.value =
-        ListComponentConstant.listQuickFilterHome.obs;
+    tabsElementModelTabsEdit.value = DumpData.listQuickFilterHome.obs;
     tabsElementModelShow.value = tabsElementModelTabsEdit.value;
   }
 

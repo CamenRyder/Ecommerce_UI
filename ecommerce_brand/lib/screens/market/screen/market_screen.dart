@@ -1,11 +1,10 @@
-import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
-
-import 'package:ecommerce_brand/core/utils/theme/colors.dart';
-import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
-import 'package:ecommerce_brand/screens/market/widgets/app_bar_shorter_market_screen.dart';
-import 'package:ecommerce_brand/screens/market/widgets/header_market_tab_default.dart';
+import 'package:ecommerce_brand/domain/controller/market_controller.dart';
+import 'package:ecommerce_brand/screens/market/screen/page/body_sliding_market_screen.dart';
+import 'package:ecommerce_brand/screens/market/screen/page/panel_sliding_market_screen.dart';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class MarketScreen extends StatefulWidget {
   const MarketScreen({super.key});
@@ -18,73 +17,30 @@ class MarketScreen extends StatefulWidget {
 
 class _MarketScreen extends State<MarketScreen>
     with SingleTickerProviderStateMixin {
-  late TabController tabController;
+  final controller = Get.find<MarketScreenController>();
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 4, vsync: this);
+    controller.initTabController(this);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.backgroundWhite,
-      body: SafeArea(
-          child: Container(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: Constant.paddingHorizontal,
-                  vertical: Constant.paddingVertical),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const AppBarShorterMarketScreen(),
-                  const HeaderMarketDefault(),
-                  TabBar(
-                      isScrollable: true,
-                      indicatorWeight: 1,
-                      indicatorColor: Colors.transparent,
-                      padding: const EdgeInsets.only(bottom: 10, left: 15),
-                      tabAlignment: TabAlignment.center,
-                      automaticIndicatorColorAdjustment: false,
-                      indicatorSize: TabBarIndicatorSize.label,
-                      labelStyle: AppTypography.bodyNormalBold,
-                      unselectedLabelColor: AppColors.textGrey,
-                      controller: tabController,
-                      tabs: const [
-                        Tab(
-                          text: "Feadtures",
-                        ),
-                        Tab(
-                          text: "Collections",
-                        ),
-                        Tab(
-                          text: "Stores",
-                        ),
-                        Tab(
-                          text: "Tags",
-                        ),
-                      ]),
-                  Expanded(
-                      child: TabBarView(
-                    controller: tabController,
-                    children: [
-                      Container(
-                        color: AppColors.primary,
-                      ),
-                      Container(
-                        color: AppColors.badgesOgraneLinear,
-                      ),
-                      Container(
-                        color: AppColors.textGrey,
-                      ),
-                      Container(
-                        color: Colors.green,
-                      ),
-                    ],
-                  )),
-                  // AppBarLongMarketScreen(),
-                ],
-              ))),
+    return Obx(
+      () => SlidingUpPanel(
+        boxShadow: null,
+        maxHeight: MediaQuery.sizeOf(context).height - 205,
+        minHeight: MediaQuery.sizeOf(context).height - 420,
+        isDraggable: controller.isDragPanel.value,
+        onPanelSlide: (position) {
+          position > 0.15
+              ? controller.isFadeAnimationBodySlding.value = true
+              : controller.isFadeAnimationBodySlding.value = false;
+        },
+        onPanelOpened: controller.lockDragablePanel,
+        body: const BodySldingMarketScreen(),
+        panel: PanelSlidingMarketScreen(),
+      ),
     );
   }
 }

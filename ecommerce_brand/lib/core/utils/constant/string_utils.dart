@@ -32,7 +32,7 @@ class AppStringConstant {
   static const String editImage = "Edit photo";
 }
 
-class ListComponentConstant {
+class DumpData {
   static final listQuickFilterHome = <TabsEditsModel>[
     TabsEditsModel(
         name: "All",
@@ -83,5 +83,12 @@ class ListComponentConstant {
         tag: "Store",
         isChoice: false,
         isShow: true),
-  ];  
+  ];
+
+  static final List<String> listTabMarket = [
+    "Feadtures",
+    "Collections",
+    "Stores",
+    "Tags"
+  ];
 }
