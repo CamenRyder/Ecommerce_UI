@@ -200,6 +200,34 @@ class Assets {
   static const AssetGenImage imagesMockMarketChampionStores =
       AssetGenImage('assets/images/mock_market_champion_stores.jpg');
 
+  /// File path: assets/images/mock_market_image1.png
+  static const AssetGenImage imagesMockMarketImage1 =
+      AssetGenImage('assets/images/mock_market_image1.png');
+
+  /// File path: assets/images/mock_market_image2.png
+  static const AssetGenImage imagesMockMarketImage2 =
+      AssetGenImage('assets/images/mock_market_image2.png');
+
+  /// File path: assets/images/mock_market_image3.png
+  static const AssetGenImage imagesMockMarketImage3 =
+      AssetGenImage('assets/images/mock_market_image3.png');
+
+  /// File path: assets/images/mock_market_image4.png
+  static const AssetGenImage imagesMockMarketImage4 =
+      AssetGenImage('assets/images/mock_market_image4.png');
+
+  /// File path: assets/images/mock_market_image5.png
+  static const AssetGenImage imagesMockMarketImage5 =
+      AssetGenImage('assets/images/mock_market_image5.png');
+
+  /// File path: assets/images/mock_market_image6.png
+  static const AssetGenImage imagesMockMarketImage6 =
+      AssetGenImage('assets/images/mock_market_image6.png');
+
+  /// File path: assets/images/mock_market_image7.png
+  static const AssetGenImage imagesMockMarketImage7 =
+      AssetGenImage('assets/images/mock_market_image7.png');
+
   /// File path: assets/images/mock_market_lacoste_stores.png
   static const AssetGenImage imagesMockMarketLacosteStores =
       AssetGenImage('assets/images/mock_market_lacoste_stores.png');
@@ -261,6 +289,13 @@ class Assets {
         imagesMockMarketAdidasStores,
         imagesMockMarketBershkaStores,
         imagesMockMarketChampionStores,
+        imagesMockMarketImage1,
+        imagesMockMarketImage2,
+        imagesMockMarketImage3,
+        imagesMockMarketImage4,
+        imagesMockMarketImage5,
+        imagesMockMarketImage6,
+        imagesMockMarketImage7,
         imagesMockMarketLacosteStores,
         imagesMockMarketLeviStores,
         imagesMockMarketZaraStores

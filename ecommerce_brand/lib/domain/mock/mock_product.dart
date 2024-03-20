@@ -5,6 +5,50 @@ import 'package:ecommerce_brand/domain/models/product_model.dart';
 import 'package:flutter/material.dart';
 
 class MockProduct {
+  static List<Product> listProductSaleOnMarket = [
+    Product(
+        name: "Bershka Platform Sandals with Buckle",
+        price: 29,
+        oldPrice: 49,
+        image: Assets.imagesMockMarketImage1),
+    Product(
+        name: "Bershka Platform Tennis with Detail",
+        price: 37,
+        oldPrice: 64,
+        image: Assets.imagesMockMarketImage2),
+    Product(
+        name: "Adidas Sleeveless Own The Run Shirt",
+        price: 19,
+        oldPrice: 29,
+        image: Assets.imagesMockMarketImage3),
+    Product(
+        name: "Camo 720 High Rise Supper Skinny Jeans",
+        price: 29,
+        oldPrice: 59,
+        image: Assets.imagesMockMarketImage4),
+    Product(
+        name: "80's High Rise Taper Pants",
+        price: 34,
+        oldPrice: 69,
+        image: Assets.imagesMockMarketImage5),
+  ];
+  static List<Product> listProductFreshCollections = [
+    Product(
+        name: "Lacoste x Polaroid",
+        brandName: "Lacoste",
+        iconBrand: Assets.imagesAvtLacoste,
+        image: Assets.imagesMockImage02),
+    Product(
+        name: "Cartoon Network",
+        brandName: "Bershka",
+        iconBrand: Assets.imagesAvtBershka,
+        image: Assets.imagesMockMarketImage6),
+    Product(
+        name: "Stan Smith, Forever",
+        brandName: "Adidas",
+        iconBrand: Assets.imagesAvtAddidas,
+        image: Assets.imagesMockMarketImage7),
+  ];  
   static List<Product> listProductHomeFeed = [
     Product(
         name: "Top Lacoste SPORT...",
