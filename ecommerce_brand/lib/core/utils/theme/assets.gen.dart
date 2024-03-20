@@ -22,6 +22,10 @@ class Assets {
   static const SvgGenImage iconsIcArrowDown =
       SvgGenImage('assets/icons/ic_arrow_down.svg');
 
+  /// File path: assets/icons/ic_arrow_next.svg
+  static const SvgGenImage iconsIcArrowNext =
+      SvgGenImage('assets/icons/ic_arrow_next.svg');
+
   /// File path: assets/icons/ic_ban.svg
   static const SvgGenImage iconsIcBan = SvgGenImage('assets/icons/ic_ban.svg');
 
@@ -104,6 +108,14 @@ class Assets {
   static const AssetGenImage imagesAvtAddidas =
       AssetGenImage('assets/images/avt_addidas.png');
 
+  /// File path: assets/images/avt_bershka.jpg
+  static const AssetGenImage imagesAvtBershka =
+      AssetGenImage('assets/images/avt_bershka.jpg');
+
+  /// File path: assets/images/avt_champion.jpg
+  static const AssetGenImage imagesAvtChampion =
+      AssetGenImage('assets/images/avt_champion.jpg');
+
   /// File path: assets/images/avt_lacoste.png
   static const AssetGenImage imagesAvtLacoste =
       AssetGenImage('assets/images/avt_lacoste.png');
@@ -111,6 +123,14 @@ class Assets {
   /// File path: assets/images/avt_levi.png
   static const AssetGenImage imagesAvtLevi =
       AssetGenImage('assets/images/avt_levi.png');
+
+  /// File path: assets/images/avt_zara.png
+  static const AssetGenImage imagesAvtZara =
+      AssetGenImage('assets/images/avt_zara.png');
+
+  /// File path: assets/images/marketHeaderView.png
+  static const AssetGenImage imagesMarketHeaderView =
+      AssetGenImage('assets/images/marketHeaderView.png');
 
   /// File path: assets/images/mock_cart_product_image02.png
   static const AssetGenImage imagesMockCartProductImage02 =
@@ -168,10 +188,35 @@ class Assets {
   static const AssetGenImage imagesMockImageCartTracking06 =
       AssetGenImage('assets/images/mock_image_cart_tracking_06.png');
 
+  /// File path: assets/images/mock_market_adidas_stores.jpg
+  static const AssetGenImage imagesMockMarketAdidasStores =
+      AssetGenImage('assets/images/mock_market_adidas_stores.jpg');
+
+  /// File path: assets/images/mock_market_bershka_stores.jpg
+  static const AssetGenImage imagesMockMarketBershkaStores =
+      AssetGenImage('assets/images/mock_market_bershka_stores.jpg');
+
+  /// File path: assets/images/mock_market_champion_stores.jpg
+  static const AssetGenImage imagesMockMarketChampionStores =
+      AssetGenImage('assets/images/mock_market_champion_stores.jpg');
+
+  /// File path: assets/images/mock_market_lacoste_stores.png
+  static const AssetGenImage imagesMockMarketLacosteStores =
+      AssetGenImage('assets/images/mock_market_lacoste_stores.png');
+
+  /// File path: assets/images/mock_market_levi_stores.png
+  static const AssetGenImage imagesMockMarketLeviStores =
+      AssetGenImage('assets/images/mock_market_levi_stores.png');
+
+  /// File path: assets/images/mock_market_zara_stores.jpg
+  static const AssetGenImage imagesMockMarketZaraStores =
+      AssetGenImage('assets/images/mock_market_zara_stores.jpg');
+
   /// List of all assets
   static List<dynamic> get values => [
         iconsIcWomen,
         iconsIcArrowDown,
+        iconsIcArrowNext,
         iconsIcBan,
         iconsIcClose,
         iconsIcDisable,
@@ -193,8 +238,12 @@ class Assets {
         iconsIcUnfollow,
         iconsIcWarming,
         imagesAvtAddidas,
+        imagesAvtBershka,
+        imagesAvtChampion,
         imagesAvtLacoste,
         imagesAvtLevi,
+        imagesAvtZara,
+        imagesMarketHeaderView,
         imagesMockCartProductImage02,
         imagesMockCartProductImage03,
         imagesMockCartProductImage05,
@@ -208,7 +257,13 @@ class Assets {
         imagesMockImage08,
         imagesMockImage09,
         imagesMockImage10,
-        imagesMockImageCartTracking06
+        imagesMockImageCartTracking06,
+        imagesMockMarketAdidasStores,
+        imagesMockMarketBershkaStores,
+        imagesMockMarketChampionStores,
+        imagesMockMarketLacosteStores,
+        imagesMockMarketLeviStores,
+        imagesMockMarketZaraStores
       ];
 }
 

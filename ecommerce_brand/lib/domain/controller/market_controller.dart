@@ -1,4 +1,5 @@
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
+import 'package:ecommerce_brand/domain/mock/mock_store.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,7 +8,7 @@ class MarketScreenController extends GetxController {
 
   final RxBool isFadeAnimationBodySlding = false.obs;
   final RxBool isDragPanel = true.obs;
-
+  final storesElement = MockStore.stores;  
   void initTabController(TickerProvider provider) {
     tabMarketController = Rx(
       TabController(
@@ -16,6 +17,8 @@ class MarketScreenController extends GetxController {
     isFadeAnimationBodySlding.value = false;
     isDragPanel.value = true;
   }
+
+  int getPageViewLength() => MockStore.stores.length;
 
   int getTabBarLength() => DumpData.listTabMarket.length;
 

@@ -85,8 +85,12 @@ class AppTypography {
   static const bodyBoldLight = TextStyle(
       fontSize: 16, fontWeight: FontWeight.bold, color: AppColors.textLight);
 
-  static const bodyLarge = TextStyle(
+  static const bodyLarge22 = TextStyle(
       fontSize: 22, fontWeight: FontWeight.w500, color: AppColors.black);
+  static const bodyLarge22B = TextStyle(
+      fontSize: 22, fontWeight: FontWeight.w800, color: AppColors.black);
+  static const bodyLargeBold = TextStyle(
+      fontSize: 24, fontWeight: FontWeight.w800, color: AppColors.black);
   static const bodyLarge32 = TextStyle(
       fontSize: 32, fontWeight: FontWeight.w800, color: AppColors.black);
 }

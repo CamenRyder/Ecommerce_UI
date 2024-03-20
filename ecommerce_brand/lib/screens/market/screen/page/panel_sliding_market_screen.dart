@@ -17,18 +17,7 @@ class PanelSlidingMarketScreen extends StatelessWidget {
           vertical: Constant.paddingVertical),
       child: Column(
         children: [
-          // TabBar(
-          //     isScrollable: true,
-          //     indicatorWeight: 1,
-          //     indicatorColor: Colors.transparent,
-          //     padding: const EdgeInsets.only(bottom: 0, left: 15),
-          //     tabAlignment: TabAlignment.center,
-          //     automaticIndicatorColorAdjustment: false,
-          //     indicatorSize: TabBarIndicatorSize.label,
-          //     labelStyle: AppTypography.bodyNormalBold,
-          //     unselectedLabelColor: AppColors.textGrey,
-          //     controller: controller.tabMarketController.value,
-          //     tabs: controller.tabViews()),
+          // tabsView(),
           Expanded(
               child: TabBarView(
             controller: controller.tabMarketController.value,
@@ -48,5 +37,20 @@ class PanelSlidingMarketScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget tabsView() {
+    return TabBar(
+        isScrollable: true,
+        indicatorWeight: 1,
+        indicatorColor: Colors.transparent,
+        padding: const EdgeInsets.only(bottom: 0, left: 15),
+        tabAlignment: TabAlignment.center,
+        automaticIndicatorColorAdjustment: false,
+        indicatorSize: TabBarIndicatorSize.label,
+        labelStyle: AppTypography.bodyNormalBold,
+        unselectedLabelColor: AppColors.textGrey,
+        controller: controller.tabMarketController.value,
+        tabs: controller.tabViews());
   }
 }

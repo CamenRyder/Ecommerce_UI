@@ -54,7 +54,7 @@ class CartTrackingDetailScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(vertical: 12),
               child: const Text(
                 "Bershka Mom Jeans",
-                style: AppTypography.bodyLarge,
+                style: AppTypography.bodyLarge22,
               ),
             ),
           ),

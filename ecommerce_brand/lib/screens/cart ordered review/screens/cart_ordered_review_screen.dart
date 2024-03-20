@@ -68,7 +68,7 @@ class _CartOrderedReviewScreen extends State<CartOrderedReviewScreen> {
               margin: const EdgeInsets.symmetric(vertical: 12),
               child: Text(
                 _model.title ?? "Bershka Mom Jeans Mock",
-                style: AppTypography.bodyLarge,
+                style: AppTypography.bodyLarge22,
               ),
             ),
           ),
@@ -98,7 +98,7 @@ class _CartOrderedReviewScreen extends State<CartOrderedReviewScreen> {
                 horizontal: Constant.paddingHorizontal),
             child: const Text(
               "Your package was delivered",
-              style: AppTypography.bodyLarge,
+              style: AppTypography.bodyLarge22,
             ),
           ),
           Container(

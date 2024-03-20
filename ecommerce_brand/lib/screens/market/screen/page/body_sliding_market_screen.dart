@@ -2,12 +2,9 @@ import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/domain/controller/market_controller.dart';
-import 'package:ecommerce_brand/screens/market/widgets/app_bar_long_market_screen.dart';
 import 'package:ecommerce_brand/screens/market/widgets/app_bar_shorter_market_screen.dart';
 import 'package:ecommerce_brand/screens/market/widgets/header_market_tab_default.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class BodySldingMarketScreen extends StatefulWidget {
