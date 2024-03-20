@@ -1,4 +1,5 @@
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
+import 'package:ecommerce_brand/domain/mock/mock_product.dart';
 import 'package:ecommerce_brand/domain/mock/mock_store.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,7 +9,9 @@ class MarketScreenController extends GetxController {
 
   final RxBool isFadeAnimationBodySlding = false.obs;
   final RxBool isDragPanel = true.obs;
-  final storesElement = MockStore.stores;  
+  final newStoresElement = MockStore.stores;
+  final productsOnSales = MockProduct.listProductSaleOnMarket;
+  final colectionsElement = MockProduct.listProductFreshCollections;
   void initTabController(TickerProvider provider) {
     tabMarketController = Rx(
       TabController(
@@ -18,9 +21,15 @@ class MarketScreenController extends GetxController {
     isDragPanel.value = true;
   }
 
-  int getPageViewLength() => MockStore.stores.length;
+  int getListViewNewStoresLength() => MockStore.stores.length;
 
   int getTabBarLength() => DumpData.listTabMarket.length;
+
+  int getListViewFreshCollectionLength() =>
+      MockProduct.listProductFreshCollections.length;
+
+  int getListViewProductOnSalesLength() =>
+      MockProduct.listProductSaleOnMarket.length;
 
   List<Widget> tabViews() {
     List<String> data = DumpData.listTabMarket;

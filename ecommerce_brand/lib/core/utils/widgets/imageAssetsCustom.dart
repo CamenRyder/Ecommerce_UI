@@ -1,9 +1,6 @@
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:flutter/material.dart';
-
-
 
 class CustomImage extends StatelessWidget {
   final String url;
@@ -127,9 +124,8 @@ class CustomImage3 extends StatelessWidget {
       {super.key,
       required this.path,
       this.name = '',
-
-      this.isEven  = false , 
-      this.height =  230 , 
+      this.isEven = false,
+      this.height = 230,
       this.width = 180,
       this.radius = 0,
       this.fontSize = 16,
@@ -137,10 +133,12 @@ class CustomImage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-          borderRadius: BorderRadius.circular(radius),
-          child: Image.asset(
-            path,
-            fit: fit,
-          )); 
+        borderRadius: BorderRadius.circular(radius),
+        child: Image.asset(
+          height: height,
+          width: width,
+          path,
+          fit: fit,
+        ));
   }
 }

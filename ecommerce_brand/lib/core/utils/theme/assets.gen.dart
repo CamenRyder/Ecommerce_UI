@@ -196,9 +196,9 @@ class Assets {
   static const AssetGenImage imagesMockMarketBershkaStores =
       AssetGenImage('assets/images/mock_market_bershka_stores.jpg');
 
-  /// File path: assets/images/mock_market_champion_stores.jpg
+  /// File path: assets/images/mock_market_champion_stores.jpeg
   static const AssetGenImage imagesMockMarketChampionStores =
-      AssetGenImage('assets/images/mock_market_champion_stores.jpg');
+      AssetGenImage('assets/images/mock_market_champion_stores.jpeg');
 
   /// File path: assets/images/mock_market_image1.png
   static const AssetGenImage imagesMockMarketImage1 =
@@ -236,9 +236,9 @@ class Assets {
   static const AssetGenImage imagesMockMarketLeviStores =
       AssetGenImage('assets/images/mock_market_levi_stores.png');
 
-  /// File path: assets/images/mock_market_zara_stores.jpg
+  /// File path: assets/images/mock_market_zara_stores.png
   static const AssetGenImage imagesMockMarketZaraStores =
-      AssetGenImage('assets/images/mock_market_zara_stores.jpg');
+      AssetGenImage('assets/images/mock_market_zara_stores.png');
 
   /// List of all assets
   static List<dynamic> get values => [

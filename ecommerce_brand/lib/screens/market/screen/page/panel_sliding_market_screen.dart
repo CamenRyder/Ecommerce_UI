@@ -12,14 +12,13 @@ class PanelSlidingMarketScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-          horizontal: Constant.paddingHorizontal,
-          vertical: Constant.paddingVertical),
+      padding: const EdgeInsets.symmetric(vertical: Constant.paddingVertical),
       child: Column(
         children: [
           // tabsView(),
           Expanded(
               child: TabBarView(
+            physics: const NeverScrollableScrollPhysics(),
             controller: controller.tabMarketController.value,
             children: [
               FeaturesTabView(),

@@ -23,6 +23,11 @@ class AppTypography {
   static const bodyNormalRed = TextStyle(
       fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.textRed);
 
+  static const bodyBoldlRed = TextStyle(
+      fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.textRed);
+
+  static const bodyBoldlGrey = TextStyle(
+      fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.textGrey);
   static const bodyNormalPrimary = TextStyle(
       fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.primary);
 
@@ -35,6 +40,8 @@ class AppTypography {
       fontSize: 15, fontWeight: FontWeight.w600, color: AppColors.black);
   static const bodyNormal15B = TextStyle(
       fontSize: 15, fontWeight: FontWeight.w600, color: AppColors.black);
+  static const bodyNormal16B500 = TextStyle(
+      fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.black);
 
   static const bodyNormal16Black = TextStyle(
       fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.black);
@@ -88,7 +95,7 @@ class AppTypography {
   static const bodyLarge22 = TextStyle(
       fontSize: 22, fontWeight: FontWeight.w500, color: AppColors.black);
   static const bodyLarge22B = TextStyle(
-      fontSize: 22, fontWeight: FontWeight.w800, color: AppColors.black);
+      fontSize: 22, fontWeight: FontWeight.w600, color: AppColors.black);
   static const bodyLargeBold = TextStyle(
       fontSize: 24, fontWeight: FontWeight.w800, color: AppColors.black);
   static const bodyLarge32 = TextStyle(
