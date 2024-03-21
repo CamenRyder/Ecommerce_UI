@@ -7,6 +7,7 @@ import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
 import 'package:ecommerce_brand/screens/home/screens/page/feed_page.dart';
 import 'package:ecommerce_brand/screens/home/widgets/bottom_navigator_bar.dart';
+import 'package:ecommerce_brand/screens/market/screen/market_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -44,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         physics: const NeverScrollableScrollPhysics(),
         children: [
           const FeedPage(),
-          // const MarketScreen(),f
+          const MarketScreen(),
           // const ProfileScreen(),
           Container(
             color: AppColors.backgroundWhite,
@@ -124,3 +125,106 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     });
   }
 }
+
+
+/*
+AnimatedOpacity(
+            duration: const Duration(milliseconds: 200),
+            opacity: _controller.showBottomFloatingActionButton.value ? 1 : 0,
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.only(bottom: 30),
+              height: 76,
+              width: 207,
+              decoration: AppStyles.borderSideFloatingActionButton,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                      onTap: () {
+                        // Get.toNamed(Routes.document);
+                        print('hello world');
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(5),
+                        decoration:
+                            AppStyles.borderComponentFloatingActionButton,
+                        child: Badge(
+                          backgroundColor: AppColors.badgesOgraneLinear,
+                          child: WrapperIconSVG(
+                            icon: Assets.iconsIcFile,
+                          ),
+                        ),
+                      )),
+                  GestureDetector(
+                    onTap: () {
+                      _controller.showBottomFloatingActionButton.value = false;
+                      _controller.isSearchBar.value = true;
+                    },
+                    child: Container(
+                        padding: const EdgeInsets.all(5),
+                        decoration:
+                            AppStyles.borderComponentFloatingActionButton,
+                        child: WrapperIconSVG(
+                          icon: Assets.iconsIcResearch,
+                        )),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // Get.toNamed(Routes.document);
+                      print('hello world');
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(5),
+                      decoration: AppStyles.borderComponentFloatingActionButton,
+                      child: WrapperIconSVG(
+                        icon: Assets.iconsIcWomen,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )),
+
+AnimatedOpacity(
+            duration: const Duration(milliseconds: 200),
+            opacity: _controller.showBottomFloatingActionButton.value ? 1 : 0,
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.only(bottom: 30),
+              height: 76,
+              width: 144,
+              decoration: AppStyles.borderSideFloatingActionButton,
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      _controller.showBottomFloatingActionButton.value = false;
+                      _controller.isSearchBar.value = true;
+                    },
+                    child: Container(
+                        padding: const EdgeInsets.all(5),
+                        decoration:
+                            AppStyles.borderComponentFloatingActionButton,
+                        child: WrapperIconSVG(
+                          icon: Assets.iconsIcResearch,
+                        )),
+                  ),
+                  Expanded(child: Container()),
+                  GestureDetector(
+                    onTap: () {
+                      // Get.toNamed(Routes.document);
+                      print('hello world');
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(5),
+                      decoration: AppStyles.borderComponentFloatingActionButton,
+                      child: WrapperIconSVG(
+                        icon: Assets.iconsIcFile,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )),
+ */

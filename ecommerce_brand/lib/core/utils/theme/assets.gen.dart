@@ -14,9 +14,17 @@ import 'package:flutter/services.dart';
 class Assets {
   Assets._();
 
+  /// File path: assets/icons/ic_Women.svg
+  static const SvgGenImage iconsIcWomen =
+      SvgGenImage('assets/icons/ic_Women.svg');
+
   /// File path: assets/icons/ic_arrow_down.svg
   static const SvgGenImage iconsIcArrowDown =
       SvgGenImage('assets/icons/ic_arrow_down.svg');
+
+  /// File path: assets/icons/ic_arrow_next.svg
+  static const SvgGenImage iconsIcArrowNext =
+      SvgGenImage('assets/icons/ic_arrow_next.svg');
 
   /// File path: assets/icons/ic_ban.svg
   static const SvgGenImage iconsIcBan = SvgGenImage('assets/icons/ic_ban.svg');
@@ -100,6 +108,14 @@ class Assets {
   static const AssetGenImage imagesAvtAddidas =
       AssetGenImage('assets/images/avt_addidas.png');
 
+  /// File path: assets/images/avt_bershka.jpg
+  static const AssetGenImage imagesAvtBershka =
+      AssetGenImage('assets/images/avt_bershka.jpg');
+
+  /// File path: assets/images/avt_champion.jpg
+  static const AssetGenImage imagesAvtChampion =
+      AssetGenImage('assets/images/avt_champion.jpg');
+
   /// File path: assets/images/avt_lacoste.png
   static const AssetGenImage imagesAvtLacoste =
       AssetGenImage('assets/images/avt_lacoste.png');
@@ -107,6 +123,26 @@ class Assets {
   /// File path: assets/images/avt_levi.png
   static const AssetGenImage imagesAvtLevi =
       AssetGenImage('assets/images/avt_levi.png');
+
+  /// File path: assets/images/avt_zara.png
+  static const AssetGenImage imagesAvtZara =
+      AssetGenImage('assets/images/avt_zara.png');
+
+  /// File path: assets/images/image_glam_tag.png
+  static const AssetGenImage imagesImageGlamTag =
+      AssetGenImage('assets/images/image_glam_tag.png');
+
+  /// File path: assets/images/image_luxury_tag.png
+  static const AssetGenImage imagesImageLuxuryTag =
+      AssetGenImage('assets/images/image_luxury_tag.png');
+
+  /// File path: assets/images/image_sustainable_tag.png
+  static const AssetGenImage imagesImageSustainableTag =
+      AssetGenImage('assets/images/image_sustainable_tag.png');
+
+  /// File path: assets/images/marketHeaderView.png
+  static const AssetGenImage imagesMarketHeaderView =
+      AssetGenImage('assets/images/marketHeaderView.png');
 
   /// File path: assets/images/mock_cart_product_image02.png
   static const AssetGenImage imagesMockCartProductImage02 =
@@ -160,13 +196,75 @@ class Assets {
   static const AssetGenImage imagesMockImage10 =
       AssetGenImage('assets/images/mock_image10.png');
 
+  /// File path: assets/images/mock_image11.png
+  static const AssetGenImage imagesMockImage11 =
+      AssetGenImage('assets/images/mock_image11.png');
+
+  /// File path: assets/images/mock_image12.png
+  static const AssetGenImage imagesMockImage12 =
+      AssetGenImage('assets/images/mock_image12.png');
+
   /// File path: assets/images/mock_image_cart_tracking_06.png
   static const AssetGenImage imagesMockImageCartTracking06 =
       AssetGenImage('assets/images/mock_image_cart_tracking_06.png');
 
+  /// File path: assets/images/mock_market_adidas_stores.jpg
+  static const AssetGenImage imagesMockMarketAdidasStores =
+      AssetGenImage('assets/images/mock_market_adidas_stores.jpg');
+
+  /// File path: assets/images/mock_market_bershka_stores.jpg
+  static const AssetGenImage imagesMockMarketBershkaStores =
+      AssetGenImage('assets/images/mock_market_bershka_stores.jpg');
+
+  /// File path: assets/images/mock_market_champion_stores.jpeg
+  static const AssetGenImage imagesMockMarketChampionStores =
+      AssetGenImage('assets/images/mock_market_champion_stores.jpeg');
+
+  /// File path: assets/images/mock_market_image1.png
+  static const AssetGenImage imagesMockMarketImage1 =
+      AssetGenImage('assets/images/mock_market_image1.png');
+
+  /// File path: assets/images/mock_market_image2.png
+  static const AssetGenImage imagesMockMarketImage2 =
+      AssetGenImage('assets/images/mock_market_image2.png');
+
+  /// File path: assets/images/mock_market_image3.png
+  static const AssetGenImage imagesMockMarketImage3 =
+      AssetGenImage('assets/images/mock_market_image3.png');
+
+  /// File path: assets/images/mock_market_image4.png
+  static const AssetGenImage imagesMockMarketImage4 =
+      AssetGenImage('assets/images/mock_market_image4.png');
+
+  /// File path: assets/images/mock_market_image5.png
+  static const AssetGenImage imagesMockMarketImage5 =
+      AssetGenImage('assets/images/mock_market_image5.png');
+
+  /// File path: assets/images/mock_market_image6.png
+  static const AssetGenImage imagesMockMarketImage6 =
+      AssetGenImage('assets/images/mock_market_image6.png');
+
+  /// File path: assets/images/mock_market_image7.png
+  static const AssetGenImage imagesMockMarketImage7 =
+      AssetGenImage('assets/images/mock_market_image7.png');
+
+  /// File path: assets/images/mock_market_lacoste_stores.png
+  static const AssetGenImage imagesMockMarketLacosteStores =
+      AssetGenImage('assets/images/mock_market_lacoste_stores.png');
+
+  /// File path: assets/images/mock_market_levi_stores.png
+  static const AssetGenImage imagesMockMarketLeviStores =
+      AssetGenImage('assets/images/mock_market_levi_stores.png');
+
+  /// File path: assets/images/mock_market_zara_stores.png
+  static const AssetGenImage imagesMockMarketZaraStores =
+      AssetGenImage('assets/images/mock_market_zara_stores.png');
+
   /// List of all assets
   static List<dynamic> get values => [
+        iconsIcWomen,
         iconsIcArrowDown,
+        iconsIcArrowNext,
         iconsIcBan,
         iconsIcClose,
         iconsIcDisable,
@@ -188,8 +286,15 @@ class Assets {
         iconsIcUnfollow,
         iconsIcWarming,
         imagesAvtAddidas,
+        imagesAvtBershka,
+        imagesAvtChampion,
         imagesAvtLacoste,
         imagesAvtLevi,
+        imagesAvtZara,
+        imagesImageGlamTag,
+        imagesImageLuxuryTag,
+        imagesImageSustainableTag,
+        imagesMarketHeaderView,
         imagesMockCartProductImage02,
         imagesMockCartProductImage03,
         imagesMockCartProductImage05,
@@ -203,7 +308,22 @@ class Assets {
         imagesMockImage08,
         imagesMockImage09,
         imagesMockImage10,
-        imagesMockImageCartTracking06
+        imagesMockImage11,
+        imagesMockImage12,
+        imagesMockImageCartTracking06,
+        imagesMockMarketAdidasStores,
+        imagesMockMarketBershkaStores,
+        imagesMockMarketChampionStores,
+        imagesMockMarketImage1,
+        imagesMockMarketImage2,
+        imagesMockMarketImage3,
+        imagesMockMarketImage4,
+        imagesMockMarketImage5,
+        imagesMockMarketImage6,
+        imagesMockMarketImage7,
+        imagesMockMarketLacosteStores,
+        imagesMockMarketLeviStores,
+        imagesMockMarketZaraStores
       ];
 }
 

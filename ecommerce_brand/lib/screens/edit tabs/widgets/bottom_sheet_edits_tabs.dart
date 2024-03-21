@@ -9,14 +9,14 @@ import 'package:get/get.dart';
 class BottomSheetEditTabs extends StatelessWidget {
   BottomSheetEditTabs(
       {super.key,
-      this.textShow = "Hide",   
+      this.textShow = "Hide",
       required this.changeTabs,
       required this.textChangeTabs,
       required this.withBottomSheet});
   dynamic changeTabs;
   dynamic withBottomSheet;
   String textChangeTabs;
-  String textShow  = "Hide";  
+  String textShow = "Hide";
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class BottomSheetEditTabs extends StatelessWidget {
                         Expanded(child: Container()),
                         const Text(
                           "Actions",
-                          style: AppTypography.bodyLarge,
+                          style: AppTypography.bodyLarge22,
                         ),
                         Expanded(child: Container()),
                       ],

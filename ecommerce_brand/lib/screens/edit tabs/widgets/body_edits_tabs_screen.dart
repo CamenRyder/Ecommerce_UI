@@ -33,7 +33,7 @@ class _BodyEditsScreen extends State<BodyEditsScreen> {
             padding: const EdgeInsets.symmetric(
                 horizontal: Constant.paddingHorizontal,
                 vertical: Constant.paddingHorizontal),
-            child: const Text("Active tabs", style: AppTypography.bodyLarge),
+            child: const Text("Active tabs", style: AppTypography.bodyLarge22),
           ),
           const ReorderingListTabs(),
         ],

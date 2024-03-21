@@ -42,7 +42,7 @@ class _BottomNavigatorBar extends State<BottomNavigatorBar> {
           child: SizedBox(
             height: 60,
             child: BottomNavigationBar(
-              backgroundColor: Colors.white,
+              backgroundColor: AppColors.backgroundWhite,
               type: BottomNavigationBarType.fixed,
               showUnselectedLabels: true,
               elevation: 0,

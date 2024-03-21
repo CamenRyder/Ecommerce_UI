@@ -1,9 +1,14 @@
+
+
 class Product {
   String? name;
   dynamic image;
   double? price;
+  double? oldPrice;
   dynamic brandName;
-  Product({this.name, this.image, this.price, this.brandName});
+  dynamic iconBrand;  
+
+  Product({this.name, this.image, this.price, this.brandName, this.oldPrice, this.iconBrand});
 
   @override
   String toString() {

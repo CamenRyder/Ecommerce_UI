@@ -49,8 +49,8 @@ class _ReorderingListTabs extends State<ReorderingListTabs> {
                           bottom: Constant.paddingHorizontal),
                       child: const Text(
                         "Diabled tabs",
-                        style: AppTypography.bodyLarge,
-                      ), 
+                        style: AppTypography.bodyLarge22,
+                      ),
                     ),
                     for (int index = 0; index < _itemsDisable.length; index++)
                       TabsDisableWidget(
