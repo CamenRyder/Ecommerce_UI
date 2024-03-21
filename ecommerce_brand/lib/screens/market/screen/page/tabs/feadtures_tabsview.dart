@@ -110,6 +110,7 @@ class FeaturesTabView extends StatelessWidget {
                         width: MediaQuery.sizeOf(context).width * 3 / 7,
                         height: 230,
                         child: Assets.iconsIcTag.svg(
+                          // ignore: deprecated_member_use_from_same_package
                           color: AppColors.primaryTag,
                         ),
                       ),

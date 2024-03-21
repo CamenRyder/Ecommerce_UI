@@ -27,6 +27,7 @@ class PanelCartTrackingWidget extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: 20),
                   child: Center(
                     child: Assets.iconsIcRulerRack
+                        // ignore: deprecated_member_use_from_same_package
                         .svg(color: Colors.white, height: 6),
                   ),
                 )
@@ -77,6 +78,7 @@ class PanelCartTrackingWidget extends StatelessWidget {
                                                   right: 24),
                                               child: CustomImage3(
                                                 radius: 12,
+                                                width: 50,
                                                 path: MockProduct
                                                     .listCartTrackingProduct[
                                                         index]
