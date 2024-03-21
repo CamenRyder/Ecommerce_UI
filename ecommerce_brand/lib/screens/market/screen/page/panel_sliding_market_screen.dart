@@ -18,10 +18,12 @@ class PanelSlidingMarketScreen extends StatelessWidget {
         children: [
           controller.isFullScreen.value
               ? Container(
-                  margin: const EdgeInsets.only(top: 45),
+                  margin: const EdgeInsets.only(top: 59),
                   child: Column(
                     children: [
-                       AppBarLongMarketScreen(),
+                      AppBarLongMarketScreen(
+                        isPadding: true,
+                      ),
                       TabBar(
                           isScrollable: true,
                           indicatorWeight: 1,

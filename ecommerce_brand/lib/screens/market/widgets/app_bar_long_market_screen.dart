@@ -7,8 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hidable/hidable.dart';
 
+// ignore: must_be_immutable
 class AppBarLongMarketScreen extends StatelessWidget {
-  AppBarLongMarketScreen({super.key});
+  AppBarLongMarketScreen({super.key, required this.isPadding});
+  bool isPadding = false;
   final controller = Get.find<HomeScreenController>();
 
   @override
@@ -18,9 +20,11 @@ class AppBarLongMarketScreen extends StatelessWidget {
       enableOpacityAnimation: true,
       deltaFactor: 0.8,
       child: Container(
-        padding: const EdgeInsets.symmetric(
-            horizontal: Constant.paddingHorizontal,
-            vertical: Constant.paddingVertical),
+        padding: isPadding
+            ? const EdgeInsets.symmetric(
+                horizontal: Constant.paddingHorizontal,
+              )
+            : null,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

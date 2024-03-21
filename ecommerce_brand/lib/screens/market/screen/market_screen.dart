@@ -34,11 +34,11 @@ class _MarketScreen extends State<MarketScreen>
         boxShadow: null,
         maxHeight: controller.isFullScreen.value
             ? MediaQuery.sizeOf(context).height
-            : MediaQuery.sizeOf(context).height - 205,
+            : MediaQuery.sizeOf(context).height - 255,
         minHeight: MediaQuery.sizeOf(context).height - 420,
         isDraggable: controller.isDragPanel.value,
         onPanelSlide: (position) {
-          position > 0.15
+          position > 0.2
               ? controller.isFadeAnimationBodySlding.value = true
               : controller.isFadeAnimationBodySlding.value = false;
         },
