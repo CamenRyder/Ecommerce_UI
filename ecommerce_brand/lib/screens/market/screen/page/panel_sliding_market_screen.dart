@@ -3,6 +3,7 @@ import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/domain/controller/market_controller.dart';
 import 'package:ecommerce_brand/screens/market/screen/page/tabs/feadtures_tabsview.dart';
+import 'package:ecommerce_brand/screens/market/widgets/app_bar_long_market_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,7 +16,26 @@ class PanelSlidingMarketScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: Constant.paddingVertical),
       child: Column(
         children: [
-          // tabsView(),
+          controller.isFullScreen.value
+              ? Container(
+                  margin: const EdgeInsets.only(top: 45),
+                  child: Column(
+                    children: [
+                       AppBarLongMarketScreen(),
+                      TabBar(
+                          isScrollable: true,
+                          indicatorWeight: 1,
+                          indicatorColor: Colors.transparent,
+                          tabAlignment: TabAlignment.center,
+                          automaticIndicatorColorAdjustment: false,
+                          indicatorSize: TabBarIndicatorSize.label,
+                          labelStyle: AppTypography.bodyNormalBold,
+                          unselectedLabelColor: AppColors.textGrey,
+                          controller: controller.tabMarketController.value,
+                          tabs: controller.tabViews()),
+                    ],
+                  ))
+              : Container(),
           Expanded(
               child: TabBarView(
             physics: const NeverScrollableScrollPhysics(),

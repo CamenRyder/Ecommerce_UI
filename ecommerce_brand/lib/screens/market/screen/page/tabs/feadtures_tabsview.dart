@@ -14,183 +14,190 @@ class FeaturesTabView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.zero,
-      // physics: const NeverScrollableScrollPhysics(),
-      children: [
-        Container(
-          child: Assets.imagesMarketHeaderView.image(),
-        ),
-        Container(
-          padding: const EdgeInsets.only(
-            top: Constant.paddingVertical,
-            bottom: 30,
-            left: Constant.paddingHorizontal,
-            right: Constant.paddingHorizontal,
+    return Obx(
+      () => ListView(
+        padding: EdgeInsets.zero,
+        controller: controller.scrollController,
+        physics: controller.isPhysicScrollMarket.value
+            ? const AlwaysScrollableScrollPhysics()
+            : const NeverScrollableScrollPhysics(),
+        children: [
+          Container(
+            child: Assets.imagesMarketHeaderView.image(),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text("New Stores", style: AppTypography.bodyLarge22B),
-              Assets.iconsIcArrowNext.svg(
-                  colorFilter:
-                      const ColorFilter.mode(Colors.black, BlendMode.dst))
-            ],
+          Container(
+            padding: const EdgeInsets.only(
+              top: Constant.paddingVertical,
+              bottom: 30,
+              left: Constant.paddingHorizontal,
+              right: Constant.paddingHorizontal,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text("New Stores", style: AppTypography.bodyLarge22B),
+                Assets.iconsIcArrowNext.svg(
+                    colorFilter:
+                        const ColorFilter.mode(Colors.black, BlendMode.dst))
+              ],
+            ),
           ),
-        ),
-        listStores(),
-        Container(
-          padding: const EdgeInsets.only(
-            top: 40,
-            bottom: 20,
-            left: Constant.paddingHorizontal,
-            right: Constant.paddingHorizontal,
+          listStores(),
+          Container(
+            padding: const EdgeInsets.only(
+              top: 40,
+              bottom: 20,
+              left: Constant.paddingHorizontal,
+              right: Constant.paddingHorizontal,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text("Product on sales",
+                    style: AppTypography.bodyLarge22B),
+                Assets.iconsIcArrowNext.svg(
+                    colorFilter:
+                        const ColorFilter.mode(Colors.black, BlendMode.dst))
+              ],
+            ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text("Product on sales", style: AppTypography.bodyLarge22B),
-              Assets.iconsIcArrowNext.svg(
-                  colorFilter:
-                      const ColorFilter.mode(Colors.black, BlendMode.dst))
-            ],
+          listSales(),
+          Container(
+            padding: const EdgeInsets.only(
+              top: 40,
+              bottom: 20,
+              left: Constant.paddingHorizontal,
+              right: Constant.paddingHorizontal,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text("Fresh collections",
+                    style: AppTypography.bodyLarge22B),
+                Assets.iconsIcArrowNext.svg(
+                    colorFilter:
+                        const ColorFilter.mode(Colors.black, BlendMode.dst))
+              ],
+            ),
           ),
-        ),
-        listSales(),
-        Container(
-          padding: const EdgeInsets.only(
-            top: 40,
-            bottom: 20,
-            left: Constant.paddingHorizontal,
-            right: Constant.paddingHorizontal,
+          listCollection(),
+          Container(
+            padding: const EdgeInsets.only(
+              top: 40,
+              bottom: 20,
+              left: Constant.paddingHorizontal,
+              right: Constant.paddingHorizontal,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text("Delivery tags", style: AppTypography.bodyLarge22B),
+                Assets.iconsIcArrowNext.svg(
+                    colorFilter:
+                        const ColorFilter.mode(Colors.black, BlendMode.dst))
+              ],
+            ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text("Fresh collections",
-                  style: AppTypography.bodyLarge22B),
-              Assets.iconsIcArrowNext.svg(
-                  colorFilter:
-                      const ColorFilter.mode(Colors.black, BlendMode.dst))
-            ],
-          ),
-        ),
-        listCollection(),
-        Container(
-          padding: const EdgeInsets.only(
-            top: 40,
-            bottom: 20,
-            left: Constant.paddingHorizontal,
-            right: Constant.paddingHorizontal,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text("Delivery tags", style: AppTypography.bodyLarge22B),
-              Assets.iconsIcArrowNext.svg(
-                  colorFilter:
-                      const ColorFilter.mode(Colors.black, BlendMode.dst))
-            ],
-          ),
-        ),
-        SizedBox(
-          width: 400,
-          height: 240,
-          child: ListView.builder(
-            padding: const EdgeInsets.only(left: 26),
-            scrollDirection: Axis.horizontal,
-            itemCount: controller.getListDeliveryTagsLength(),
-            itemBuilder: (context, index) {
-              return Container(
-                  padding: const EdgeInsets.all(4),
-                  width: MediaQuery.sizeOf(context).width * 3 / 7,
-                  child: Stack(
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.sizeOf(context).width * 3 / 7,
-                        height: 230,
-                        child: Assets.iconsIcTag.svg(
-                          // ignore: deprecated_member_use_from_same_package
-                          color: AppColors.primaryTag,
+          SizedBox(
+            width: 400,
+            height: 240,
+            child: ListView.builder(
+              padding: const EdgeInsets.only(left: 26),
+              scrollDirection: Axis.horizontal,
+              itemCount: controller.getListDeliveryTagsLength(),
+              itemBuilder: (context, index) {
+                return Container(
+                    padding: const EdgeInsets.all(4),
+                    width: MediaQuery.sizeOf(context).width * 3 / 7,
+                    child: Stack(
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.sizeOf(context).width * 3 / 7,
+                          height: 230,
+                          child: Assets.iconsIcTag.svg(
+                            // ignore: deprecated_member_use_from_same_package
+                            color: AppColors.primaryTag,
+                          ),
                         ),
-                      ),
-                      Positioned(
-                          left: 80,
-                          top: 15,
-                          child: Container(
-                            width: 18,
-                            height: 18,
-                            decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: AppColors.backgroundWhite),
-                          )),
-                      Positioned(
-                          left: 40,
-                          top: 50,
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 100,
-                                width: 100,
-                                child: controller.listDeliveryTags[index].image
-                                    .image(),
-                              ),
-                              Container(
-                                margin: const EdgeInsets.only(top: 20),
-                                child: const Text(
-                                  "Sustainable",
-                                  style: AppTypography.bodyNormal15B,
+                        Positioned(
+                            left: 80,
+                            top: 15,
+                            child: Container(
+                              width: 18,
+                              height: 18,
+                              decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: AppColors.backgroundWhite),
+                            )),
+                        Positioned(
+                            left: 40,
+                            top: 50,
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 100,
+                                  width: 100,
+                                  child: controller
+                                      .listDeliveryTags[index].image
+                                      .image(),
                                 ),
-                              )
-                            ],
-                          ))
-                    ],
-                  ));
-            },
+                                Container(
+                                  margin: const EdgeInsets.only(top: 20),
+                                  child: const Text(
+                                    "Sustainable",
+                                    style: AppTypography.bodyNormal15B,
+                                  ),
+                                )
+                              ],
+                            ))
+                      ],
+                    ));
+              },
+            ),
           ),
-        ),
-        Container(
-          padding: const EdgeInsets.only(
-            top: 40,
-            bottom: 20,
-            left: Constant.paddingHorizontal,
-            right: Constant.paddingHorizontal,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(right: 12),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border:
-                            Border.all(width: 0.5, color: AppColors.textGrey)),
-                    child: CircleAvatar(
-                      backgroundColor: AppColors.backgroundWhite,
-                      child: Assets.imagesAvtLacoste.image(),
+          Container(
+            padding: const EdgeInsets.only(
+              top: 40,
+              bottom: 20,
+              left: Constant.paddingHorizontal,
+              right: Constant.paddingHorizontal,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(right: 12),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                              width: 0.5, color: AppColors.textGrey)),
+                      child: CircleAvatar(
+                        backgroundColor: AppColors.backgroundWhite,
+                        child: Assets.imagesAvtLacoste.image(),
+                      ),
                     ),
-                  ),
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Lacoste", style: AppTypography.bodyNormal15Black),
-                      SizedBox(height: 7),
-                      Text("Store of the week",
-                          style: AppTypography.bodyNormal),
-                    ],
-                  )
-                ],
-              ),
-              Assets.iconsIcArrowNext.svg(
-                  colorFilter:
-                      const ColorFilter.mode(Colors.black, BlendMode.dst))
-            ],
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Lacoste", style: AppTypography.bodyNormal15Black),
+                        SizedBox(height: 7),
+                        Text("Store of the week",
+                            style: AppTypography.bodyNormal),
+                      ],
+                    )
+                  ],
+                ),
+                Assets.iconsIcArrowNext.svg(
+                    colorFilter:
+                        const ColorFilter.mode(Colors.black, BlendMode.dst))
+              ],
+            ),
           ),
-        ),
-        listStoreOfWeek()
-      ],
+          listStoreOfWeek()
+        ],
+      ),
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
+import 'package:ecommerce_brand/domain/controller/home_controller.dart';
 import 'package:ecommerce_brand/domain/mock/mock_product.dart';
 import 'package:ecommerce_brand/domain/mock/mock_store.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,28 @@ class MarketScreenController extends GetxController {
   final colectionsElement = MockProduct.listProductFreshCollections;
   final listDeliveryTags = MockProduct.listDeliveryTags;
   final storeOfWeeks = MockProduct.storeOfWeeks;
+  final RxBool isFullScreen = false.obs;
+  final RxBool isPhysicScrollMarket = false.obs;
+  late ScrollController scrollController;
+
+  void initScrollController() {
+    final homeController = Get.find<HomeScreenController>();
+    scrollController = homeController.scrollController;
+    // scrollController = ScrollController();
+    // double oldOffset = 0.0;
+    // final homeController = Get.find<HomeScreenController>();
+    // scrollController.addListener(() {
+    //   if (scrollController.offset > 100) {
+    //     if (scrollController.offset > oldOffset) {
+    //       homeController.onScrollOverNestedListTrue();
+    //     } else {
+    //       homeController.onScrollOverNestedListFalse();
+    //     }
+    //   }
+    //   oldOffset = scrollController.offset;
+    // });
+  }
+
   void initTabController(TickerProvider provider) {
     tabMarketController = Rx(
       TabController(
@@ -21,6 +44,8 @@ class MarketScreenController extends GetxController {
     );
     isFadeAnimationBodySlding.value = false;
     isDragPanel.value = true;
+    isPhysicScrollMarket.value = false;
+    isFullScreen.value = false;
   }
 
   int getListDeliveryTagsLength() => MockProduct.listDeliveryTags.length;
@@ -45,5 +70,9 @@ class MarketScreenController extends GetxController {
     }).toList();
   }
 
-  lockDragablePanel() => isDragPanel.value = false;
+  lockDragablePanel() {
+    isDragPanel.value = false;
+    isPhysicScrollMarket.value = true;
+    isFullScreen.value = true;
+  }
 }

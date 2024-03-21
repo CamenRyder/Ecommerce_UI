@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:ecommerce_brand/domain/controller/market_controller.dart';
 import 'package:ecommerce_brand/screens/market/screen/page/body_sliding_market_screen.dart';
 import 'package:ecommerce_brand/screens/market/screen/page/panel_sliding_market_screen.dart';
@@ -22,6 +24,7 @@ class _MarketScreen extends State<MarketScreen>
   void initState() {
     super.initState();
     controller.initTabController(this);
+    controller.initScrollController();
   }
 
   @override
@@ -29,7 +32,9 @@ class _MarketScreen extends State<MarketScreen>
     return Obx(
       () => SlidingUpPanel(
         boxShadow: null,
-        maxHeight: MediaQuery.sizeOf(context).height - 205,
+        maxHeight: controller.isFullScreen.value
+            ? MediaQuery.sizeOf(context).height
+            : MediaQuery.sizeOf(context).height - 205,
         minHeight: MediaQuery.sizeOf(context).height - 420,
         isDraggable: controller.isDragPanel.value,
         onPanelSlide: (position) {
