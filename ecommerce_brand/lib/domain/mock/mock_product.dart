@@ -32,6 +32,30 @@ class MockProduct {
         oldPrice: 69,
         image: Assets.imagesMockMarketImage5),
   ];
+  static List<Product> listDeliveryTags = [
+    Product(name: "Sustainable", image: Assets.imagesImageSustainableTag),
+    Product(name: "Luxury", image: Assets.imagesImageLuxuryTag),
+    Product(name: "Glam", image: Assets.imagesImageGlamTag),
+  ];
+  static List<Product> storeOfWeeks = [
+    Product(
+        name: "Top Lacoste Sport for Tennis",
+        price: 49,
+        image: Assets.imagesMockImage01),
+    Product(
+        name: "Lacoste Red PoLar Sweater",
+        price: 149,
+        image: Assets.imagesMockImage07),
+    Product(
+        name: "Lacoste Stretch Cotton Pique Polo",
+        price: 149,
+        oldPrice: 199,
+        image: Assets.imagesMockImage11),
+    Product(
+        name: "Lacoste Stretch Polo",
+        price: 119,
+        image: Assets.imagesMockImage12),
+  ];
   static List<Product> listProductFreshCollections = [
     Product(
         name: "Lacoste x Polaroid",
@@ -48,7 +72,7 @@ class MockProduct {
         brandName: "Adidas",
         iconBrand: Assets.imagesAvtAddidas,
         image: Assets.imagesMockMarketImage7),
-  ];  
+  ];
   static List<Product> listProductHomeFeed = [
     Product(
         name: "Top Lacoste SPORT...",

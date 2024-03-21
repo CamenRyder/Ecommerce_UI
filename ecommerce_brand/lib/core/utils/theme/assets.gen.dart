@@ -128,6 +128,18 @@ class Assets {
   static const AssetGenImage imagesAvtZara =
       AssetGenImage('assets/images/avt_zara.png');
 
+  /// File path: assets/images/image_glam_tag.png
+  static const AssetGenImage imagesImageGlamTag =
+      AssetGenImage('assets/images/image_glam_tag.png');
+
+  /// File path: assets/images/image_luxury_tag.png
+  static const AssetGenImage imagesImageLuxuryTag =
+      AssetGenImage('assets/images/image_luxury_tag.png');
+
+  /// File path: assets/images/image_sustainable_tag.png
+  static const AssetGenImage imagesImageSustainableTag =
+      AssetGenImage('assets/images/image_sustainable_tag.png');
+
   /// File path: assets/images/marketHeaderView.png
   static const AssetGenImage imagesMarketHeaderView =
       AssetGenImage('assets/images/marketHeaderView.png');
@@ -183,6 +195,14 @@ class Assets {
   /// File path: assets/images/mock_image10.png
   static const AssetGenImage imagesMockImage10 =
       AssetGenImage('assets/images/mock_image10.png');
+
+  /// File path: assets/images/mock_image11.png
+  static const AssetGenImage imagesMockImage11 =
+      AssetGenImage('assets/images/mock_image11.png');
+
+  /// File path: assets/images/mock_image12.png
+  static const AssetGenImage imagesMockImage12 =
+      AssetGenImage('assets/images/mock_image12.png');
 
   /// File path: assets/images/mock_image_cart_tracking_06.png
   static const AssetGenImage imagesMockImageCartTracking06 =
@@ -271,6 +291,9 @@ class Assets {
         imagesAvtLacoste,
         imagesAvtLevi,
         imagesAvtZara,
+        imagesImageGlamTag,
+        imagesImageLuxuryTag,
+        imagesImageSustainableTag,
         imagesMarketHeaderView,
         imagesMockCartProductImage02,
         imagesMockCartProductImage03,
@@ -285,6 +308,8 @@ class Assets {
         imagesMockImage08,
         imagesMockImage09,
         imagesMockImage10,
+        imagesMockImage11,
+        imagesMockImage12,
         imagesMockImageCartTracking06,
         imagesMockMarketAdidasStores,
         imagesMockMarketBershkaStores,

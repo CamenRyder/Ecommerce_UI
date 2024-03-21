@@ -12,6 +12,8 @@ class MarketScreenController extends GetxController {
   final newStoresElement = MockStore.stores;
   final productsOnSales = MockProduct.listProductSaleOnMarket;
   final colectionsElement = MockProduct.listProductFreshCollections;
+  final listDeliveryTags = MockProduct.listDeliveryTags;
+  final storeOfWeeks = MockProduct.storeOfWeeks;
   void initTabController(TickerProvider provider) {
     tabMarketController = Rx(
       TabController(
@@ -20,6 +22,9 @@ class MarketScreenController extends GetxController {
     isFadeAnimationBodySlding.value = false;
     isDragPanel.value = true;
   }
+
+  int getListDeliveryTagsLength() => MockProduct.listDeliveryTags.length;
+  int getStoresOfWeeksLength() => MockProduct.storeOfWeeks.length;
 
   int getListViewNewStoresLength() => MockStore.stores.length;
 
