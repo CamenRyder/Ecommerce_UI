@@ -16,7 +16,9 @@ class HomeScreenController extends GetxController {
   RxBool showBottomFloatingActionButton = false.obs;
   final isSearchBar = false.obs;
   final showFloatingWidgetType = 0.obs;
-  late ScrollController scrollController;
+  late ScrollController scrollController;  
+
+  
 
 // inital state mamangement temp :v
   final _controllerTabsEdit = Get.put(EditTabsScreenController());
@@ -27,7 +29,7 @@ class HomeScreenController extends GetxController {
   late TickerProvider _provider;
 
   void changeFloatingButton(int index) {
-    showFloatingWidgetType.value = index;  
+    showFloatingWidgetType.value = index;
   }
 
   void initTabController(TickerProvider provider) {

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
 import 'package:ecommerce_brand/domain/mock/mock_product.dart';
@@ -11,6 +13,7 @@ class MarketScreenController extends GetxController {
   final RxBool isFadeAnimationBodySlding = false.obs;
   final RxBool isDragPanel = true.obs;
   final newStoresElement = MockStore.stores;
+  final isExpandNotify = false.obs;
   final productsOnSales = MockProduct.listProductSaleOnMarket;
   final colectionsElement = MockProduct.listProductFreshCollections;
   final listDeliveryTags = MockProduct.listDeliveryTags;
@@ -22,19 +25,6 @@ class MarketScreenController extends GetxController {
   void initScrollController() {
     final homeController = Get.find<HomeScreenController>();
     scrollController = homeController.scrollController;
-    // scrollController = ScrollController();
-    // double oldOffset = 0.0;
-    // final homeController = Get.find<HomeScreenController>();
-    // scrollController.addListener(() {
-    //   if (scrollController.offset > 100) {
-    //     if (scrollController.offset > oldOffset) {
-    //       homeController.onScrollOverNestedListTrue();
-    //     } else {
-    //       homeController.onScrollOverNestedListFalse();
-    //     }
-    //   }
-    //   oldOffset = scrollController.offset;
-    // });
   }
 
   void initTabController(TickerProvider provider) {
@@ -42,6 +32,9 @@ class MarketScreenController extends GetxController {
       TabController(
           length: getTabBarLength(), vsync: provider, initialIndex: 0),
     );
+    Timer.periodic(const Duration(seconds: 2), (timer) {
+      isExpandNotify.value = !isExpandNotify.value;
+    });
     isFadeAnimationBodySlding.value = false;
     isDragPanel.value = true;
     isPhysicScrollMarket.value = false;
