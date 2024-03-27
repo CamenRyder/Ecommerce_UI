@@ -78,7 +78,7 @@ class _BodySldingMarketScreen extends State<BodySldingMarketScreen> {
       key: const ValueKey<int>(2),
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const AppBarShorterMarketScreen(),
+        AppBarShorterMarketScreen(),
         // const AppBarLongMarketScreen(),
         const HeaderMarketDefault(),
         TabBar(
