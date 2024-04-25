@@ -32,7 +32,7 @@ class MarketScreenController extends GetxController {
       TabController(
           length: getTabBarLength(), vsync: provider, initialIndex: 0),
     );
-    Timer.periodic(const Duration(seconds: 2), (timer) {
+    Timer.periodic(const Duration(seconds: 3), (timer) {
       isExpandNotify.value = !isExpandNotify.value;
     });
     isFadeAnimationBodySlding.value = false;

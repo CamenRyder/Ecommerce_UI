@@ -11,7 +11,9 @@ class AppColors {
   static const backgroundPrimary = Color.fromARGB(255, 130, 30, 155);
   static const background = Color(0xffFFFFFF);
   static const textGrey = Color(0xFF757779);
+
   static const grey75 = Color.fromARGB(255, 216, 217, 217);
+  static const grey65 = Color.fromARGB(255, 234, 234, 234);
   static const text = Color(0xff1F2024);
   static const textLight = Color.fromARGB(255, 249, 249, 249);
   static const textPrimary = Color.fromARGB(255, 127, 213, 150);

@@ -67,6 +67,8 @@ class AppTypography {
 
   static const bodyNormalBold = TextStyle(
       fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.black);
+  static const bodyNormalBold800 = TextStyle(
+      fontSize: 16, fontWeight: FontWeight.w800, color: AppColors.black);
 
   static const bodyRegularLight = TextStyle(
       fontSize: 14, fontWeight: FontWeight.normal, color: AppColors.primary);
@@ -98,6 +100,8 @@ class AppTypography {
       fontSize: 22, fontWeight: FontWeight.w600, color: AppColors.black);
   static const bodyLargeBold = TextStyle(
       fontSize: 24, fontWeight: FontWeight.w800, color: AppColors.black);
+  static const bodyLargeBold21 = TextStyle(
+      fontSize: 21, fontWeight: FontWeight.w800, color: AppColors.black);
   static const bodyLarge32 = TextStyle(
       fontSize: 32, fontWeight: FontWeight.w800, color: AppColors.black);
 }
