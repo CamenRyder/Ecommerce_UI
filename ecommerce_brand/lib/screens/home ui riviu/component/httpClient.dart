@@ -24,7 +24,7 @@ class FetchClient {
     return AppConstants.apiUrl;
   }
 
-  static String token = '';
+  static String token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJwbXMuYWRtaW5AcG5qLmNvbS52biIsImZ1bmN0aW9ucyI6WyJjdXN0b21lcl9nZXRfZ2kiLCJjdXN0b21lcl9hY3RpdmVfZ2kiLCJjb25maXJtX2V4cG9ydF9lbXMiLCJkZWxldGVfaW1wb3J0X2VtcyIsImNvbmZpcm1faW1wb3J0X2VtcyIsImxvZ2luX3dlYiIsImN1c3RvbWVyX3NjYW5fZ2lfY29kZSIsImFkbWluX2dldF9naSIsImN1c3RvbWVyX3NjYW5fcXJfY29kZSIsImFjdGl2aXR5X3JlY2VpdmVyIiwiaW1wb3J0X2VtcyIsImxvZ2luX2FwcCIsInNoaXBwZXJfY29uZmlybV9zaGlwbWVudF90b19kZWxpdmVyeSIsImN1c3RvbWVyX3NlYXJjaF9naSIsImFkbWluX2dldF9yZXBvcnRfa3BpIiwiYWRtaW5fZ2V0X3JlcG9ydF90b3BfcGVyZm9ybWVyIiwiYWRtaW5fZ2V0X3JlcG9ydF9xdWFsaXR5IiwiYWRtaW5fZ2V0X3JlcG9ydF9tYXN0ZXJkYXRhIiwiYWRtaW5fZ2V0X3JlcG9ydF9nb29kcyIsImFkbWluX2dldF9yZXBvcnRfY29ja3BpdCIsImFkbWluX2dldF9jbGllbnRzIiwiYWRtaW5fZ2V0X3ZlaGljbGVzIiwiYWRtaW5fZ2V0X21hcHBpbmdfam9iX3RpdGxlcyIsImFkbWluX2dldF9qb2JfdGl0bGVzIiwiYWRtaW5fZ2V0X2Z1bmN0aW9ucyIsImFkbWluX2dldF9ncm91cHMiLCJhZG1pbl9nZXRfcGxhbnRzIiwiYWRtaW5fZ2V0X3JvdXRlcyIsImFkbWluX2dldF9zaGlwbWVudHMiLCJhZG1pbl9hY3RpdmVfZ2kiLCJsb2dpbl9hZG1pbiIsImV4cG9ydF9lbXMiLCJhZG1pbl9nZXRfZ2VvbWFwIiwiYWRtaW5fZ2V0X2FjY2Vzc19jb250cm9scyIsImFkbWluX2dldF9uZXdwYWdlIiwiYWRtaW5fZ2V0X3JhdGluZyIsImFkbWluX2dldF9yZXBvcnRfZXJyb3JfY29kZSJdLCJhcHBOYW1lIjoiUE1TLUFETUlOIiwiaWF0IjoxNzEzNzY5MzYyLCJleHAiOjE3NDUzMjY5NjJ9.1lYoZAR8sdEi0EznO6g5oo28WMQ5xedcL-GcZRWYhQc';
 
   Dio dio = Dio();
 
@@ -43,9 +43,16 @@ class FetchClient {
   Options options() {
     var option = Options(
         headers: {
-          'x-application-name': 'PMS-APP',
+          'x-application-name': 'PMS-ADMIN',
+          'accept': 'application/json, text/plain, */*',
+          'accept-language': 'en-US,en;q=0.9',
+          'origin': 'https://admin-pms-dev.beonetech.vn',
+          'priority': 'u=1, i',
+          'referer': 'https://admin-pms-dev.beonetech.vn/',
+          'sec-fetch-mode': 'cors',
+          'sec-fetch-site': 'same-site',
           'x-private-key': AppConstants.xPrivateKey,
-          'Authorization': token.isEmpty ? '' : ('Bearer ' + token)
+          'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJwbXMuYWRtaW5AcG5qLmNvbS52biIsImZ1bmN0aW9ucyI6WyJjdXN0b21lcl9nZXRfZ2kiLCJjdXN0b21lcl9hY3RpdmVfZ2kiLCJjb25maXJtX2V4cG9ydF9lbXMiLCJkZWxldGVfaW1wb3J0X2VtcyIsImNvbmZpcm1faW1wb3J0X2VtcyIsImxvZ2luX3dlYiIsImN1c3RvbWVyX3NjYW5fZ2lfY29kZSIsImFkbWluX2dldF9naSIsImN1c3RvbWVyX3NjYW5fcXJfY29kZSIsImFjdGl2aXR5X3JlY2VpdmVyIiwiaW1wb3J0X2VtcyIsImxvZ2luX2FwcCIsInNoaXBwZXJfY29uZmlybV9zaGlwbWVudF90b19kZWxpdmVyeSIsImN1c3RvbWVyX3NlYXJjaF9naSIsImFkbWluX2dldF9yZXBvcnRfa3BpIiwiYWRtaW5fZ2V0X3JlcG9ydF90b3BfcGVyZm9ybWVyIiwiYWRtaW5fZ2V0X3JlcG9ydF9xdWFsaXR5IiwiYWRtaW5fZ2V0X3JlcG9ydF9tYXN0ZXJkYXRhIiwiYWRtaW5fZ2V0X3JlcG9ydF9nb29kcyIsImFkbWluX2dldF9yZXBvcnRfY29ja3BpdCIsImFkbWluX2dldF9jbGllbnRzIiwiYWRtaW5fZ2V0X3ZlaGljbGVzIiwiYWRtaW5fZ2V0X21hcHBpbmdfam9iX3RpdGxlcyIsImFkbWluX2dldF9qb2JfdGl0bGVzIiwiYWRtaW5fZ2V0X2Z1bmN0aW9ucyIsImFkbWluX2dldF9ncm91cHMiLCJhZG1pbl9nZXRfcGxhbnRzIiwiYWRtaW5fZ2V0X3JvdXRlcyIsImFkbWluX2dldF9zaGlwbWVudHMiLCJhZG1pbl9hY3RpdmVfZ2kiLCJsb2dpbl9hZG1pbiIsImV4cG9ydF9lbXMiLCJhZG1pbl9nZXRfZ2VvbWFwIiwiYWRtaW5fZ2V0X2FjY2Vzc19jb250cm9scyIsImFkbWluX2dldF9uZXdwYWdlIiwiYWRtaW5fZ2V0X3JhdGluZyIsImFkbWluX2dldF9yZXBvcnRfZXJyb3JfY29kZSJdLCJhcHBOYW1lIjoiUE1TLUFETUlOIiwiaWF0IjoxNzEzNzY5MzYyLCJleHAiOjE3NDUzMjY5NjJ9.1lYoZAR8sdEi0EznO6g5oo28WMQ5xedcL-GcZRWYhQc'
         },
         followRedirects: false,
         validateStatus: (status) {

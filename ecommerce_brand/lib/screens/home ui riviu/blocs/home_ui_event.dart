@@ -15,6 +15,13 @@ class ProductScreenTab3Fetched extends ProductEvent {
   ProductScreenTab3Fetched({this.page});
 }
 
+// class ScrollUp extends ProductEvent {}
+
+// class ScrollDown extends ProductEvent {}
+
+// class ScrollUpQuick extends ProductEvent {}
+
+
 
 // class GetTabsElement extends HomeUIEvent {
 //   int index;

@@ -54,6 +54,12 @@ class ProductLoadingTab03Success extends ProductState {
   }
 }
 
+// class ExpandAppBar extends ProductState {}
+
+// class ExpandAppBarQuick extends ProductState {}
+
+// class ScaleAppBar extends ProductState {}
+
 // ignore: must_be_immutable
 class ProductLoadingFailure extends ProductState {
   String? mess = "";
