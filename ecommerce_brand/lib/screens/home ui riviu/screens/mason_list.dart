@@ -41,12 +41,14 @@ class _MarsonList extends State<MarsonList> with AutomaticKeepAliveClientMixin {
   void initState() {
     super.initState();
     double oldOffset = 0.0;
+
     _bloc = context.read<ProductBloc>();
     _scrollController.addListener(() {
       if (_scrollController.offset > 100) {
+        // chưa scale màn hình
         if (_scrollController.offset > oldOffset) {
           context.read<AnimationBloc>().add(ScrollDown()); // scroll Down
-        } else if (_scrollController.offset < oldOffset - 75) {
+        } else if (_scrollController.offset < oldOffset - 150) {
           context.read<AnimationBloc>().add(ScrollUp()); // Scroll Up not Quick
         } else {
           context.read<AnimationBloc>().add(ScrollUpQuick()); // scroll Up Quick
@@ -55,6 +57,7 @@ class _MarsonList extends State<MarsonList> with AutomaticKeepAliveClientMixin {
       oldOffset = _scrollController.offset;
       if (_scrollController.position.pixels >=
           _scrollController.position.maxScrollExtent - 400) {
+        // print(">>>> check position: " + _scrollController.position.pixels);
         loadMore();
       }
     });
@@ -65,6 +68,7 @@ class _MarsonList extends State<MarsonList> with AutomaticKeepAliveClientMixin {
 
   void loadMore() {
     if (isLoading == false) {
+      // sửa lại true
       return;
     }
     isLoading = false;
@@ -98,7 +102,6 @@ class _MarsonList extends State<MarsonList> with AutomaticKeepAliveClientMixin {
 
   @override
   Widget build(BuildContext context) {
-    print("Go to here?");
     super.build(context);
     return BlocBuilder<ProductBloc, ProductState>(
       builder: (context, state) {
@@ -127,7 +130,7 @@ class _MarsonList extends State<MarsonList> with AutomaticKeepAliveClientMixin {
     return ScrollsToTop(
       onScrollsToTop: (event) => goHeadList(),
       child: RefreshIndicator(
-        key: widget.refreshIndicator,
+        // key: widget.refreshIndicator,  // consider
         onRefresh: () => refresh(),
         child: MasonryGridView.builder(
             addAutomaticKeepAlives: true,

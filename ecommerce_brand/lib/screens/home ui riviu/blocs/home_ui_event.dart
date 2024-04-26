@@ -10,6 +10,7 @@ class ProductScreenTab2Fetched extends ProductEvent {
   ProductScreenTab2Fetched({this.page});
 }
 
+
 class ProductScreenTab3Fetched extends ProductEvent {
   int? page = 1;
   ProductScreenTab3Fetched({this.page});

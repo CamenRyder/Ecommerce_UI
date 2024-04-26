@@ -13,26 +13,11 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
         (event, emit) => loadingDataTab2(event: event, emit: emit));
     on<ProductScreenTab3Fetched>(
         (event, emit) => loadingDataTab3(event: event, emit: emit));
-    // on<ScrollDown>((event, emit) => scrollDataDown(event: event, emit: emit));
-    // on<ScrollUp>((event, emit) => scrollDataUp(event: event, emit: emit));
-    // on<ScrollUpQuick>(
-    //     (event, emit) => scrollDataUpQuick(event: event, emit: emit));
+  
   }
 
   ProductService service = ProductService();
 
-  // scrollDataDown({required ScrollDown event, required Emitter emit}) async {
-  //   emit(ScaleAppBar());
-  // }
-
-  // scrollDataUp({required ScrollUp event, required Emitter emit}) async {
-  //   emit(ExpandAppBar());
-  // }
-
-  // scrollDataUpQuick(
-  //     {required ScrollUpQuick event, required Emitter emit}) async {
-  //   emit(ExpandAppBarQuick());
-  // }
 
   loadingDataTab1(
       {required ProductScreenTab1Fetched event, required Emitter emit}) async {

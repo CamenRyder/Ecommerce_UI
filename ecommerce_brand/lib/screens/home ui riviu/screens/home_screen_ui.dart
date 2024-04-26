@@ -37,6 +37,8 @@ class _HomeScreenUI extends State<HomeScreenUI>
 */
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).padding.top;
+    print(">>>> check: $height ");
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
@@ -50,9 +52,11 @@ class _HomeScreenUI extends State<HomeScreenUI>
             ),
           ],
               child: BlocListener<AnimationBloc, AnimationState>(
+                // tách riêng header setState
                 listener: (context, state) {
                   if (state is ExpandAppBar) {
                     setState(() {
+                      isShow = false;
                       isShowCatalogs = true;
                     });
                   } else if (state is ExpandAppBarQuick) {
