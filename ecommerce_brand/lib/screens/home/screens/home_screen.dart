@@ -5,7 +5,7 @@ import 'package:ecommerce_brand/core/utils/widgets/indicatorCustom.dart';
 import 'package:ecommerce_brand/core/utils/widgets/wrapper_icon_svg.dart';
 import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
 import 'package:ecommerce_brand/domain/controller/home_controller.dart';
-import 'package:ecommerce_brand/screens/home%20ui%20riviu/screens/home_screen_ui.dart';
+import 'package:ecommerce_brand/screens/home/screens/page/feed_page.dart';
 import 'package:ecommerce_brand/screens/home/widgets/bottom_navigator_bar.dart';
 import 'package:ecommerce_brand/screens/market/screen/market_screen.dart';
 import 'package:flutter/material.dart';
@@ -46,8 +46,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         controller: _controller.pageController,
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          const HomeScreenUI(),
-          // const FeedPage(),
+          // const HomeScreenUI(),
+          const FeedPage(),
           const MarketScreen(),
           // const ProfileScreen(),
           Container(
