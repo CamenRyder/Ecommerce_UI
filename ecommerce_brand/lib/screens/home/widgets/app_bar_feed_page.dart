@@ -1,7 +1,7 @@
 import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
-import 'package:ecommerce_brand/domain/controller/home_controller.dart';
+import 'package:ecommerce_brand/screens/home/home_controller.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:hidable/hidable.dart';

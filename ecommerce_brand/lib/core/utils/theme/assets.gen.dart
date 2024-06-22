@@ -124,9 +124,17 @@ class Assets {
   static const AssetGenImage imagesAvtLevi =
       AssetGenImage('assets/images/avt_levi.png');
 
+  /// File path: assets/images/avt_right_appbar.png
+  static const AssetGenImage imagesAvtRightAppbar =
+      AssetGenImage('assets/images/avt_right_appbar.png');
+
   /// File path: assets/images/avt_zara.png
   static const AssetGenImage imagesAvtZara =
       AssetGenImage('assets/images/avt_zara.png');
+
+  /// File path: assets/images/image_avatar_01.jpg
+  static const AssetGenImage imagesImageAvatar01 =
+      AssetGenImage('assets/images/image_avatar_01.jpg');
 
   /// File path: assets/images/image_glam_tag.png
   static const AssetGenImage imagesImageGlamTag =
@@ -143,6 +151,22 @@ class Assets {
   /// File path: assets/images/marketHeaderView.png
   static const AssetGenImage imagesMarketHeaderView =
       AssetGenImage('assets/images/marketHeaderView.png');
+
+  /// File path: assets/images/mockFoodImage01.jpg
+  static const AssetGenImage imagesMockFoodImage01 =
+      AssetGenImage('assets/images/mockFoodImage01.jpg');
+
+  /// File path: assets/images/mockFoodImage02.jpeg
+  static const AssetGenImage imagesMockFoodImage02 =
+      AssetGenImage('assets/images/mockFoodImage02.jpeg');
+
+  /// File path: assets/images/mockFoodImage03.jpg
+  static const AssetGenImage imagesMockFoodImage03 =
+      AssetGenImage('assets/images/mockFoodImage03.jpg');
+
+  /// File path: assets/images/mockFoodImage04.jpg
+  static const AssetGenImage imagesMockFoodImage04 =
+      AssetGenImage('assets/images/mockFoodImage04.jpg');
 
   /// File path: assets/images/mock_cart_product_image02.png
   static const AssetGenImage imagesMockCartProductImage02 =
@@ -290,11 +314,17 @@ class Assets {
         imagesAvtChampion,
         imagesAvtLacoste,
         imagesAvtLevi,
+        imagesAvtRightAppbar,
         imagesAvtZara,
+        imagesImageAvatar01,
         imagesImageGlamTag,
         imagesImageLuxuryTag,
         imagesImageSustainableTag,
         imagesMarketHeaderView,
+        imagesMockFoodImage01,
+        imagesMockFoodImage02,
+        imagesMockFoodImage03,
+        imagesMockFoodImage04,
         imagesMockCartProductImage02,
         imagesMockCartProductImage03,
         imagesMockCartProductImage05,

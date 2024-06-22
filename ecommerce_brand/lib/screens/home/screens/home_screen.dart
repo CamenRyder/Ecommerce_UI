@@ -1,14 +1,16 @@
+import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/core/utils/widgets/indicatorCustom.dart';
 import 'package:ecommerce_brand/core/utils/widgets/wrapper_icon_svg.dart';
 import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
-import 'package:ecommerce_brand/domain/controller/home_controller.dart';
+import 'package:ecommerce_brand/screens/home/home_controller.dart';
 import 'package:ecommerce_brand/screens/home/screens/page/feed_page.dart';
 import 'package:ecommerce_brand/screens/home/widgets/bottom_navigator_bar.dart';
 import 'package:ecommerce_brand/screens/market/screen/market_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
@@ -46,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         controller: _controller.pageController,
         physics: const NeverScrollableScrollPhysics(),
         children: [
+          // const HomeScreenUI(),
           const FeedPage(),
           const MarketScreen(),
           // const ProfileScreen(),
@@ -205,8 +208,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             children: [
               GestureDetector(
                 onTap: () {
-                  _controller.showBottomFloatingActionButton.value = false;
-                  _controller.isSearchBar.value = true;
+                  // _controller.showBottomFloatingActionButton.value = false;
+                  // _controller.isSearchBar.value = true;
                 },
                 child: Container(
                     padding: const EdgeInsets.all(5),
@@ -218,6 +221,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               Expanded(child: Container()),
               GestureDetector(
                 onTap: () {
+                  Get.toNamed(Routes.cartTracking);
                   // Get.toNamed(Routes.document);
                   print('hello world');
                 },

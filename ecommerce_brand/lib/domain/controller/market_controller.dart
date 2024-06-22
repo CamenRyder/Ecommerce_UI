@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
-import 'package:ecommerce_brand/domain/controller/home_controller.dart';
+import 'package:ecommerce_brand/screens/home/home_controller.dart';
 import 'package:ecommerce_brand/domain/mock/mock_product.dart';
 import 'package:ecommerce_brand/domain/mock/mock_store.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class MarketScreenController extends GetxController {
       TabController(
           length: getTabBarLength(), vsync: provider, initialIndex: 0),
     );
-    Timer.periodic(const Duration(seconds: 2), (timer) {
+    Timer.periodic(const Duration(seconds: 3), (timer) {
       isExpandNotify.value = !isExpandNotify.value;
     });
     isFadeAnimationBodySlding.value = false;

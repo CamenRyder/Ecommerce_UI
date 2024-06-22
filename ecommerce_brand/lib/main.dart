@@ -1,8 +1,9 @@
 import 'package:ecommerce_brand/core/routes/pages.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
-import 'package:ecommerce_brand/domain/controller/home_controller.dart';
+import 'package:ecommerce_brand/screens/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
             useMaterial3: false,
           ),
+          navigatorObservers: [FlutterSmartDialog.observer],
+          // here
+          builder: FlutterSmartDialog.init(),
         );
       },
     );
