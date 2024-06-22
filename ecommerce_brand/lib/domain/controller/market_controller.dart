@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
-import 'package:ecommerce_brand/domain/controller/home_controller.dart';
+import 'package:ecommerce_brand/screens/home/home_controller.dart';
 import 'package:ecommerce_brand/domain/mock/mock_product.dart';
 import 'package:ecommerce_brand/domain/mock/mock_store.dart';
 import 'package:flutter/material.dart';

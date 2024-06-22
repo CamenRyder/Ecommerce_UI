@@ -4,7 +4,7 @@ import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/core/utils/widgets/indicatorCustom.dart';
 import 'package:ecommerce_brand/core/utils/widgets/wrapper_icon_svg.dart';
 import 'package:ecommerce_brand/domain/controller/edit_tabs_controller.dart';
-import 'package:ecommerce_brand/domain/controller/home_controller.dart';
+import 'package:ecommerce_brand/screens/home/home_controller.dart';
 import 'package:ecommerce_brand/screens/home/screens/page/feed_page.dart';
 import 'package:ecommerce_brand/screens/home/widgets/bottom_navigator_bar.dart';
 import 'package:ecommerce_brand/screens/market/screen/market_screen.dart';
