@@ -14,7 +14,9 @@ class HeaderExpandedWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() => Row(
           children: [
-            Assets.iconsIcClose.svg(),
+            GestureDetector(
+                onTap: () => Get.back(),
+                child: Container(child: Assets.iconsIcClose.svg())),
             Expanded(child: Container()),
             GestureDetector(
               onTap: controller.selectOrder,
@@ -29,7 +31,7 @@ class HeaderExpandedWidget extends StatelessWidget {
               width: 15,
             ),
             GestureDetector(
-              onTap: controller.selectMessages  ,
+              onTap: controller.selectMessages,
               child: Text(
                 "Messages",
                 style: controller.isMessages.value

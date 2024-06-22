@@ -4,8 +4,10 @@ import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/core/utils/widgets/divider_stepper_custom.dart';
+import 'package:ecommerce_brand/core/utils/widgets/indicatorCustom.dart';
 import 'package:ecommerce_brand/core/utils/widgets/popUp_custom.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 
 class InfoCurrentPackageWidget extends StatelessWidget {
@@ -87,7 +89,15 @@ class InfoCurrentPackageWidget extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () {
+            onTap: () async {
+              SmartDialog.showLoading(
+                maskWidget: Container(color: AppColors.backgroundWhiteBlur20),
+                builder: (context) => const IndicatorCustom(
+                  color: AppColors.primary ,
+                ),
+              );
+              await Future.delayed(const Duration(seconds: 3));
+              SmartDialog.dismiss();
               Popup(
                 title: 'Oops!',
                 message:

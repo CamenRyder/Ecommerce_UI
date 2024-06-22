@@ -14,7 +14,7 @@ class AppBarShorterMarketScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() => AnimatedContainer(
-        duration: const Duration(milliseconds: 550),
+        duration: const Duration(milliseconds: 2000),
         padding:
             const EdgeInsets.symmetric(horizontal: Constant.paddingVertical),
         decoration: BoxDecoration(

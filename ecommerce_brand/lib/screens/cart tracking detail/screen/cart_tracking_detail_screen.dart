@@ -3,10 +3,13 @@ import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/core/utils/widgets/divider_stepper_custom.dart';
+import 'package:ecommerce_brand/core/utils/widgets/indicatorCustom.dart';
+import 'package:ecommerce_brand/core/utils/widgets/popUp_custom.dart';
 import 'package:ecommerce_brand/domain/controller/cart_tracking_detail_controller.dart';
 import 'package:ecommerce_brand/screens/cart%20tracking%20detail/widgets/stepper_1_widget.dart';
 import 'package:ecommerce_brand/screens/cart%20tracking%20detail/widgets/stepper_2_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 
 class CartTrackingDetailScreen extends StatelessWidget {
@@ -97,15 +100,36 @@ class CartTrackingDetailScreen extends StatelessWidget {
                     ? const StepperSecondWidget()
                     : const StepperFirstWidget()),
           ),
-          Container(
-            width: double.infinity,
-            alignment: Alignment.center,
-            margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 18),
-            padding: const EdgeInsets.symmetric(vertical: 14),
-            decoration: AppStyles.boxDecorationButton,
-            child: const Text(
-              "Cancel order",
-              style: AppTypography.bodyNormal15B,
+          GestureDetector(
+            onTap: () async {
+              SmartDialog.showLoading(
+                maskColor: AppColors.backgroundWhiteBlur20,
+                builder: (context) {
+                  return const IndicatorCustom();
+                },
+              );
+              await Future.delayed(const Duration(seconds: 1));
+              SmartDialog.dismiss();
+              Popup(
+                title: 'Oops!',
+                message:
+                    "Looks like there has been a mistake please check later!",
+                leftButton: 'Cancel',
+                rightButton: 'OK',
+                onTapLeftButton: () {},
+                onTapRightButton: () {},
+              ).show(context);
+            },
+            child: Container(
+              width: double.infinity,
+              alignment: Alignment.center,
+              margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 18),
+              padding: const EdgeInsets.symmetric(vertical: 14),
+              decoration: AppStyles.boxDecorationButton,
+              child: const Text(
+                "Cancel order",
+                style: AppTypography.bodyNormal15B,
+              ),
             ),
           ),
           Container(

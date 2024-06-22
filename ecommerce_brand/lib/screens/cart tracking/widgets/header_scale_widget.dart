@@ -50,7 +50,7 @@ class HeaderScaleWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                 Text(
+                Text(
                   controller.isMessages.value ? "Filter inbox" : "Filter order",
                   style: AppTypography.bodyNormal16,
                 ),

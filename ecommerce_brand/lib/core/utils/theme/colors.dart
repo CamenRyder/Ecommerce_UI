@@ -8,6 +8,8 @@ class AppColors {
 
   static const backgroundWhite = Color(0xffFFFFFF);
   static const backgroundWhiteBlur = Color.fromARGB(255, 192, 192, 192);
+  static const backgroundWhiteBlur20 = Color.fromARGB(180, 229, 229, 229);
+
   static const backgroundPrimary = Color.fromARGB(255, 130, 30, 155);
   static const background = Color(0xffFFFFFF);
   static const textGrey = Color(0xFF757779);
