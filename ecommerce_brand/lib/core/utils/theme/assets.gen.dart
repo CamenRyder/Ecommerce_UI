@@ -14,6 +14,10 @@ import 'package:flutter/services.dart';
 class Assets {
   Assets._();
 
+  /// File path: assets/icons/app_icon.jpg
+  static const AssetGenImage iconsAppIcon =
+      AssetGenImage('assets/icons/app_icon.jpg');
+
   /// File path: assets/icons/ic_Women.svg
   static const SvgGenImage iconsIcWomen =
       SvgGenImage('assets/icons/ic_Women.svg');
@@ -294,6 +298,7 @@ class Assets {
 
   /// List of all assets
   static List<dynamic> get values => [
+        iconsAppIcon,
         iconsIcWomen,
         iconsIcArrowDown,
         iconsIcArrowNext,
