@@ -7,6 +7,7 @@ class AppColors {
   static const primaryTag = Color.fromARGB(81, 204, 175, 255);
 
   static const backgroundWhite = Color(0xffFFFFFF);
+  static const backgroundWhiteGrey = Color(0xffE7E7E8);  
   static const backgroundWhiteBlur = Color.fromARGB(255, 192, 192, 192);
   static const backgroundWhiteBlur20 = Color.fromARGB(180, 229, 229, 229);
 

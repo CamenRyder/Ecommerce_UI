@@ -152,22 +152,6 @@ class Assets {
   static const AssetGenImage imagesMarketHeaderView =
       AssetGenImage('assets/images/marketHeaderView.png');
 
-  /// File path: assets/images/mockFoodImage01.jpg
-  static const AssetGenImage imagesMockFoodImage01 =
-      AssetGenImage('assets/images/mockFoodImage01.jpg');
-
-  /// File path: assets/images/mockFoodImage02.jpeg
-  static const AssetGenImage imagesMockFoodImage02 =
-      AssetGenImage('assets/images/mockFoodImage02.jpeg');
-
-  /// File path: assets/images/mockFoodImage03.jpg
-  static const AssetGenImage imagesMockFoodImage03 =
-      AssetGenImage('assets/images/mockFoodImage03.jpg');
-
-  /// File path: assets/images/mockFoodImage04.jpg
-  static const AssetGenImage imagesMockFoodImage04 =
-      AssetGenImage('assets/images/mockFoodImage04.jpg');
-
   /// File path: assets/images/mock_cart_product_image02.png
   static const AssetGenImage imagesMockCartProductImage02 =
       AssetGenImage('assets/images/mock_cart_product_image02.png');
@@ -231,6 +215,30 @@ class Assets {
   /// File path: assets/images/mock_image_cart_tracking_06.png
   static const AssetGenImage imagesMockImageCartTracking06 =
       AssetGenImage('assets/images/mock_image_cart_tracking_06.png');
+
+  /// File path: assets/images/mock_image_save_collection_01.png
+  static const AssetGenImage imagesMockImageSaveCollection01 =
+      AssetGenImage('assets/images/mock_image_save_collection_01.png');
+
+  /// File path: assets/images/mock_image_save_collection_02.png
+  static const AssetGenImage imagesMockImageSaveCollection02 =
+      AssetGenImage('assets/images/mock_image_save_collection_02.png');
+
+  /// File path: assets/images/mock_image_save_collection_03.png
+  static const AssetGenImage imagesMockImageSaveCollection03 =
+      AssetGenImage('assets/images/mock_image_save_collection_03.png');
+
+  /// File path: assets/images/mock_image_save_collection_04.png
+  static const AssetGenImage imagesMockImageSaveCollection04 =
+      AssetGenImage('assets/images/mock_image_save_collection_04.png');
+
+  /// File path: assets/images/mock_image_save_collection_05.png
+  static const AssetGenImage imagesMockImageSaveCollection05 =
+      AssetGenImage('assets/images/mock_image_save_collection_05.png');
+
+  /// File path: assets/images/mock_image_save_collection_06.png
+  static const AssetGenImage imagesMockImageSaveCollection06 =
+      AssetGenImage('assets/images/mock_image_save_collection_06.png');
 
   /// File path: assets/images/mock_market_adidas_stores.jpg
   static const AssetGenImage imagesMockMarketAdidasStores =
@@ -321,10 +329,6 @@ class Assets {
         imagesImageLuxuryTag,
         imagesImageSustainableTag,
         imagesMarketHeaderView,
-        imagesMockFoodImage01,
-        imagesMockFoodImage02,
-        imagesMockFoodImage03,
-        imagesMockFoodImage04,
         imagesMockCartProductImage02,
         imagesMockCartProductImage03,
         imagesMockCartProductImage05,
@@ -341,6 +345,12 @@ class Assets {
         imagesMockImage11,
         imagesMockImage12,
         imagesMockImageCartTracking06,
+        imagesMockImageSaveCollection01,
+        imagesMockImageSaveCollection02,
+        imagesMockImageSaveCollection03,
+        imagesMockImageSaveCollection04,
+        imagesMockImageSaveCollection05,
+        imagesMockImageSaveCollection06,
         imagesMockMarketAdidasStores,
         imagesMockMarketBershkaStores,
         imagesMockMarketChampionStores,

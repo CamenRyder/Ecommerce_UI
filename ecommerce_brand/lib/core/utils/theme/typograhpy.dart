@@ -50,6 +50,10 @@ class AppTypography {
       fontSize: 18,
       fontWeight: FontWeight.w500,
       color: AppColors.backgroundWhite);
+  static const body16White = TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: AppColors.backgroundWhite);
 
   static const bodyNormal18Grey = TextStyle(
       fontSize: 18, fontWeight: FontWeight.w500, color: AppColors.textGrey);
@@ -88,6 +92,10 @@ class AppTypography {
       fontSize: 18,
       fontWeight: FontWeight.bold,
       color: Color.fromARGB(255, 125, 119, 119));
+  static const bodyBold70perBlack = TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: Color.fromARGB(255, 0, 0, 0));
 
   static const bodyBold70perWhite =
       TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white);

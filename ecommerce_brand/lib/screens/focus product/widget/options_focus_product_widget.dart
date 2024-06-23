@@ -43,16 +43,17 @@ class _OptionsFocusProduct extends State<OptionsFocusProductWidget> {
         });
       },
       onLongPressEnd: (a) {
-        Get.back();
+        item.functionEndPress();
       },
       onTap: () async {
         setState(() {
           _controller.getTextItem(item.name ?? "Name");
           item.isSelected = true;
         });
-        await Future.delayed((const Duration(milliseconds: 370)), () {
-          Get.back();
-        });
+        // await Future.delayed((const Duration(milliseconds: 370)), () {
+        //   Get.back();
+        // });
+        item.functionEndPress();
       },
       child: AnimatedContainer(
         curve: Curves.fastOutSlowIn,

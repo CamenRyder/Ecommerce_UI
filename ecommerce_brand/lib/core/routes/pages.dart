@@ -5,6 +5,7 @@ import 'package:ecommerce_brand/screens/cart%20tracking/screens/cart_tracking_sc
 import 'package:ecommerce_brand/screens/edit%20tabs/screens/edit_tabs_screen.dart';
 import 'package:ecommerce_brand/screens/focus%20product/screen/focus_product_screen.dart';
 import 'package:ecommerce_brand/screens/home/screens/home_screen.dart';
+import 'package:ecommerce_brand/screens/save%20item%20into%20collection/screen/save_into_collection_screen.dart';
 import 'package:get/get.dart';
 
 abstract class AppPages {
@@ -49,5 +50,19 @@ abstract class AppPages {
         model: Get.arguments,
       ),
     ),
+    GetPage(
+      name: Routes.cartOrderedReview,
+      showCupertinoParallax: false,
+      transition: Transition.fadeIn,
+      page: () => CartOrderedReviewScreen(
+        model: Get.arguments,
+      ),
+    ),
+    GetPage(
+      name: Routes.saveProductIntoCollect,
+      showCupertinoParallax: false,
+      transition: Transition.fadeIn,
+      page: () => const SaveIntoCollectionScreen(),
+    )
   ];
 }

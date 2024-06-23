@@ -7,4 +7,5 @@ abstract class Routes {
   static const cartTracking = '/cartTracking';
   static const cartTrackingDetail = '/cartTrackingDetail';
   static const cartOrderedReview = '/cartOrderedReview';
+  static const saveProductIntoCollect = '/saveProductIntoCollect';
 }
