@@ -28,6 +28,8 @@ class AppTypography {
 
   static const bodyBoldlGrey = TextStyle(
       fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.textGrey);
+  static const bodyBoldlGrey16 = TextStyle(
+      fontSize: 16, fontWeight: FontWeight.w600, color: AppColors.textGrey);
   static const bodyNormalPrimary = TextStyle(
       fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.primary);
 

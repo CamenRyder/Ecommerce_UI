@@ -13,7 +13,7 @@ class BodySaveIntoCollectionWidget extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.only(
             left: Constant.paddingHorizontal,
-            right: Constant.paddingHorizontal, 
+            right: Constant.paddingHorizontal,
             top: Constant.paddingVertical),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -24,17 +24,17 @@ class BodySaveIntoCollectionWidget extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () => Get.back(),
-                  child: Assets.iconsIcClose.svg(),
+                  child: Assets.iconsIcClose.svg(height: 28, width: 28),
                 ),
-                Assets.iconsIcFeature.svg(),
+                Assets.iconsIcFeature.svg(height: 28, width: 28),
                 const SizedBox(
-                  width: 20,
-                  height: 20,
+                  width: 28,
+                  height: 28,
                 )
               ],
             ),
             Container(
-              margin: const EdgeInsets.only(top: 60, bottom: 30),
+              margin: const EdgeInsets.only(top: 45, bottom: 30),
               height: 126,
               width: 103,
               child: ClipRRect(
