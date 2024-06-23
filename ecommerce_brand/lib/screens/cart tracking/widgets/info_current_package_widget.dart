@@ -74,7 +74,9 @@ class InfoCurrentPackageWidget extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () => Get.toNamed(Routes.cartTrackingDetail),
+            onTap: () async {
+              Get.back();
+            },
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 13),
               decoration: BoxDecoration(
@@ -93,7 +95,7 @@ class InfoCurrentPackageWidget extends StatelessWidget {
               SmartDialog.showLoading(
                 maskWidget: Container(color: AppColors.backgroundWhiteBlur20),
                 builder: (context) => const IndicatorCustom(
-                  color: AppColors.primary ,
+                  color: AppColors.primary,
                 ),
               );
               await Future.delayed(const Duration(seconds: 3));

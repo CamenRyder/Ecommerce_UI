@@ -7,7 +7,6 @@ class FocusProductScreenController extends GetxController {
   RxBool isSelectedLongPress = false.obs;
   RxBool isSelectedLongPressOption = false.obs;
   RxString title = "".obs;
-
   List<FocusProductModel> optionFocusProduct = [
     FocusProductModel(
         name: "Save",
@@ -15,10 +14,20 @@ class FocusProductScreenController extends GetxController {
         isSelected: false,
         functionEndPress: () => Get.toNamed(Routes.saveProductIntoCollect)),
     FocusProductModel(
-        name: "Share", icon: Assets.iconsIcMedia, isSelected: false),
+        name: "Share",
+        icon: Assets.iconsIcMedia,
+        isSelected: false,
+        functionEndPress: () => {print("On tap  Share!")}),
     FocusProductModel(
-        name: "Selected", icon: Assets.iconsIcTick, isSelected: false),
-    FocusProductModel(name: "Hide", icon: Assets.iconsIcBan, isSelected: false),
+        name: "Selected",
+        icon: Assets.iconsIcTick,
+        isSelected: false,
+        functionEndPress: () => {print("On tap Selected")}),
+    FocusProductModel(
+        name: "Hide",
+        icon: Assets.iconsIcBan,
+        isSelected: false,
+        functionEndPress: () => {print("On tap Hide")}),
   ];
 
   getTextItem(String name) {

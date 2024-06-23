@@ -55,8 +55,8 @@ class _FocusProductScreen extends State<FocusProductScreen> {
                   horizontal: Constant.paddingHorizontal),
               child: SizedBox(
                 height: 55,
-                child: Obx(
-                  () => _controller.isSelectedLongPressOption.value ||
+                child: Obx(() {
+                  return _controller.isSelectedLongPressOption.value ||
                           _controller.isSelectedLongPress.value
                       ? Row(
                           children: [
@@ -70,8 +70,8 @@ class _FocusProductScreen extends State<FocusProductScreen> {
                             Expanded(child: Container()),
                           ],
                         )
-                      : Container(),
-                ),
+                      : Container();
+                }),
               ),
             ),
             Padding(
