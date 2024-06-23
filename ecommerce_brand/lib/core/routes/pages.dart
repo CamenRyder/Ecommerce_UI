@@ -27,7 +27,7 @@ abstract class AppPages {
       showCupertinoParallax: false,
       transition: Transition.fadeIn,
       page: () => FocusProductScreen(
-        items: Get.arguments,
+        item: Get.arguments,
       ),
     ),
     GetPage(
@@ -62,7 +62,9 @@ abstract class AppPages {
       name: Routes.saveProductIntoCollect,
       showCupertinoParallax: false,
       transition: Transition.fadeIn,
-      page: () => const SaveIntoCollectionScreen(),
+      page: () => SaveIntoCollectionScreen(
+        product: Get.arguments,
+      ),
     )
   ];
 }

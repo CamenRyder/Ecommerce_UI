@@ -1,4 +1,5 @@
 import 'package:ecommerce_brand/core/routes/routes.dart';
+import 'package:ecommerce_brand/core/utils/helper.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/styles.dart';
@@ -74,9 +75,7 @@ class InfoCurrentPackageWidget extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () async {
-              Get.back();
-            },
+            onTap: () => Get.toNamed(Routes.cartTrackingDetail),
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 13),
               decoration: BoxDecoration(
@@ -92,23 +91,7 @@ class InfoCurrentPackageWidget extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () async {
-              SmartDialog.showLoading(
-                maskWidget: Container(color: AppColors.backgroundWhiteBlur20),
-                builder: (context) => const IndicatorCustom(
-                  color: AppColors.primary,
-                ),
-              );
-              await Future.delayed(const Duration(seconds: 3));
-              SmartDialog.dismiss();
-              Popup(
-                title: 'Oops!',
-                message:
-                    "Looks like there has been a mistake please check later!",
-                leftButton: 'Cancel',
-                rightButton: 'OK',
-                onTapLeftButton: () {},
-                onTapRightButton: () {},
-              ).show(context);
+              animationToastLoadingFail(context: context);
             },
             child: Container(
               margin: const EdgeInsets.only(top: 15, bottom: 12),

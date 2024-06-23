@@ -1,6 +1,7 @@
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/styles.dart';
 import 'package:ecommerce_brand/domain/controller/save_into_collection_controller.dart';
+import 'package:ecommerce_brand/domain/models/product_model.dart';
 
 import 'package:ecommerce_brand/screens/save%20item%20into%20collection/widgets/body_save_into_collection_widget.dart';
 import 'package:ecommerce_brand/screens/save%20item%20into%20collection/widgets/footer_sliding_panel_widget.dart';
@@ -10,8 +11,8 @@ import 'package:get/get.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class SaveIntoCollectionScreen extends StatefulWidget {
-  const SaveIntoCollectionScreen({super.key});
-
+  const SaveIntoCollectionScreen({super.key, required this.product});
+  final Product product;
   @override
   State<SaveIntoCollectionScreen> createState() =>
       _SaveIntoCollectionScreenState();
@@ -46,7 +47,9 @@ class _SaveIntoCollectionScreenState extends State<SaveIntoCollectionScreen> {
                 scrollController: sc,
               );
             },
-            body: const BodySaveIntoCollectionWidget()),
+            body: BodySaveIntoCollectionWidget(
+              product: widget.product,
+            )),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:ecommerce_brand/domain/controller/focus_product_controller.dart';
+import 'package:ecommerce_brand/domain/models/product_model.dart';
 import 'package:ecommerce_brand/screens/focus%20product/widget/options_focus_product_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,8 +11,8 @@ import 'package:glass/glass.dart';
 
 // ignore: must_be_immutable
 class FocusProductScreen extends StatefulWidget {
-  dynamic items;
-  FocusProductScreen({super.key, required this.items});
+  Product item;
+  FocusProductScreen({super.key, required this.item});
 
   @override
   State<StatefulWidget> createState() {
@@ -41,7 +42,7 @@ class _FocusProductScreen extends State<FocusProductScreen> {
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(widget.items.image.path),
+            image: AssetImage(widget.item.image.path),
             fit: BoxFit.cover,
           ),
         ),
@@ -81,15 +82,17 @@ class _FocusProductScreen extends State<FocusProductScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Hero(
-                      tag: 'list_${widget.items.name}',
+                      tag: 'list_${widget.item.name}',
                       child: SizedBox(
                         width: 240,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(12),
-                          child: widget.items.image.image(),
+                          child: widget.item.image.image(),
                         ),
                       )),
-                  const OptionsFocusProductWidget(),
+                  OptionsFocusProductWidget(
+                    item: widget.item,
+                  ),
                 ],
               ),
             ),
@@ -115,7 +118,7 @@ class _FocusProductScreen extends State<FocusProductScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "${widget.items.name}",
+                          "${widget.item.name}",
                           style: _controller.isSelectedLongPress.value
                               ? AppTypography.bodyNormal18White
                               : AppTypography.bodyNormal16Black,

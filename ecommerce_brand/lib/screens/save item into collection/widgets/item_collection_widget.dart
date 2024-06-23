@@ -1,4 +1,4 @@
-import 'package:ecommerce_brand/core/utils/theme/colors.dart';
+import 'package:ecommerce_brand/core/utils/helper.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,12 +12,8 @@ class ItemCollectionWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Get.back();
-        Get.snackbar("Products saved to ${item['name']}", "See more",
-            snackPosition: SnackPosition.BOTTOM,
-            duration: const Duration(milliseconds: 1600),
-            backgroundColor: AppColors.black,
-            margin: const EdgeInsets.only(bottom: 50, left: 12, right: 12),
-            colorText: Colors.white);
+        showToast(
+            title: "Products saved to ${item['name']}", message: "See more");
       },
       child: Container(
           margin: const EdgeInsets.only(top: 3, bottom: 12),

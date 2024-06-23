@@ -1,12 +1,13 @@
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/domain/controller/focus_product_controller.dart';
 import 'package:ecommerce_brand/domain/models/focus_product_model.dart';
+import 'package:ecommerce_brand/domain/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class OptionsFocusProductWidget extends StatefulWidget {
-  const OptionsFocusProductWidget({super.key});
-
+  const OptionsFocusProductWidget({super.key, required this.item});
+  final Product item;
   @override
   State<StatefulWidget> createState() {
     return _OptionsFocusProduct();
@@ -43,17 +44,24 @@ class _OptionsFocusProduct extends State<OptionsFocusProductWidget> {
         });
       },
       onLongPressEnd: (a) {
-        item.functionEndPress();
+        item.functionEndPress(widget.item, context);
+        Future.delayed((const Duration(seconds: 1)), () {
+          setState(() {
+            _controller.resetSelected();
+          });
+        });
       },
       onTap: () async {
         setState(() {
           _controller.getTextItem(item.name ?? "Name");
           item.isSelected = true;
+          Future.delayed((const Duration(seconds: 1)), () {
+            setState(() {
+              _controller.resetSelected();
+            });
+          });
         });
-        // await Future.delayed((const Duration(milliseconds: 370)), () {
-        //   Get.back();
-        // });
-        item.functionEndPress();
+        item.functionEndPress(widget.item, context);
       },
       child: AnimatedContainer(
         curve: Curves.fastOutSlowIn,

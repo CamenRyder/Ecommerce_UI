@@ -1,6 +1,9 @@
 import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/domain/models/focus_product_model.dart';
+import 'package:ecommerce_brand/domain/models/product_model.dart';
+import 'package:ecommerce_brand/screens/save%20item%20into%20collection/widgets/bottom_sheet_sharing_widget.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FocusProductScreenController extends GetxController {
@@ -12,23 +15,34 @@ class FocusProductScreenController extends GetxController {
         name: "Save",
         icon: Assets.iconsIcFeature,
         isSelected: false,
-        functionEndPress: () => Get.toNamed(Routes.saveProductIntoCollect)),
+        functionEndPress: (Product item, context) =>
+            Get.toNamed(Routes.saveProductIntoCollect, arguments: item)),
     FocusProductModel(
         name: "Share",
         icon: Assets.iconsIcMedia,
         isSelected: false,
-        functionEndPress: () => {print("On tap  Share!")}),
+        functionEndPress: (Product item, context) => {
+              showModalBottomSheet(
+                  enableDrag: false,
+                  isDismissible: false,
+                  context: context,
+                  builder: (context) => BottomSheetSharingWidget())
+            }),
     FocusProductModel(
         name: "Selected",
         icon: Assets.iconsIcTick,
         isSelected: false,
-        functionEndPress: () => {print("On tap Selected")}),
+        functionEndPress: (Product item) => {print("On tap Selected")}),
     FocusProductModel(
         name: "Hide",
         icon: Assets.iconsIcBan,
         isSelected: false,
-        functionEndPress: () => {print("On tap Hide")}),
+        functionEndPress: (Product item) => {print("On tap Hide")}),
   ];
+
+  resetSelected() {
+    optionFocusProduct.forEach((e) => e.isSelected = false);
+  }
 
   getTextItem(String name) {
     title.value = name;

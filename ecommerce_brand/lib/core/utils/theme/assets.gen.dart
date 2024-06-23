@@ -18,6 +18,18 @@ class Assets {
   static const AssetGenImage iconsAppIcon =
       AssetGenImage('assets/icons/app_icon.jpg');
 
+  /// File path: assets/icons/button.png
+  static const AssetGenImage iconsButton =
+      AssetGenImage('assets/icons/button.png');
+
+  /// File path: assets/icons/facebook.png
+  static const AssetGenImage iconsFacebook =
+      AssetGenImage('assets/icons/facebook.png');
+
+  /// File path: assets/icons/gmail.png
+  static const AssetGenImage iconsGmail =
+      AssetGenImage('assets/icons/gmail.png');
+
   /// File path: assets/icons/ic_Women.svg
   static const SvgGenImage iconsIcWomen =
       SvgGenImage('assets/icons/ic_Women.svg');
@@ -107,6 +119,33 @@ class Assets {
   /// File path: assets/icons/ic_warming.svg
   static const SvgGenImage iconsIcWarming =
       SvgGenImage('assets/icons/ic_warming.svg');
+
+  /// File path: assets/icons/instagram.png
+  static const AssetGenImage iconsInstagram =
+      AssetGenImage('assets/icons/instagram.png');
+
+  /// File path: assets/icons/line.png
+  static const AssetGenImage iconsLine = AssetGenImage('assets/icons/line.png');
+
+  /// File path: assets/icons/messenger.png
+  static const AssetGenImage iconsMessenger =
+      AssetGenImage('assets/icons/messenger.png');
+
+  /// File path: assets/icons/telegram.png
+  static const AssetGenImage iconsTelegram =
+      AssetGenImage('assets/icons/telegram.png');
+
+  /// File path: assets/icons/twitter.png
+  static const AssetGenImage iconsTwitter =
+      AssetGenImage('assets/icons/twitter.png');
+
+  /// File path: assets/icons/wechat.png
+  static const AssetGenImage iconsWechat =
+      AssetGenImage('assets/icons/wechat.png');
+
+  /// File path: assets/icons/whatsapp.png
+  static const AssetGenImage iconsWhatsapp =
+      AssetGenImage('assets/icons/whatsapp.png');
 
   /// File path: assets/images/avt_addidas.png
   static const AssetGenImage imagesAvtAddidas =
@@ -299,6 +338,9 @@ class Assets {
   /// List of all assets
   static List<dynamic> get values => [
         iconsAppIcon,
+        iconsButton,
+        iconsFacebook,
+        iconsGmail,
         iconsIcWomen,
         iconsIcArrowDown,
         iconsIcArrowNext,
@@ -322,6 +364,13 @@ class Assets {
         iconsIcUnable,
         iconsIcUnfollow,
         iconsIcWarming,
+        iconsInstagram,
+        iconsLine,
+        iconsMessenger,
+        iconsTelegram,
+        iconsTwitter,
+        iconsWechat,
+        iconsWhatsapp,
         imagesAvtAddidas,
         imagesAvtBershka,
         imagesAvtChampion,

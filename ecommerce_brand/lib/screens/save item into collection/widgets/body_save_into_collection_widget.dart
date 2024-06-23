@@ -1,12 +1,13 @@
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
+import 'package:ecommerce_brand/domain/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BodySaveIntoCollectionWidget extends StatelessWidget {
-  const BodySaveIntoCollectionWidget({super.key});
-
+  BodySaveIntoCollectionWidget({super.key, required this.product});
+  Product product;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,10 +40,10 @@ class BodySaveIntoCollectionWidget extends StatelessWidget {
               width: 103,
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child: Assets.imagesMockImage03.image()),
+                  child: product.image.image()),
             ),
-            const Text(
-              'Bershka Mom Jeans',
+            Text(
+              product.name ?? 'Bershka Mom Jeans',
               style: AppTypography.bodyBold70perBlack,
             ),
             Expanded(child: Container())
