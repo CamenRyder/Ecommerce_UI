@@ -1,16 +1,18 @@
-// ignore_for_file: use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously, deprecated_member_use
 
 import 'package:ecommerce_brand/core/utils/helper.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
+import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BottomSheetSharingWidget extends StatelessWidget {
   BottomSheetSharingWidget({super.key});
   final double radius = 15;
-  final _url = Uri.parse('https://www.facebook.com/seanz018');
+  final _url = Uri.parse('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
   final List<dynamic> items = [
     {"images": Assets.iconsFacebook.image(), "name": "Facebook"},
     {"images": Assets.iconsMessenger.image(), "name": "Messager"},
@@ -25,7 +27,7 @@ class BottomSheetSharingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(left: radius, right: radius, top: radius),
-      height: MediaQuery.sizeOf(context).height / 6,
+      height: MediaQuery.sizeOf(context).height / 6 + 40,
       color: Colors.white,
       width: MediaQuery.sizeOf(context).width,
       child: SafeArea(
@@ -44,50 +46,94 @@ class BottomSheetSharingWidget extends StatelessWidget {
             ],
           ),
           Expanded(
-              child: ListView.builder(
-            itemCount: items.length,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                onTap: () async {
-                  if (index == 0) {
-                    animationToastLoadingFail(
-                      context: context,
-                      isAwait: false,
-                      title: "Hii there:D",
-                      message:
-                          "Contact me for any question or working. Many thanks!",
-                      // isAwait: false
-                    );
-                    if (!await launchUrl(_url)) {
-                      throw Exception('Could not launch $_url');
+            child: ListView.builder(
+              itemCount: items.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () async {
+                    if (index == 0) {
+                      animationToastLoadingFail(
+                        context: context,
+                        isAwait: false,
+                        title: "Hii there:D",
+                        message:
+                            "Contact me for any question or working. Many thanks!",
+                        // isAwait: false
+                      );
+                      if (!await launchUrl(_url)) {
+                        throw Exception('Could not launch $_url');
+                      }
+                    } else {
+                      animationToastLoadingFail(context: context);
                     }
-                  } else {
-                    animationToastLoadingFail(context: context);
-                  }
-                },
-                child: Container(
-                  width: 70,
-                  margin: const EdgeInsets.only(top: 12, right: 12),
-                  color: Colors.white,
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 3),
-                        height: 40,
-                        width: 40,
-                        child: items[index]['images'],
-                      ),
-                      Text(
-                        items[index]['name'],
-                        style: AppTypography.bodyNormal,
-                      )
-                    ],
+                  },
+                  child: Container(
+                    width: 70,
+                    margin: const EdgeInsets.only(top: 12, right: 12),
+                    color: Colors.white,
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(bottom: 3),
+                          height: 40,
+                          width: 40,
+                          child: items[index]['images'],
+                        ),
+                        Text(
+                          items[index]['name'],
+                          style: AppTypography.bodyNormal,
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              );
-            },
-          ))
+                );
+              },
+            ),
+          ),
+          Container(
+              height: 40,
+              margin: const EdgeInsets.symmetric(horizontal: 5),
+              padding:
+                  const EdgeInsets.only(left: 12, right: 3, top: 3, bottom: 3),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey, width: 0.5),
+                borderRadius: BorderRadius.circular(6),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text("https://watch?v=dQw4w9WgXcQ"),
+                  ElevatedButton(
+                      style: const ButtonStyle(
+                        shadowColor: null,
+                        backgroundColor:
+                            MaterialStatePropertyAll<Color>(AppColors.primary),
+                      ),
+                      onPressed: () async {
+                        String url =
+                            'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+                        try {
+                          await Clipboard.setData(ClipboardData(text: url));
+                          Get.back();
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('Copied to Clipboard!')),
+                          );
+                        } catch (e) {
+                          Get.back();
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('Failed to copy to clipboard.')),
+                          );
+                        }
+                      },
+                      child: const Text(
+                        "Copy",
+                        style: AppTypography.bodyBold,
+                      ))
+                ],
+              ))
         ],
       )),
     );

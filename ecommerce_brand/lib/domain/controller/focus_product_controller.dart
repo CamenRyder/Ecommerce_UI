@@ -1,4 +1,5 @@
 import 'package:ecommerce_brand/core/routes/routes.dart';
+import 'package:ecommerce_brand/core/utils/helper.dart';
 import 'package:ecommerce_brand/core/utils/theme/assets.gen.dart';
 import 'package:ecommerce_brand/domain/models/focus_product_model.dart';
 import 'package:ecommerce_brand/domain/models/product_model.dart';
@@ -32,12 +33,14 @@ class FocusProductScreenController extends GetxController {
         name: "Selected",
         icon: Assets.iconsIcTick,
         isSelected: false,
-        functionEndPress: (Product item) => {print("On tap Selected")}),
+        functionEndPress: (Product item, context) =>
+            {animationToastLoadingFail(context: context)}),
     FocusProductModel(
         name: "Hide",
         icon: Assets.iconsIcBan,
         isSelected: false,
-        functionEndPress: (Product item) => {print("On tap Hide")}),
+        functionEndPress: (Product item, context) =>
+            {animationToastLoadingFail(context: context)}),
   ];
 
   resetSelected() {
