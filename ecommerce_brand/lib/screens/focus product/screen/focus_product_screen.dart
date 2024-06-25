@@ -1,3 +1,4 @@
+import 'package:ecommerce_brand/core/routes/routes.dart';
 import 'package:ecommerce_brand/core/utils/constant/string_utils.dart';
 import 'package:ecommerce_brand/core/utils/theme/colors.dart';
 import 'package:ecommerce_brand/core/utils/theme/typograhpy.dart';
@@ -97,10 +98,16 @@ class _FocusProductScreen extends State<FocusProductScreen> {
               ),
             ),
             Obx(() => GestureDetector(
+                  onTap: () {
+                    _controller.getTextItem("Show more");
+                    Get.toNamed(Routes.productDetail);
+                  },
                   onLongPress: () {
                     _controller.getTextItem("Show more");
                   },
-                  onLongPressEnd: (a) {},
+                  onLongPressEnd: (a) {
+                    Get.toNamed(Routes.productDetail);
+                  },
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 350),
                     margin: const EdgeInsets.only(top: 24),

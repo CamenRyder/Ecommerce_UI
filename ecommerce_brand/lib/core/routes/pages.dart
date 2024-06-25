@@ -8,6 +8,8 @@ import 'package:ecommerce_brand/screens/home/screens/home_screen.dart';
 import 'package:ecommerce_brand/screens/save%20item%20into%20collection/screen/save_into_collection_screen.dart';
 import 'package:get/get.dart';
 
+import '../../screens/product detail/screen/product_detail_screen.dart';
+
 abstract class AppPages {
   static final List<GetPage> pages = [
     GetPage(
@@ -65,6 +67,14 @@ abstract class AppPages {
       page: () => SaveIntoCollectionScreen(
         product: Get.arguments,
       ),
+    ),
+    GetPage(
+      name: Routes.productDetail,
+      showCupertinoParallax: false,
+      transition: Transition.fadeIn,
+      page: () => const ProductDetailScreen(
+          // product: Get.arguments,
+          ),
     )
   ];
 }
